@@ -6,7 +6,10 @@ public class Donut : MonoBehaviour
 {
     private Vector3 SpinSpeed;
 
-	[SerializeField] private float MoveSpeed;
+	[SerializeField]
+    private float MoveSpeed;
+    [SerializeField]
+    private float spinSpeed;
 
 	private float leftConstraint = -5f;
 	private float rightConstraint = 5f;
@@ -14,7 +17,8 @@ public class Donut : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        leftConstraint = -5f;
+        rightConstraint = 5f;
     }
 
 
