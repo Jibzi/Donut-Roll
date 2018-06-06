@@ -24,9 +24,14 @@ public class FloatingComponent : MonoBehaviour {
 
     void Rotate()
     {
-        QuaternionicRotation.x += RotationSpeed.x * Time.deltaTime;
-        QuaternionicRotation.y += RotationSpeed.y * Time.deltaTime;
-        QuaternionicRotation.z += RotationSpeed.z * Time.deltaTime;
+
+        QuaternionicRotation.Set
+            (
+            RotationSpeed.x * Time.deltaTime,
+            RotationSpeed.y * Time.deltaTime,
+            RotationSpeed.z * Time.deltaTime, 
+            0
+            );
     }
 
     void Float()
