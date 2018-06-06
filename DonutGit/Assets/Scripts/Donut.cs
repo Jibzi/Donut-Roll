@@ -27,37 +27,36 @@ public class Donut : MonoBehaviour
         hasMovedTooFarRight = this.transform.position.x > rightConstraint;
     }
 
+    /*A method to clamp the movement on X between the left and right constraints. Though, for now
+    I will use the far less optimised box colliders to get the prototype working.*/
     void ClampHorizontalMovement()
     {
         //If the donut has moved too far right:
         if (hasMovedTooFarLeft)
         {
             //Only allow the donut to move to the right.
-            horizontalMovement = Mathf.Clamp01(horizontalMovement);
+            //horizontalMovement = Mathf.Clamp01(horizontalMovement);
+            Mathf.Clamp(this.transform.position.x, leftConstraint, rightConstraint);
             //Move the donut
             MoveSideways();
         }
         //Else if the donut has moved too far right:
-        else if (hasMovedTooFarRight)
+        if (hasMovedTooFarRight)
         {
             //Only allow the donut to move to the left
-            horizontalMovement = -Mathf.Clamp01(horizontalMovement);
+            //horizontalMovement = -Mathf.Clamp01(horizontalMovement);
+            //Mathf.Clamp(this.transform.position.x, leftConstraint, rightConstraint);
             //Move the donut
             MoveSideways();
         }
-        //Else, the donut is somewhere between the two:
-        else
+        //Else, the donut is somewhere between the two: (this used to be an else statement, whence its dodgy stucture).
+        if (!hasMovedTooFarLeft && !hasMovedTooFarRight)
         {
             //Allow the donut to move either left or right
             ResetHorizontalMovement();
             //Move the donut
             MoveSideways();
         }
-    }
-
-    void GetInput()
-    {
-        horizontalMovement = Input.GetAxis("Horizontal");
     }
 
     void ResetHorizontalMovement()
@@ -76,7 +75,6 @@ public class Donut : MonoBehaviour
     void Update ()
 	{
         SpinSpeed.x = (Time.deltaTime * 225f); //225f
-        GetInput();
         ClampHorizontalMovement();
 		this.transform.Rotate(SpinSpeed);
 	}
