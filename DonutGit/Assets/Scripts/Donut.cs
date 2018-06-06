@@ -11,21 +11,33 @@ public class Donut : MonoBehaviour
         leftConstraint,
         rightConstraint;
     private Vector2 HorizontalConstraints;
-    private bool donutNeedsToStop;
+    private bool hasMovedTooFarLeft;
+    private bool hasMovedTooFarRight;
+    [SerializeField]
+    float sidewaysSpeed;
 
     // Use this for initialization
     void Start()
     {
+        leftConstraint = -5;
+        rightConstraint = 5;
         HorizontalConstraints = new Vector2(leftConstraint, rightConstraint);
-        SpinSpeed = new Vector3(0, 0, 0);
         horizontalMovement = Input.GetAxis("Horizontal");
+        hasMovedTooFarLeft = this.transform.position.x < leftConstraint;
+        hasMovedTooFarRight = this.transform.position.x > rightConstraint;
     }
 
     void ClampHorizontalMovement()
     {
-        if (donutNeedsToStop)
+        //What happens if it goes too far left?
+        if (!hasMovedTooFarLeft)
         {
-
+            
+        }
+        //What happens if it goes too far right?
+        if (!hasMovedTooFarRight)
+        {
+            
         }
     }
 
@@ -36,7 +48,7 @@ public class Donut : MonoBehaviour
 
     void MoveSideways()
     {
-        this.transform.Translate(new Vector3(horizontalMovement,0,0));
+        this.transform.Translate(new Vector3(horizontalMovement*Time.deltaTime*sidewaysSpeed,0,0));
     }
 
 
@@ -44,9 +56,14 @@ public class Donut : MonoBehaviour
     // Update is called once per frame
     void Update ()
 	{
-		SpinSpeed.x = (Time.deltaTime * 225f);
-        donutNeedsToStop = this.transform.position.x > leftConstraint || this.transform.position.x < rightConstraint;
+
+        SpinSpeed.x = (Time.deltaTime * 225f); //225f
+
+
+
+
         GetInput();
+        
         MoveSideways();
 		this.transform.Rotate(SpinSpeed);
 	}
