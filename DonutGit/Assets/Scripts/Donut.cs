@@ -14,7 +14,7 @@ public class Donut : MonoBehaviour
     private bool hasMovedTooFarLeft;
     private bool hasMovedTooFarRight;
     [SerializeField]
-    float sidewaysSpeed;
+    private float sidewaysSpeed;
 
     // Use this for initialization
     void Start()
@@ -29,19 +29,38 @@ public class Donut : MonoBehaviour
 
     void ClampHorizontalMovement()
     {
-        //What happens if it goes too far left?
-        if (!hasMovedTooFarLeft)
+        //If the donut has moved too far right:
+        if (hasMovedTooFarLeft)
         {
-            
+            //Only allow the donut to move to the right.
+            horizontalMovement = Mathf.Clamp01(horizontalMovement);
+            //Move the donut
+            MoveSideways();
         }
-        //What happens if it goes too far right?
-        if (!hasMovedTooFarRight)
+        //Else if the donut has moved too far right:
+        else if (hasMovedTooFarRight)
         {
-            
+            //Only allow the donut to move to the left
+            horizontalMovement = -Mathf.Clamp01(horizontalMovement);
+            //Move the donut
+            MoveSideways();
+        }
+        //Else, the donut is somewhere between the two:
+        else
+        {
+            //Allow the donut to move either left or right
+            ResetHorizontalMovement();
+            //Move the donut
+            MoveSideways();
         }
     }
 
     void GetInput()
+    {
+        horizontalMovement = Input.GetAxis("Horizontal");
+    }
+
+    void ResetHorizontalMovement()
     {
         horizontalMovement = Input.GetAxis("Horizontal");
     }
@@ -56,15 +75,9 @@ public class Donut : MonoBehaviour
     // Update is called once per frame
     void Update ()
 	{
-
         SpinSpeed.x = (Time.deltaTime * 225f); //225f
-
-
-
-
         GetInput();
-        
-        MoveSideways();
+        ClampHorizontalMovement();
 		this.transform.Rotate(SpinSpeed);
 	}
 
