@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cba7146-12f8-49fe-ad8e-7adf5c9b21c7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,22 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WorldBendShader.shader" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <marker date="1528285758728" expanded="true" signature="0:137" ph="/* Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld' ... */" />
-                <marker date="1528285758728" expanded="true" signature="162:1064" ph="{...}" />
-                <marker date="1528285758728" expanded="true" signature="174:259" ph="{...}" />
-                <marker date="1528285758728" expanded="true" signature="271:1036" ph="{...}" />
-                <marker date="1528285758728" expanded="true" signature="324:1028" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Obstacle.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,12 +28,143 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Donut.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <marker date="1528286571481" expanded="false" signature="6:78" ph="..." />
                 <marker date="1528286571481" expanded="true" signature="114:365" ph="{...}" />
                 <marker date="1528286571481" expanded="true" signature="216:223" ph="{...}" />
                 <marker date="1528286571481" expanded="true" signature="277:363" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorldBendShader.shader" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <marker date="1528285758728" expanded="true" signature="0:137" ph="/* Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld' ... */" />
+                <marker date="1528285758728" expanded="true" signature="162:1064" ph="{...}" />
+                <marker date="1528285758728" expanded="true" signature="174:259" ph="{...}" />
+                <marker date="1528285758728" expanded="true" signature="271:1036" ph="{...}" />
+                <marker date="1528285758728" expanded="true" signature="324:1028" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compiled-Standard.shader" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+              <folding>
+                <marker date="1528292112390" expanded="true" signature="0:419" ph="/* Compiled shader for PC, Mac &amp; Linux Standalone ... */" />
+                <marker date="1528292112390" expanded="true" signature="452:2079" ph="{...}" />
+                <marker date="1528292112390" expanded="true" signature="2165:2347" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="2536:2773" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="3505:4673" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="7691:8649" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="16497:17665" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="21095:22053" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="31377:32615" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="36229:37257" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="45779:47017" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="51043:52071" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="62031:63199" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="64900:65038" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1528292112390" expanded="true" signature="66142:67310" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="71330:72568" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="74480:74618" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1528292112390" expanded="true" signature="75771:77009" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="80524:80705" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="80885:81122" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="81942:83110" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="85686:86644" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="91848:93016" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="95497:96455" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="101195:102363" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="104997:105955" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="111623:112791" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="115412:116370" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="121739:122907" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="125483:126441" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="131624:132862" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="135979:137007" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="143707:144945" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="148114:149142" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="157649:158887" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="161964:162992" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="168661:169899" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="173071:174099" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="180057:181295" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="184387:185415" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="191831:193069" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="196161:197189" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="204134:205372" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="208524:209552" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="216140:217378" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="220530:221558" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="227892:227958" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="228102:228339" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="228953:229631" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="231276:231814" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="232605:233283" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="234801:235339" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="235469:235648" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="235761:235998" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="236720:237888" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="239898:241066" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="243279:244447" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="247258:248426" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="252694:253862" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="256673:257841" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="261202:261383" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="261572:261809" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="262541:263709" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="266481:267439" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="271996:273164" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="276815:277773" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="282111:283349" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="286963:287991" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="296513:297751" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="301777:302805" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="312765:313933" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="315723:315861" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1528292112390" expanded="true" signature="317049:318217" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="322678:323916" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="325828:325966" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+                <marker date="1528292112390" expanded="true" signature="327119:328357" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="331872:332051" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="332231:332468" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="333288:334456" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="337271:338229" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="341847:343015" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="345631:346589" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="349832:351000" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="353873:354831" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="358913:360081" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="362956:363914" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="367697:368865" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="371591:372549" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="376235:377473" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="380190:381218" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="384937:386175" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="389252:390280" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="395949:397187" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="400359:401387" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="407345:408583" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="411333:412361" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="415812:417050" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="419860:420888" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="423616:423682" ph="/* Stats for Vertex shader: ... */" />
+                <marker date="1528292112390" expanded="true" signature="423826:424063" ph="/* Compiled programs ... */" />
+                <marker date="1528292112390" expanded="true" signature="424677:425355" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="427000:427538" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="428329:429007" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+                <marker date="1528292112390" expanded="true" signature="430525:431063" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
               </folding>
             </state>
           </provider>
@@ -63,9 +176,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Donut.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Donut.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/builtin_shaders-2018.1.3f1/Editor/StandardShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/ParsedCombinations-Standard.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -149,12 +265,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528285749019</updated>
       <workItem from="1528285750415" duration="803000" />
-      <workItem from="1528286559695" duration="336000" />
+      <workItem from="1528286559695" duration="2391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1139000" />
+    <option name="totallyTimeSpent" value="3194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -235,10 +351,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/builtin_shaders-2018.1.3f1/Editor/StandardShaderGUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3465" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Temp/ParsedCombinations-Standard.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1528292091041" expanded="true" signature="0:100" ph="/* Total snippets: 12 ... */" />
+            <marker date="1528292091041" expanded="true" signature="226:304" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="1105:1183" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="1350:1428" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="2196:2274" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="2597:2675" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="2823:2901" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="3390:3468" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="3667:3745" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="4484:4562" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="5201:5280" ph="/* ----------------------------------------- ... */" />
+            <marker date="1528292091041" expanded="true" signature="5539:5618" ph="/* ----------------------------------------- ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <marker date="1528285758728" expanded="true" signature="0:137" ph="/* Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld' ... */" />
             <marker date="1528285758728" expanded="true" signature="162:1064" ph="{...}" />
@@ -249,17 +397,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs">
+    <entry file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="375">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding>
+            <marker date="1528292112390" expanded="true" signature="0:419" ph="/* Compiled shader for PC, Mac &amp; Linux Standalone ... */" />
+            <marker date="1528292112390" expanded="true" signature="452:2079" ph="{...}" />
+            <marker date="1528292112390" expanded="true" signature="2165:2347" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="2536:2773" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="3505:4673" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="7691:8649" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="16497:17665" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="21095:22053" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="31377:32615" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="36229:37257" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="45779:47017" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="51043:52071" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="62031:63199" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="64900:65038" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+            <marker date="1528292112390" expanded="true" signature="66142:67310" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="71330:72568" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="74480:74618" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+            <marker date="1528292112390" expanded="true" signature="75771:77009" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="80524:80705" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="80885:81122" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="81942:83110" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="85686:86644" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="91848:93016" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="95497:96455" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="101195:102363" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="104997:105955" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="111623:112791" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="115412:116370" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="121739:122907" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="125483:126441" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="131624:132862" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="135979:137007" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="143707:144945" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="148114:149142" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="157649:158887" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="161964:162992" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="168661:169899" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="173071:174099" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="180057:181295" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="184387:185415" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="191831:193069" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="196161:197189" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="204134:205372" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="208524:209552" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="216140:217378" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="220530:221558" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="227892:227958" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="228102:228339" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="228953:229631" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="231276:231814" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="232605:233283" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="234801:235339" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="235469:235648" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="235761:235998" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="236720:237888" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="239898:241066" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="243279:244447" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="247258:248426" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="252694:253862" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="256673:257841" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="261202:261383" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="261572:261809" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="262541:263709" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="266481:267439" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="271996:273164" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="276815:277773" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="282111:283349" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="286963:287991" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="296513:297751" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="301777:302805" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="312765:313933" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="315723:315861" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+            <marker date="1528292112390" expanded="true" signature="317049:318217" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="322678:323916" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="325828:325966" ph="/* No shader variant for this keyword set. The closest match will be used instead. ... */" />
+            <marker date="1528292112390" expanded="true" signature="327119:328357" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="331872:332051" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="332231:332468" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="333288:334456" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="337271:338229" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="341847:343015" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="345631:346589" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="349832:351000" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="353873:354831" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="358913:360081" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="362956:363914" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="367697:368865" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="371591:372549" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="376235:377473" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="380190:381218" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="384937:386175" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="389252:390280" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="395949:397187" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="400359:401387" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="407345:408583" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="411333:412361" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="415812:417050" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="419860:420888" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="423616:423682" ph="/* Stats for Vertex shader: ... */" />
+            <marker date="1528292112390" expanded="true" signature="423826:424063" ph="/* Compiled programs ... */" />
+            <marker date="1528292112390" expanded="true" signature="424677:425355" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="427000:427538" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="428329:429007" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+            <marker date="1528292112390" expanded="true" signature="430525:431063" ph="/* Generated by Microsoft (R) D3D Shader Disassembler ... */" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Donut.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <marker date="1528286571481" expanded="false" signature="6:78" ph="..." />
             <marker date="1528286571481" expanded="true" signature="114:365" ph="{...}" />
