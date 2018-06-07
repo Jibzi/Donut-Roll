@@ -23,12 +23,12 @@ public class FloatingComponent : MonoBehaviour
 
     void Rotate()
     {
-        this.transform.Rotate(RotationSpeed/100, Space.World);
+        this.transform.Rotate(RotationSpeed/100);
     }
 
     void Float()
     {
-        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (100 - WobbleAmplitude)), -10 * Time.deltaTime, Space.World);
+        transform.Translate(0, (Mathf.Sin(Time.time * WobbleFrequency) / (100 - WobbleAmplitude)), -10 * Time.deltaTime);
     }
 
     void Move()
