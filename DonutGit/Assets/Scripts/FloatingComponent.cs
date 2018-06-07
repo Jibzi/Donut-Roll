@@ -28,7 +28,7 @@ public class FloatingComponent : MonoBehaviour
 
     void Float()
     {
-        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (1/WobbleAmplitude)), -10 * Time.deltaTime, Space.World);
+        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (100 - WobbleAmplitude)), -10 * Time.deltaTime, Space.World);
     }
 
     void Move()
