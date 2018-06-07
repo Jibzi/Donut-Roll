@@ -5,7 +5,6 @@ using UnityEngine;
 public class FloatingComponent : MonoBehaviour
 {
 
-<<<<<<< HEAD
 
 
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
@@ -20,14 +19,7 @@ public class FloatingComponent : MonoBehaviour
 
     [SerializeField]
     private Vector3 RotationSpeed;
-=======
-    
-    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")][Range(0,10)][SerializeField] private float WobbleFrequency;
-    
-    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")][Range(0, 100)][SerializeField] private float WobbleAmplitude;
-    
-    [SerializeField] private Vector3 RotationSpeed;
->>>>>>> 348dd73d68147292fd41fa169b5e382efa031959
+
 
     private Vector3 _startPos;
     private float clamper = 100f;

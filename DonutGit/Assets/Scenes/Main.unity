@@ -418,10 +418,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 583978196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b328a2245bbd1240b7eab6382d0d2ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 452df24be0501da4bb9d8490c623a04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collectable: {fileID: 0}
 --- !u!114 &583978199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +514,19 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7be16a999efe81447a9acf09544cf033, type: 3}
   m_PrefabInternal: {fileID: 468619006}
+--- !u!114 &1825893058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1825893057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b328a2245bbd1240b7eab6382d0d2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SC: {fileID: 1825893061}
+  timeToDespawn: 0
 --- !u!135 &1825893061
 SphereCollider:
   m_ObjectHideFlags: 0
