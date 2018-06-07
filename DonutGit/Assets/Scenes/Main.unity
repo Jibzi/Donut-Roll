@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WobbleFrequency: 5.08
   WobbleAmplitude: 64.5
-  RotationSpeed: {x: 0, y: 0, z: 0}
+  RotationSpeed: {x: 0, y: 200, z: 0}
 --- !u!4 &583978200
 Transform:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1114222444f544e86e22b36346379a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 10
   spinSpeed: 225
   leftConstraint: 0
   rightConstraint: 0
