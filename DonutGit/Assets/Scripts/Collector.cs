@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collection : MonoBehaviour {
+public class Collector : MonoBehaviour {
 
     GameObject Collectable;
 
