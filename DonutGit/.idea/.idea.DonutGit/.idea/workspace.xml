@@ -45,6 +45,18 @@
       <file leaf-file-name="FloatingComponent.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/FloatingComponent.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state>
+              <caret selection-end-line="47" selection-end-column="1" />
+              <folding>
+                <marker date="1528373311979" expanded="true" signature="6:78" ph="..." />
+                <marker date="1528373311979" expanded="true" signature="126:1104" ph="{...}" />
+                <marker date="1528373311979" expanded="true" signature="622:721" ph="{...}" />
+                <marker date="1528373311979" expanded="true" signature="740:815" ph="{...}" />
+                <marker date="1528373311979" expanded="true" signature="833:990" ph="{...}" />
+                <marker date="1528373311979" expanded="true" signature="1007:1054" ph="{...}" />
+                <marker date="1528373311979" expanded="true" signature="1074:1102" ph="{...}" />
+=======
             <state relative-caret-position="345">
               <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
@@ -55,11 +67,24 @@
                 <marker date="1528369415819" expanded="true" signature="694:851" ph="{...}" />
                 <marker date="1528369415819" expanded="true" signature="868:915" ph="{...}" />
                 <marker date="1528369415819" expanded="true" signature="935:963" ph="{...}" />
+>>>>>>> 25852242a72a8d934edf8dd5c01e1088142ce1ea
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Main.unity" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scenes/Main.unity">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="443" column="17" selection-start-line="443" selection-start-column="17" selection-end-line="443" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+=======
+>>>>>>> 25852242a72a8d934edf8dd5c01e1088142ce1ea
       <file leaf-file-name="WorldBendShader.shader" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Materials/Shaders/WorldBendShader.shader">
           <provider selected="true" editor-type-id="text-editor">
@@ -228,7 +253,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="19382000" />
+=======
     <option name="totallyTimeSpent" value="17186000" />
+>>>>>>> 25852242a72a8d934edf8dd5c01e1088142ce1ea
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,6 +577,15 @@
         <state relative-caret-position="360">
           <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
+<<<<<<< HEAD
+            <marker date="1528373311979" expanded="true" signature="6:78" ph="..." />
+            <marker date="1528373311979" expanded="true" signature="126:1104" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="622:721" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="740:815" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="833:990" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="1007:1054" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="1074:1102" ph="{...}" />
+=======
             <marker date="1528369415819" expanded="false" signature="6:78" ph="..." />
             <marker date="1528369415819" expanded="true" signature="126:965" ph="{...}" />
             <marker date="1528369415819" expanded="true" signature="483:582" ph="{...}" />
@@ -555,6 +593,7 @@
             <marker date="1528369415819" expanded="true" signature="694:851" ph="{...}" />
             <marker date="1528369415819" expanded="true" signature="868:915" ph="{...}" />
             <marker date="1528369415819" expanded="true" signature="935:963" ph="{...}" />
+>>>>>>> 25852242a72a8d934edf8dd5c01e1088142ce1ea
           </folding>
         </state>
       </provider>
@@ -812,8 +851,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/Main.unity">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="15">
+          <caret line="443" column="17" selection-start-line="443" selection-start-column="17" selection-end-line="443" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FloatingComponent.cs">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="47" selection-end-column="1" />
+          <folding>
+            <marker date="1528373311979" expanded="true" signature="6:78" ph="..." />
+            <marker date="1528373311979" expanded="true" signature="126:1104" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="622:721" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="740:815" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="833:990" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="1007:1054" ph="{...}" />
+            <marker date="1528373311979" expanded="true" signature="1074:1102" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
         <state relative-caret-position="345">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
@@ -828,5 +890,6 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 25852242a72a8d934edf8dd5c01e1088142ce1ea
   </component>
 </project>

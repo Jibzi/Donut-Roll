@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collector : MonoBehaviour {
+public class Collection : MonoBehaviour {
 
-    // Use this for initialization
-    void Start() {
-
-    }
+	// Use this for initialization
+	void Start () {
+		
+	}
 	
+    
+
 
 
 	// Update is called once per frame

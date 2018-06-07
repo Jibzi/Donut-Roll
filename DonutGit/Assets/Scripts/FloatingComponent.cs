@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloatingComponent : MonoBehaviour
 {
 
+<<<<<<< HEAD
 
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
     [Range(0, 10)]
@@ -18,6 +19,14 @@ public class FloatingComponent : MonoBehaviour
 
     [SerializeField]
     private Vector3 RotationSpeed;
+=======
+    
+    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")][Range(0,10)][SerializeField] private float WobbleFrequency;
+    
+    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")][Range(0, 100)][SerializeField] private float WobbleAmplitude;
+    
+    [SerializeField] private Vector3 RotationSpeed;
+>>>>>>> 0ef301f7645ab44e2a79a045f8bd6d3b4ebb3aab
 
     private Vector3 _startPos;
     private float clamper = 100f;
@@ -26,7 +35,7 @@ public class FloatingComponent : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+	void Start ()
     {
         _startPos = new Vector3(0, 1.7f, 120);
         transform.position = _startPos;
@@ -34,12 +43,12 @@ public class FloatingComponent : MonoBehaviour
 
     void Rotate()
     {
-        this.transform.Rotate(RotationSpeed / 100, Space.World);
+        this.transform.Rotate(RotationSpeed/100, Space.World);
     }
 
     void Float()
     {
-        transform.Translate(0, (Mathf.Sin(Time.time * WobbleFrequency) / (clamper - WobbleAmplitude)), worldSpeed * Time.deltaTime, Space.World);
+        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (clamper - WobbleAmplitude)), worldSpeed * Time.deltaTime, Space.World);
     }
 
     void Move()
@@ -48,7 +57,7 @@ public class FloatingComponent : MonoBehaviour
         Float();
     }
 
-    void Update()
+    void Update ()
     {
         Move();
     }
