@@ -8,11 +8,15 @@ public class FloatingComponent : MonoBehaviour
     
     [Range(0,10)][SerializeField] private float WobbleFrequency;
     
-    [Range(0, 100)] [SerializeField] private float WobbleAmplitude;
+    [Range(0, 100)][SerializeField] private float WobbleAmplitude;
     
     [SerializeField] private Vector3 RotationSpeed;
 
     private Vector3 _startPos;
+    private float clamper = 100f;
+    private float worldSpeed = -10;
+
+
 
     // Use this for initialization
 	void Start ()
@@ -28,7 +32,7 @@ public class FloatingComponent : MonoBehaviour
 
     void Float()
     {
-        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (100 - WobbleAmplitude)), -10 * Time.deltaTime, Space.World);
+        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (clamper - WobbleAmplitude)), worldSpeed * Time.deltaTime, Space.World);
     }
 
     void Move()
@@ -39,7 +43,6 @@ public class FloatingComponent : MonoBehaviour
 
     void Update ()
     {
-        Rotate();
         Move();
     }
 }
