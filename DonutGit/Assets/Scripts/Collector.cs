@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour {
 
+    GameObject Collectable;
+
     // Use this for initialization
-    void Start() {
-
+    void Start()
+    {
+        Collectable = GameObject.FindWithTag("Collectable");
     }
-	
 
+    void ResetCollectable()
+    {
+        
+    }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update ()
+    {
 		
 	}
 }
