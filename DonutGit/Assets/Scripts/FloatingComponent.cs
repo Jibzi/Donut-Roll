@@ -2,41 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatingComponent : MonoBehaviour {
+public class FloatingComponent : MonoBehaviour
+{
+
     
-    [SerializeField]
-    //How much the component floats
-    private Vector3 FloatingAmount;
-    //Speed at which the component floats
-    [SerializeField]
-    private Vector3 FloatingSpeed;
-    //Speed at which the component rotates
-    [SerializeField]
-    private Vector3 RotationSpeed;
-    private Quaternion QuaternionicRotation;
+    [Range(0,10)][SerializeField] private float WobbleFrequency;
+    
+    [Range(0, 100)] [SerializeField] private float WobbleAmplitude;
+    
+    [SerializeField] private Vector3 RotationSpeed;
+
+    private Vector3 _startPos;
 
     // Use this for initialization
 	void Start ()
     {
-        QuaternionicRotation = transform.rotation;
-        RotationSpeed.Set(500, 500, 500);
+        _startPos = new Vector3(0, 1.7f, 120);
+        transform.position = _startPos;
     }
 
     void Rotate()
     {
-
-        QuaternionicRotation.Set
-            (
-            RotationSpeed.x * Time.deltaTime,
-            RotationSpeed.y * Time.deltaTime,
-            RotationSpeed.z * Time.deltaTime, 
-            0
-            );
+        this.transform.Rotate(RotationSpeed/100, Space.World);
     }
 
     void Float()
     {
-
+        transform.Translate(0,(Mathf.Sin(Time.time * WobbleFrequency) / (1/WobbleAmplitude)), -10 * Time.deltaTime, Space.World);
     }
 
     void Move()
@@ -45,17 +37,9 @@ public class FloatingComponent : MonoBehaviour {
         Float();
     }
 
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-
-
-
-    void LateUpdate ()
+    void Update ()
     {
         Rotate();
-	}
+        Move();
+    }
 }
