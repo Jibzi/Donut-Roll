@@ -5,7 +5,6 @@ using UnityEngine;
 public class FloatingComponent : MonoBehaviour
 {
 
-<<<<<<< HEAD
 
 
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
