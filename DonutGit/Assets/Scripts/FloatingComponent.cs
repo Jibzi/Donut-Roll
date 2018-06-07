@@ -12,6 +12,10 @@ public class FloatingComponent : MonoBehaviour
     
     [SerializeField] private Vector3 RotationSpeed;
 
+    private float _clamper;
+
+    private float _worldSpeed;
+
     private Vector3 _startPos;
 
     // Use this for initialization
@@ -19,6 +23,8 @@ public class FloatingComponent : MonoBehaviour
     {
         _startPos = new Vector3(0, 1.7f, 120);
         transform.position = _startPos;
+        _clamper = 100;
+        _worldSpeed = -10;
     }
 
     void Rotate()
@@ -31,15 +37,10 @@ public class FloatingComponent : MonoBehaviour
         transform.Translate(0, (Mathf.Sin(Time.time * WobbleFrequency) / (100 - WobbleAmplitude)), -10 * Time.deltaTime);
     }
 
-    void Move()
-    {
-        Rotate();
-        Float();
-    }
 
     void Update ()
     {
         Rotate();
-        Move();
+        Float();
     }
 }
