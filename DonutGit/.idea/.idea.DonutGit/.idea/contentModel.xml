@@ -195,13 +195,14 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BuildRoad.cs" t="Include" />
+          <e p="Collectable.cs" t="Include" />
           <e p="Collector.cs" t="Include" />
-          <e p="Collection.cs" t="Include" />
           <e p="Donut.cs" t="Include" />
           <e p="FloatingComponent.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="RoadPartComponent.cs" t="Include" />
+          <e p="ScoreTracker.cs" t="Include" />
           <e p="WorldBender.cs" t="Include" />
         </e>
       </e>
