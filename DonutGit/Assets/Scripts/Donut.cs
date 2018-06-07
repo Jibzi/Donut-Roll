@@ -7,17 +7,19 @@ public class Donut : MonoBehaviour
     private Vector3 SpinSpeed;
 
 	[SerializeField]
-    private float MoveSpeed;
+    private float moveSpeed;    //Luke: 20f
     [SerializeField]
-    private float spinSpeed;
+    private float spinSpeed;    //George: 225f
 
-	private float leftConstraint = -5f;
-	private float rightConstraint = 5f;
+    [SerializeField]
+	private float leftConstraint;
+    [SerializeField]
+	private float rightConstraint;
 
     // Use this for initialization
     void Start()
     {
-        leftConstraint = -5f;
+        leftConstraint = -5;
         rightConstraint = 5f;
     }
 
@@ -28,7 +30,7 @@ public class Donut : MonoBehaviour
     void Update ()
 	{
 
-        SpinSpeed.x = (Time.deltaTime * 225f); //225f
+        SpinSpeed.x = (Time.deltaTime * spinSpeed); 
 
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
@@ -38,9 +40,8 @@ public class Donut : MonoBehaviour
 			}
 			else
 			{
-				this.transform.Translate(-MoveSpeed * Time.deltaTime, 0,0);
+				transform.Translate(-moveSpeed * Time.deltaTime, 0,0);
 			}
-
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
@@ -51,12 +52,12 @@ public class Donut : MonoBehaviour
 			}
 			else
 			{
-				this.transform.Translate(MoveSpeed * Time.deltaTime, 0,0);
+				transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
 			}
 
 		}
      
-		this.transform.Rotate(SpinSpeed);
+		transform.Rotate(SpinSpeed);
 	}
 
 
