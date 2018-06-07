@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: a9d1723612a2acc4b8a783c82db4b57c, type: 2}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -403,25 +403,13 @@ GameObject:
   m_Component:
   - component: {fileID: 583978200}
   - component: {fileID: 583978199}
-  - component: {fileID: 583978197}
   m_Layer: 0
-  m_Name: Collectible
-  m_TagString: Untagged
+  m_Name: Collectable
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &583978197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 583978196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b328a2245bbd1240b7eab6382d0d2ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &583978199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +557,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 89663ebb193b14741ac5b59f6f8aaa5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 2100000, guid: 7fb7d9d44716e2f429abd214b5c09d87, type: 2}
     - target: {fileID: 400002, guid: 89663ebb193b14741ac5b59f6f8aaa5f, type: 3}
       propertyPath: m_LocalScale.y
@@ -593,6 +582,12 @@ Prefab:
     - target: {fileID: 400002, guid: 89663ebb193b14741ac5b59f6f8aaa5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -100
+=======
+      objectReference: {fileID: 2100000, guid: 9f3748f3a1aae7046a7c815647fc7293, type: 2}
+    - target: {fileID: 100002, guid: 89663ebb193b14741ac5b59f6f8aaa5f, type: 3}
+      propertyPath: m_TagString
+      value: Collectable
+>>>>>>> 16af19862c97d6c62ec4a9ea38851da17767f88a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89663ebb193b14741ac5b59f6f8aaa5f, type: 3}
@@ -606,9 +601,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1875077728}
   - component: {fileID: 1875077729}
+  - component: {fileID: 1875077730}
   m_Layer: 0
   m_Name: TheDonut
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,3 +639,14 @@ MonoBehaviour:
   spinSpeed: 225
   leftConstraint: 0
   rightConstraint: 0
+--- !u!114 &1875077730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1875077727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b328a2245bbd1240b7eab6382d0d2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
