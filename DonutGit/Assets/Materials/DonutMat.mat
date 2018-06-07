@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: DonutMat
-  m_Shader: {fileID: 4800000, guid: 7e86e78fb12ea3f4ebfa36b309c2580e, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: c49b82893591fcb40bb3dac209d759e9, type: 3}
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7b83c8bb92699a44f8a13c35a9ff9932, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:

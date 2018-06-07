@@ -6,9 +6,9 @@ public class FloatingComponent : MonoBehaviour
 {
 
     
-    [Range(0,10)][SerializeField] private float WobbleFrequency;
+    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")][Range(0,10)][SerializeField] private float WobbleFrequency;
     
-    [Range(0, 100)][SerializeField] private float WobbleAmplitude;
+    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")][Range(0, 100)][SerializeField] private float WobbleAmplitude;
     
     [SerializeField] private Vector3 RotationSpeed;
 
