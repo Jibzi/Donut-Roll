@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cba7146-12f8-49fe-ad8e-7adf5c9b21c7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DonutGit/.idea/contentModel.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5cba7146-12f8-49fe-ad8e-7adf5c9b21c7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,20 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FloatingComponent.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FloatingComponent.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/FloatingComponent.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
-                <marker date="1528369415819" expanded="false" signature="6:78" ph="..." />
-                <marker date="1528369415819" expanded="true" signature="126:965" ph="{...}" />
-                <marker date="1528369415819" expanded="true" signature="483:582" ph="{...}" />
-                <marker date="1528369415819" expanded="true" signature="601:676" ph="{...}" />
-                <marker date="1528369415819" expanded="true" signature="694:851" ph="{...}" />
-                <marker date="1528369415819" expanded="true" signature="868:915" ph="{...}" />
-                <marker date="1528369415819" expanded="true" signature="935:963" ph="{...}" />
+                <marker date="1528372989102" expanded="false" signature="6:78" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.unity" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scenes/Main.unity">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-495">
+              <caret line="442" selection-start-line="442" selection-end-line="442" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -228,7 +229,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17186000" />
+    <option name="totallyTimeSpent" value="17999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,13 +549,7 @@
         <state relative-caret-position="360">
           <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
-            <marker date="1528369415819" expanded="false" signature="6:78" ph="..." />
-            <marker date="1528369415819" expanded="true" signature="126:965" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="483:582" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="601:676" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="694:851" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="868:915" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="935:963" ph="{...}" />
+            <marker date="1528372989102" expanded="false" signature="6:78" ph="..." />
           </folding>
         </state>
       </provider>
@@ -793,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/Main.unity">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="442" selection-start-line="442" selection-end-line="442" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Donut.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -814,17 +802,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FloatingComponent.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
-            <marker date="1528369415819" expanded="false" signature="6:78" ph="..." />
-            <marker date="1528369415819" expanded="true" signature="126:965" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="483:582" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="601:676" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="694:851" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="868:915" ph="{...}" />
-            <marker date="1528369415819" expanded="true" signature="935:963" ph="{...}" />
+            <marker date="1528372989102" expanded="false" signature="6:78" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/Main.unity">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-495">
+          <caret line="442" selection-start-line="442" selection-end-line="442" selection-end-column="12" />
         </state>
       </provider>
     </entry>
