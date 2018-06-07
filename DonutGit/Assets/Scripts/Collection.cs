@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collector : MonoBehaviour {
+public class Collection : MonoBehaviour {
 
+<<<<<<< HEAD:DonutGit/Assets/Scripts/Collector.cs
     GameObject Collectable;
 
     // Use this for initialization
@@ -11,6 +12,15 @@ public class Collector : MonoBehaviour {
     {
         Collectable = GameObject.FindWithTag("Collectable");
     }
+=======
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+    
+
+>>>>>>> 6a393612f9f58cd31badb12f4ad7c0b0c4492ac9:DonutGit/Assets/Scripts/Collection.cs
 
     void ResetCollectable()
     {
