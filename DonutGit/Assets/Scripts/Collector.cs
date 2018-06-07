@@ -9,6 +9,7 @@ public class Collector : MonoBehaviour {
     [SerializeField] SphereCollider SC;
     [SerializeField] private float timeToDespawn;
     private float collectablesCollected;
+    private const string kTagToSeek = "collectable";
 
     // Use this for initialization
     void Start()
@@ -22,10 +23,17 @@ public class Collector : MonoBehaviour {
         collectablesCollected++;
     }
 
-    
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == kTagToSeek)
+        {
+            Destroy(col.gameObject);
+        }
+    }
 
     void ResetCollectable()
     {
+        //Reset the collectable to nothing.
         Collectable = new GameObject();
     }
 

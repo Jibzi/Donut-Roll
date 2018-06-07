@@ -7,6 +7,7 @@ public class FloatingComponent : MonoBehaviour
 
 <<<<<<< HEAD
 
+
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
     [Range(0, 10)]
     [SerializeField]
@@ -19,14 +20,6 @@ public class FloatingComponent : MonoBehaviour
 
     [SerializeField]
     private Vector3 RotationSpeed;
-=======
-    
-    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")][Range(0,10)][SerializeField] private float WobbleFrequency;
-    
-    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")][Range(0, 100)][SerializeField] private float WobbleAmplitude;
-    
-    [SerializeField] private Vector3 RotationSpeed;
->>>>>>> 0ef301f7645ab44e2a79a045f8bd6d3b4ebb3aab
 
     private Vector3 _startPos;
     private float clamper = 100f;
