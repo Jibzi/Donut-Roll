@@ -10,11 +10,10 @@ public class Donut : MonoBehaviour
     private float moveSpeed;    //Luke: 20f
     [SerializeField]
     private float spinSpeed;    //George: 225f
-
-    [SerializeField]
-	private float leftConstraint;
-    [SerializeField]
+    //
+    [SerializeField][Tooltip("Distance the path's centre to the right, at which the donut is stopped from going out of bounds. ")]
 	private float rightConstraint;
+    private float leftConstraint;
 
     // Use this for initialization
     void Start()

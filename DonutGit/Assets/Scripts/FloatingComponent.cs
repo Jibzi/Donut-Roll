@@ -5,8 +5,6 @@ using UnityEngine;
 public class FloatingComponent : MonoBehaviour
 {
 
-
-
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
     [Range(0, 10)]
     [SerializeField]
