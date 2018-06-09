@@ -195,12 +195,18 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BuildRoad.cs" t="Include" />
+<<<<<<< HEAD
           <e p="Collection.cs" t="Include" />
+=======
+          <e p="Collectable.cs" t="Include" />
+          <e p="Collector.cs" t="Include" />
+>>>>>>> d3fd6a982d7844fa03e75393d4a6cc54934383a5
           <e p="Donut.cs" t="Include" />
           <e p="FloatingComponent.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="RoadPartComponent.cs" t="Include" />
+          <e p="ScoreTracker.cs" t="Include" />
           <e p="WorldBender.cs" t="Include" />
         </e>
       </e>

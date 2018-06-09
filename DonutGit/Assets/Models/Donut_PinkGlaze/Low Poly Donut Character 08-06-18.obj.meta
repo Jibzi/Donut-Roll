@@ -1,18 +1,22 @@
 fileFormatVersion: 2
-guid: 8c5e303d32acbc9438d622b76753fc61
-timeCreated: 1528288838
-licenseType: Free
+guid: a705bf585e9700c48b0713a35381fb4a
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pTorus1
-    400000: //RootNode
-    400002: pTorus1
-    2100000: pTorus1Mat
-    2300000: pTorus1
-    3300000: pTorus1
-    4300000: pTorus1
+    100000: group1_Model_for_z_brush_06_06_18:pTorus1
+    100002: //RootNode
+    100004: pCylinder1_group1
+    400000: group1_Model_for_z_brush_06_06_18:pTorus1
+    400002: //RootNode
+    400004: pCylinder1_group1
+    2100000: group1_Model_for_z_brush_06_06_18_pTorus1Mat
+    2100002: pCylinder1_group1Mat
+    2300000: group1_Model_for_z_brush_06_06_18:pTorus1
+    2300002: pCylinder1_group1
+    3300000: group1_Model_for_z_brush_06_06_18:pTorus1
+    3300002: pCylinder1_group1
+    4300000: group1_Model_for_z_brush_06_06_18:pTorus1
+    4300002: pCylinder1_group1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -32,6 +36,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -47,7 +52,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
