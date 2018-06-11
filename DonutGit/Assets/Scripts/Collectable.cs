@@ -56,9 +56,9 @@ public class Collectable : MonoBehaviour {
         }
     }
 
-    public void HandleCollected(object sender, EventArgs)
+    public void HandleCollected(object sender, EventArgs eventArgs)
     {
-
+        //Do something important when the point changes.
     }
 
 
