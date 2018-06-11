@@ -19,10 +19,10 @@ public class Collectable : MonoBehaviour {
     [SerializeField]
     [Tooltip("The distance from the donut to check for collision")]
     private float zDistance;
-    
-    
-    
     //ToDo: Luke has suggested a collisive offset for the donut, to change the gamefeel.
+    
+    
+    
 
     //For visual variation, minutely change the size of every collectable
     void SetSize()
@@ -46,9 +46,10 @@ public class Collectable : MonoBehaviour {
         const string kPlayerTag = "Player";
         Player = GameObject.FindGameObjectWithTag(kPlayerTag);
         Debug.Log(kPlayerTag);
-    }  
+    }
 
-    public event EventHandler Collected; //Collected += HandleCollected
+    //Our lovely event handler, to which we add using the += operator (Page 16 of Player's Guide to C#)
+    public static event EventHandler Collected; 
 
     public void OnCollected()
     {
@@ -71,7 +72,8 @@ public class Collectable : MonoBehaviour {
     void CheckIsCollidingThenCollect()
     {
         //Note: I want to later change this method to a container-method.
-        //Check if the collectable is colliding with the donut
+        //Declared and initialised in case of reuse, and for cleaner code, avoiding magic numbers/magic variables
+        //Check if the collectable is colliding with the donut. 
         bool isColliding = (this.transform.position.x <= (xDistance + Player.transform.position.x))
             && (this.transform.position.z <= (zDistance + Player.transform.position.z));
         //If the collectable is colliding with the donut,

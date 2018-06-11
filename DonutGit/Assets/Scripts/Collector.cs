@@ -29,7 +29,7 @@ public class Collector : MonoBehaviour {
     }
     
     //Increment the number of collectables collected, which will influence the score.
-    void AddToCollectablesCollected()
+    void AddToCollectablesCollected(object sender, System.EventArgs eventArgs)
     {
         collectablesCollected++;
     }
@@ -104,6 +104,7 @@ public class Collector : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-	
+        Collectable.Collected += AddToCollectablesCollected;
+        
 	}
 }
