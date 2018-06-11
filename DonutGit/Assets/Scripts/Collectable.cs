@@ -45,12 +45,22 @@ public class Collectable : MonoBehaviour {
         FindPlayer();
 	}
 
-    public event EventHandler PointChanged;
+
+    public event EventHandler Collected;
 
     public void OnCollected()
     {
+        if (Collected != null)
+        {
+            Collected(this, EventArgs.Empty);
+        }
+    }
+
+    public void HandleCollected(object sender, EventArgs)
+    {
 
     }
+
 
 	// Update is called once per frame
 	void Update () {
