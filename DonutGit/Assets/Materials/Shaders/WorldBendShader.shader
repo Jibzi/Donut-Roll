@@ -41,6 +41,7 @@ dist = max(0, dist-_BendFalloff);
 dist = dist*dist;
 
 world.xy += dist*_BendAmount;
+
 return mul(unity_WorldToObject, world);
 }
 
@@ -58,5 +59,5 @@ o.Alpha = c.a;
 		
 		ENDCG
 	}
-	FallBack "Mobil/Diffuse"
+	FallBack "Mobile/Diffuse"
 }

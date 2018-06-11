@@ -22,6 +22,10 @@ public class FloatingComponent : MonoBehaviour
     private Vector3 _startPos;
     private float clamper = 100f;
     private float worldSpeed = -10;
+    
+    
+    private Vector3 _oldPos;
+    
 
 
 

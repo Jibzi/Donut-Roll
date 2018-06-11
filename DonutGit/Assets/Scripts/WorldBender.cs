@@ -11,9 +11,9 @@ public class WorldBender : MonoBehaviour
     public Transform BendStart;
 
     //Make sliders for the variables in the editor.
-    [Range(-200f, 200f)] [SerializeField] private float _x = 0f;
-    [Range(-200f, 200f)] [SerializeField] private float _y = 0f;
-    [Range(-50f, 50f)] [SerializeField] private float _falloff = 0f;
+    [Range(-200f, 200f)] [SerializeField] public float X = 0f;
+    [Range(-200f, 200f)] [SerializeField] public float Y = 0f;
+    [Range(-50f, 50f)] [SerializeField] public float Falloff = 0f;
 
     //Pack the two variables into a vector to be passed to the shader.
     private Vector2 bendAmount = Vector2.zero;
@@ -34,11 +34,11 @@ public class WorldBender : MonoBehaviour
     void Update()
     {
         //Update shader values at runtime, so we can create the illusion of corners just by altering the x bend amount.
-        bendAmount.x = _x;
-        bendAmount.y = _y;
+        bendAmount.x = X;
+        bendAmount.y = Y;
 
         Shader.SetGlobalVector(bendAmountId, bendAmount);
         Shader.SetGlobalVector(bendStartId, BendStart.position);
-        Shader.SetGlobalFloat(bendFalloffId, _falloff);
+        Shader.SetGlobalFloat(bendFalloffId, Falloff);
     }
 }
