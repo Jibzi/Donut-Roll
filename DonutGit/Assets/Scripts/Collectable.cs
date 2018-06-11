@@ -13,6 +13,16 @@ public class Collectable : MonoBehaviour {
     [SerializeField]
     [Tooltip("The maximal randomly allocable to the collectable. Recommended: 1.1")]
     private float maximalCollectableSize;
+    [SerializeField]
+    [Tooltip("The distance from the donut to check for collision")]
+    private float xDistance;
+    [SerializeField]
+    [Tooltip("The distance from the donut to check for collision")]
+    private float zDistance;
+    
+    
+    
+    //ToDo: Luke has suggested a collisive offset for the donut, to change the gamefeel.
 
     //For visual variation, minutely change the size of every collectable
     void SetSize()
@@ -36,17 +46,9 @@ public class Collectable : MonoBehaviour {
         const string kPlayerTag = "Player";
         Player = GameObject.FindGameObjectWithTag(kPlayerTag);
         Debug.Log(kPlayerTag);
-    }
+    }  
 
-
-    // Use this for initialization
-	void Start () {
-        SetSize();
-        FindPlayer();
-	}
-
-
-    public event EventHandler Collected;
+    public event EventHandler Collected; //Collected += HandleCollected
 
     public void OnCollected()
     {
@@ -58,11 +60,38 @@ public class Collectable : MonoBehaviour {
 
     public void HandleCollected(object sender, EventArgs eventArgs)
     {
-        //Do something important when the point changes.
+        //Do something important when collected:
+        //Trigger a pretty particle effect upon destruction.
+        
+        //Destroy the current collectable
+        Destroy(this);
+        Debug.Log("Collectable has been destroyed");
     }
 
+    void CheckIsCollidingThenCollect()
+    {
+        //Note: I want to later change this method to a container-method.
+        //Check if the collectable is colliding with the donut
+        bool isColliding = (this.transform.position.x <= (xDistance + Player.transform.position.x))
+            && (this.transform.position.z <= (zDistance + Player.transform.position.z));
+        //If the collectable is colliding with the donut,
+        if (isColliding)
+        {
+            //Trigger the OnCollected() event.
+            OnCollected();
+        }
+    }
+    
+// Use this for initialization
+	void Start () {
+        SetSize();
+        FindPlayer();
+        Collected += HandleCollected;
+	}
 
 	// Update is called once per frame
-	void Update () {
-	}
+	void Update ()
+    {
+        CheckIsCollidingThenCollect();
+    }
 }
