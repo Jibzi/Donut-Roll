@@ -199,6 +199,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AssetTestCam.cs" t="Include" />
           <e p="BuildRoad.cs" t="Include" />
           <e p="Collectable.cs" t="Include" />
           <e p="Collector.cs" t="Include" />
