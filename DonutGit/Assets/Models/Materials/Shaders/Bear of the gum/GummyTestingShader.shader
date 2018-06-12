@@ -1,21 +1,12 @@
-﻿Shader "Custom/GummyShader" {
-	Properties{
-		/*I want;
-		Color (compressed, customisable float 3)
-		AO
-		Roughness
-		Gradient for depth fade (something like 0, 0.1 ...
-		*/
-
-
-		_Color("Color", Color) = (1,1,1,1)
-		_Normal("Normal", Normal) = (1,1,1)
-		_Glossiness("Smoothness", Range(0,1)) = 0.5
-		_AO("AO", Range(0,1));
-		_DepthFadeGradient("DepthFadeGradient", Range(0, 1))
+﻿Shader "Custom/GummyTestingShader" {
+	Properties {
+		_Color ("Color", Color) = (1,1,1,1)
+		_MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_Glossiness ("Smoothness", Range(0,1)) = 0.5
+		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Transparent" }
 		LOD 200
 
 		CGPROGRAM
@@ -32,6 +23,7 @@
 		};
 
 		half _Glossiness;
+		half _Metallic;
 		fixed4 _Color;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
