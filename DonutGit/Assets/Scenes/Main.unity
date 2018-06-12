@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42258823, g: 0.46306792, b: 0.53006184, a: 1}
+  m_IndirectSpecularColor: {r: 0.17325068, g: 0.21655202, b: 0.29859373, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 10
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 583978200}
   - component: {fileID: 583978199}
   - component: {fileID: 583978197}
+  - component: {fileID: 583978198}
   m_Layer: 0
   m_Name: Collectable
   m_TagString: Untagged
@@ -404,17 +405,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452df24be0501da4bb9d8490c623a04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimalCollectableSize: 0
-  maximalCollectableSize: 0
-  xDistance: 0
-  zDistance: 0
---- !u!114 &583978199
+  minimalCollectableSize: 0.5
+  maximalCollectableSize: 1.5
+  xDistance: 1
+  zDistance: 1
+--- !u!114 &583978198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 583978196}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ba134213cc4b8479ee3cefb0d271f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WobbleFrequency: 5.12
+  WobbleAmplitude: 61
+  RotationSpeed: {x: 0, y: 200, z: 0}
+--- !u!114 &583978199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583978196}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3cf97f2fe6712e4e889ac266ebc1a66, type: 3}
   m_Name: 
@@ -483,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BendStart: {fileID: 282840814}
   X: 0
-  Y: 0
+  Y: -15
   Falloff: 0
 --- !u!4 &1381090626
 Transform:
