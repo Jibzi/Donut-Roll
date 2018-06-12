@@ -39,7 +39,7 @@ public class WarpRedux : MonoBehaviour
 	void Start () {
 		
 		//Set object to it's start pos.
-		_startPos = new Vector3(0, 0.8f, 120);
+		_startPos = new Vector3(0, 0.9f, 120);
 		transform.position = _startPos;
 		
 		//Initiate realpos with startpos.

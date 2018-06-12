@@ -380,7 +380,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 583978200}
-  - component: {fileID: 583978199}
   - component: {fileID: 583978197}
   - component: {fileID: 583978198}
   m_Layer: 0
@@ -401,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452df24be0501da4bb9d8490c623a04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimalCollectableSize: 0.5
-  maximalCollectableSize: 1.5
+  minimalCollectableSize: 0.4
+  maximalCollectableSize: 1
   xDistance: 1
   zDistance: 1
 --- !u!114 &583978198
@@ -419,20 +418,6 @@ MonoBehaviour:
   WobbleFrequency: 5.25
   WobbleAmplitude: 74.4
   RotationSpeed: {x: 0, y: 300, z: 0}
---- !u!114 &583978199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 583978196}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3cf97f2fe6712e4e889ac266ebc1a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WobbleFrequency: 0
-  WobbleAmplitude: 0
-  RotationSpeed: {x: 0, y: 0, z: 0}
 --- !u!4 &583978200
 Transform:
   m_ObjectHideFlags: 0
