@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: a9d1723612a2acc4b8a783c82db4b57c, type: 2}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -405,11 +405,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452df24be0501da4bb9d8490c623a04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   minimalCollectableSize: 0.5
   maximalCollectableSize: 1.5
   xDistance: 1
   zDistance: 1
 --- !u!114 &583978198
+=======
+  minimalCollectableSize: 0.9
+  maximalCollectableSize: 1.1
+  xDistance: 0
+  zDistance: 0
+--- !u!114 &583978199
+>>>>>>> c478ce2a4ba9d0eaf7e6de6453704a95b84d5abd
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
