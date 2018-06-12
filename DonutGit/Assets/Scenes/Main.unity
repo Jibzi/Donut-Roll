@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4373109, g: 0.4850828, b: 0.56535345, a: 1}
+  m_IndirectSpecularColor: {r: 0.42258823, g: 0.46306792, b: 0.53006184, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: a9d1723612a2acc4b8a783c82db4b57c, type: 2}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -290,12 +290,12 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
@@ -477,9 +477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BendStart: {fileID: 282840814}
-  _x: 0
-  _y: -15
-  _falloff: 3
+  X: 0
+  Y: 0
+  Falloff: 0
 --- !u!4 &1381090626
 Transform:
   m_ObjectHideFlags: 0

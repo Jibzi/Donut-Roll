@@ -95,5 +95,6 @@ public class Collectable : MonoBehaviour {
 	void Update ()
     {
         CheckIsCollidingThenCollect();
+        
     }
 }

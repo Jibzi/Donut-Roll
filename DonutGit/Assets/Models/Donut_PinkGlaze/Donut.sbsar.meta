@@ -1,0 +1,66 @@
+fileFormatVersion: 2
+guid: 08fa803696c933c469412595558e35b3
+timeCreated: 1528761792
+licenseType: Free
+SubstanceImporter:
+  externalObjects: {}
+  serializedVersion: 5
+  materialInstances:
+  - serializedVersion: 16
+    name: Donut
+    prototypeName: Donut
+    shaderName: 
+    shader: {fileID: 4800000, guid: c49b82893591fcb40bb3dac209d759e9, type: 3}
+    shaderKeywords: 
+    renderQueue: -1
+    lightmapFlags: 4
+    inputs: []
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 1, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 0
+      animationUpdateRate: 0
+    materialProperties:
+      serializedVersion: 3
+      texEnvs: []
+      floats: []
+      colors: []
+    textureParameters:
+    - name: Donut_basecolor
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Donut_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Donut_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp: _MainTex
+      material: {instanceID: 0}
+      baseUID: 2662119750
+    - shaderProp: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 2662119748
+    - shaderProp: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 2662119744
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  deletedPrototypes: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

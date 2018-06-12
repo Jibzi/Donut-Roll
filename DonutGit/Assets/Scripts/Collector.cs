@@ -24,16 +24,14 @@ public class Collector : MonoBehaviour {
     void Start()
     {
         //Collectable = GameObject.FindWithTag(kTagToSeek);
-        
-        
+        Collectable.Collected += AddToCollectablesCollected;        
     }
-    
+
     //Increment the number of collectables collected, which will influence the score.
     void AddToCollectablesCollected(object sender, System.EventArgs eventArgs)
     {
         collectablesCollected++;
     }
-
     //Increment the combo, which will temporarily influence the score.
     void AddToCurrentCombo()
     {
@@ -104,7 +102,7 @@ public class Collector : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        Collectable.Collected += AddToCollectablesCollected;
         
-	}
+
+    }
 }
