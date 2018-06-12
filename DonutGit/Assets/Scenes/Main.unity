@@ -407,11 +407,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of f3785a5... Merge branch 'master' of https://github.com/Jibzi/Donut-Roll
   minimalCollectableSize: 0.5
   maximalCollectableSize: 1.5
   xDistance: 1
   zDistance: 1
 --- !u!114 &583978198
+<<<<<<< HEAD
 =======
   minimalCollectableSize: 0.9
   maximalCollectableSize: 1.1
@@ -423,6 +427,8 @@ MonoBehaviour:
   zDistance: 0
 --- !u!114 &583978199
 >>>>>>> c478ce2a4ba9d0eaf7e6de6453704a95b84d5abd
+=======
+>>>>>>> parent of f3785a5... Merge branch 'master' of https://github.com/Jibzi/Donut-Roll
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
