@@ -416,9 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba134213cc4b8479ee3cefb0d271f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WobbleFrequency: 5.12
-  WobbleAmplitude: 61
-  RotationSpeed: {x: 0, y: 200, z: 0}
+  WobbleFrequency: 5.25
+  WobbleAmplitude: 74.4
+  RotationSpeed: {x: 0, y: 300, z: 0}
 --- !u!114 &583978199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 583978196}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.09118855, y: 1, z: -1.21}
+  m_LocalPosition: {x: 0.09118855, y: 0.6, z: -1.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1181138559}
