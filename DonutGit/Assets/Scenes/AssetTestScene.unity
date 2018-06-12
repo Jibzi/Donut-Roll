@@ -281,7 +281,7 @@ Transform:
   m_Children:
   - {fileID: 1573508381}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180942887
 GameObject:
@@ -346,7 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 36.67, y: -82.5, z: 0}
 --- !u!1001 &1413119687
 Prefab:
@@ -385,7 +385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008549906990756, guid: f84dae995f01cb74fbbe948579b678af, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f84dae995f01cb74fbbe948579b678af, type: 2}
@@ -449,12 +449,70 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452385056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.131, y: 1.582, z: -8.621}
+  m_LocalPosition: {x: 1.827, y: -1.226, z: -13.067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1568372765
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.999126
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0721102
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.291557
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0048
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0048
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fa2ed4777f6f444a81aa3912e60c8ed, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a705bf585e9700c48b0713a35381fb4a, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1573508380
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c0b882a35bc3cb342b3339fb917f1621, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: c0b882a35bc3cb342b3339fb917f1621, type: 3}
       propertyPath: m_Materials.Array.data[0]
