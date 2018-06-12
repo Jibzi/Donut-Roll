@@ -8,13 +8,18 @@ public class WarpRedux : MonoBehaviour
     private Vector3 _realPos;
     private Vector3 _warpPos;
 
-    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")] [Range(0, 10)] [SerializeField]
+    [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
+    [Range(0, 10)]
+    [SerializeField]
     private float WobbleFrequency;
 
-    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")] [Range(0, 100)] [SerializeField]
+    [Tooltip("How much the coin wobbles up and down. Recommended: 60.")]
+    [Range(0, 100)]
+    [SerializeField]
     private float WobbleAmplitude;
 
-    [SerializeField] private Vector3 RotationSpeed;
+    [SerializeField]
+    private Vector3 RotationSpeed;
 
     //Tells the object where to appear in the world.
     //TODO: Add a more robust system for setting the spawn point, maybe load it based on what object this script is attached to.
@@ -32,11 +37,9 @@ public class WarpRedux : MonoBehaviour
     private GameObject _wb;
     private WorldBender _wbs;
 
-    // Use this for initialization
     void Start()
     {
         //Set object to it's start pos.
-        //_startPos = new Vector3(0, 0.9f, 120);
         transform.position = _startPos;
 
         //Initiate realpos with startpos.
