@@ -1,12 +1,16 @@
-﻿Shader "Custom/GummyTestingShader" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/GummyTestingShader" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_Fresnel("Fresnel (A) ", 2D) = "" {}
 	}
 	SubShader {
-		Tags { "RenderType"="Transparent" }
+		Tags { "Queue" = "Transparent" "RenderType"="Transparent" }
 		LOD 200
 
 		CGPROGRAM
@@ -18,9 +22,30 @@
 
 		sampler2D _MainTex;
 
+		struct appdata
+		{
+			float4 vertex : POSITION;
+			float 2 uv : TEXCOORD0;
+		};
+
 		struct Input {
 			float2 uv_MainTex;
 		};
+
+		/*vOUT vert(vIN v)
+		{
+			vOUT o;
+			o.pos = UnityObjectToClipPos(v.vertex);
+			o.uv = v.texcoord;
+
+			float3 posWorld = mul(unity_ObjectToWorld, v.vertex).xyz;
+			float3 normWorld = normalize(mul(float3x3(unity_ObjectToWorld), v.normal));
+
+			float3 I = normalize(posWorld - _WorldSpaceCameraPos.xyz);
+			o.R = _Bias + _Scale * pow(1.0 + dot(I, normWorld), _Power);
+
+			return o;
+		}*/
 
 		half _Glossiness;
 		half _Metallic;
