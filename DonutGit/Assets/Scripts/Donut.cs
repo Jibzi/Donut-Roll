@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Donut : MonoBehaviour
@@ -14,10 +15,16 @@ public class Donut : MonoBehaviour
     [SerializeField][Tooltip("Distance the path's centre to the right, at which the donut is stopped from going out of bounds. ")]
 	private float rightConstraint;
     private float leftConstraint;
+	
+	//Store the Donut's animator
+	private AnimHelper _animHelper;
 
     // Use this for initialization
     void Start()
     {
+
+	    _animHelper = this.GetComponent<AnimHelper>();
+	    
         leftConstraint = -5;
         rightConstraint = 5f;
     }
@@ -55,9 +62,10 @@ public class Donut : MonoBehaviour
 			}
 
 		}
-     
-		transform.Rotate(SpinSpeed);
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			_animHelper.DonutJumpStart(0f);
+		}
 	}
-
-
 }
