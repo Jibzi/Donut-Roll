@@ -13,7 +13,11 @@ public class ChromaticRandomiser : MonoBehaviour {
 
     void RandomiseColour()
     {
-        
+        //If the material is simplistic enough to redound a base colour, simply recolour it using the albedoColor parameter.
+        if (_material.name == "J")
+        {
+
+        }
     }
 
     void RandomiseTexture()

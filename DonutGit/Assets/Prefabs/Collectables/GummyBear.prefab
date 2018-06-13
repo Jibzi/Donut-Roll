@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 114166882247866572}
   - component: {fileID: 114034907578861946}
   m_Layer: 0
-  m_Name: Collectable
+  m_Name: GummyBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
