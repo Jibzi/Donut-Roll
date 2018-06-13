@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 m_EditorVersion: 2017.3.1f1
+=======
+<<<<<<< HEAD
+m_EditorVersion: 2018.1.3f1
+=======
+m_EditorVersion: 2018.1.1f1
+>>>>>>> bacb1bff20e0ddad9b86ca3f99716acde4ea5a6f
+>>>>>>> parent of 174c00b... Revert "Merge branch 'master' of https://github.com/Jibzi/Donut-Roll"
