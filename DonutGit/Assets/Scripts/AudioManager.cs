@@ -36,6 +36,12 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play(sounds[0].name);
+        Collectable.Collected += PlayIfAnEventHappens;
+    }
+
+    void PlayIfAnEventHappens(object sender, System.EventArgs eventArgs)
+    {
+        Play(sounds[1].name);
     }
 
 
