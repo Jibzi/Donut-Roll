@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Adds user input to the donut. Handles left and right movement, and jumping. Contrains the player to the road.
+//Also handles playing certain animations, like jump.
+//
+
 public class Donut : MonoBehaviour
 {
     private Vector3 SpinSpeed;

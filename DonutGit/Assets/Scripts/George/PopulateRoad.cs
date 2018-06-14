@@ -3,6 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Called when a road part resets to the far end of the road. Populates that road part with 4 obstacles, which are
+//randomly chosen from the array. Then gives those obstacles a random X position chosen from 3 "lanes".
+//Currently the obstacles are evenly spaced 5 units apart in Z i.e. 0, 5, 10, 15.
+//
+
+//TODO: Currently this does not work due to the WarpRedux script setting the new obstacles postitions to a hardcoded value.
+
 public class PopulateRoad : MonoBehaviour {
 
     public GameObject[] Obstacles = new GameObject[2];

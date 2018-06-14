@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Simple first person camera controls for the art asset testing scene, where the prefabs can be made without 
+//interfering with the main game scene.
+//This scipt is very janky, but it works well enough for what it is.
+//
+
 public class AssetTestCam : MonoBehaviour {
 
 	// Use this for initialization

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//
+//Author: George
+//
+//Script that adds functionality to the main menu.
+//
+
 public class MainMenu : MonoBehaviour {
 
     public void PlayGame()

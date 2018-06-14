@@ -210,7 +210,6 @@
             <e p="DonutSpin.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="PopulateRoad.cs" t="Include" />
-            <e p="PseudoWarp.cs" t="Include" />
             <e p="RoadPartComponent.cs" t="Include" />
             <e p="WarpRedux.cs" t="Include" />
             <e p="WorldBender.cs" t="Include" />
