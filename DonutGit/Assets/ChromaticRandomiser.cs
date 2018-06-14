@@ -14,11 +14,12 @@ public class ChromaticRandomiser : MonoBehaviour {
 
     void RandomiseColour()
     {
-        //If the material is simplistic enough to redound a base colour, simply recolour it using the albedoColor parameter.
-        if (_material.name == "GummyMat")
-        {
-            
-        }
+        Dictionary<string, Color> colours = new Dictionary<string, Color>();
+        colours["Red"] = Color.red;
+        //colours["Green"]
+
+
+        //_material.color 
     }
 
     void RandomiseTexture()
@@ -42,18 +43,26 @@ public class ChromaticRandomiser : MonoBehaviour {
 
     void Randomise()
     {
-        
+        //If the material is simplistic enough to redound a base colour, simply recolour it using the albedoColor parameter.
+        if (_material.name == "GummyMat")
+        {
+            RandomiseColour();  
+        }
+        else
+        {
+            RandomiseTexture();
+        }
     }
 
 	// Use this for initialization
 	void Start () {
         _material = GetComponent<Renderer>().material;
-        RandomiseTexture();
+        //Randomise();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        RandomiseColour();
+        
 	}
 }
