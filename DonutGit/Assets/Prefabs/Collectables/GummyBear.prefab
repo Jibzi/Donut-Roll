@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4590787540292804}
   - component: {fileID: 33331008660328708}
   - component: {fileID: 23976407396380160}
+  - component: {fileID: 114766283556725284}
   m_Layer: 0
   m_Name: GummyBear
   m_TagString: Untagged
@@ -53,10 +54,9 @@ GameObject:
   - component: {fileID: 4021456201942306}
   - component: {fileID: 114166882247866572}
   - component: {fileID: 114034907578861946}
-  - component: {fileID: 114568635385435784}
   m_Layer: 0
   m_Name: GummyBear
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,17 +173,16 @@ MonoBehaviour:
   maximalCollectableSize: 1
   xDistance: 1
   zDistance: 1
---- !u!114 &114568635385435784
+--- !u!114 &114766283556725284
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832008180382944}
+  m_GameObject: {fileID: 1720703326976216}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb713bd3570f04143ae2714636046009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 7f1ecb9d7107d04488fbf9c888a84203, type: 2}
-  textures:
-  - {fileID: 0}
+  _material: {fileID: 0}
+  textures: []

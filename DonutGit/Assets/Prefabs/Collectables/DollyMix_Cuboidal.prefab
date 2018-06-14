@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114056355557189406}
   m_Layer: 0
   m_Name: DollyMix_Cuboidal
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651344560407572}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.09118855, y: 0.6, z: -1.21}
+  m_LocalPosition: {x: 0.17159319, y: 3.6892896, z: -5.104497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4748425004321464}

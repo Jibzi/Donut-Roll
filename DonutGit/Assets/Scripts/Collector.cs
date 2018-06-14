@@ -10,7 +10,6 @@ public class Collector : MonoBehaviour {
     [SerializeField] SphereCollider SC;
     [SerializeField] private float timeToDespawn;
     private bool hasBeenCollected;
-    GameObject Mary;
     Dictionary<GameObject, GameObject> collectables;
     /*The number of collectables collected and the current combo, in respection. I chose integers as they
      make better numerary sense and floats seemed silly and too complex for a mobile game's demographic*/
