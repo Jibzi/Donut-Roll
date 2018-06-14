@@ -28,7 +28,7 @@ public class WarpRedux : MonoBehaviour
     private Vector3 _startPos;
 
     //Value used to reduce the amplitude of wobbling
-    private float clamper = 100f;
+    private float WobbleClamper = 100f;
 
     //Stores the speed at which the world is currently moving.
     //TODO: Make this just grab the speed from a manager class or something.
@@ -71,7 +71,7 @@ public class WarpRedux : MonoBehaviour
     {
         _realPos.Set(
             _realPos.x,
-            (_realPos.y + (Mathf.Sin(Time.time * WobbleFrequency) / (clamper - WobbleAmplitude))),
+            (_realPos.y + (Mathf.Sin(Time.time * WobbleFrequency) / (WobbleClamper - WobbleAmplitude))),
             (_realPos.z + worldSpeed * Time.deltaTime)
         );
     }
