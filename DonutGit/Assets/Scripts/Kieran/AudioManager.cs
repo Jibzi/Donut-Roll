@@ -1,5 +1,4 @@
-﻿using UnityEditor.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 
 //An auditory manager based on Brackeys' tutorial; and some changes I made thereto on a personal project 
 public class AudioManager : MonoBehaviour

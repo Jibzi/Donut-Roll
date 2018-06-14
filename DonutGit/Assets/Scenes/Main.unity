@@ -366,6 +366,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.94, y: -9.2, z: 0}
+--- !u!1 &325124252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 325124253}
+  - component: {fileID: 325124255}
+  - component: {fileID: 325124254}
+  m_Layer: 0
+  m_Name: Road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325124253
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325124252}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.902832, y: -0.7988281, z: 5.1850586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 887876147}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &325124254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325124252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abaee9a172cf0245bd1d91d40d4ef3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacles:
+  - {fileID: 1107559272812808, guid: 64961093f25a96a4fa25d32af994908f, type: 2}
+  - {fileID: 1865244003152646, guid: f84dae995f01cb74fbbe948579b678af, type: 2}
+--- !u!114 &325124255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325124252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad4ae2c254ede449820ec43fe0e8b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roadPart: {fileID: 1197885475181940, guid: 5079817c81f2620489fe6f69be6416a8, type: 2}
 --- !u!1001 &342593822
 Prefab:
   m_ObjectHideFlags: 0
@@ -654,6 +710,7 @@ Transform:
   - {fileID: 170076735}
   - {fileID: 1381090626}
   - {fileID: 399447100}
+  - {fileID: 325124253}
   m_Father: {fileID: 242138661}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -833,7 +890,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1381090626}
   - component: {fileID: 1381090625}
-  - component: {fileID: 1381090624}
   m_Layer: 0
   m_Name: Bender
   m_TagString: Untagged
@@ -841,18 +897,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1381090624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1381090623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad4ae2c254ede449820ec43fe0e8b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roadPart: {fileID: 1197885475181940, guid: 5079817c81f2620489fe6f69be6416a8, type: 2}
 --- !u!114 &1381090625
 MonoBehaviour:
   m_ObjectHideFlags: 0
