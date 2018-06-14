@@ -16,6 +16,7 @@ public class ChromaticRandomiser : MonoBehaviour {
     {
         Dictionary<string, Color> colours = new Dictionary<string, Color>();
         colours["Red"] = Color.red;
+        colours["Green"] = (51, 255, 0);
         //colours["Green"]
 
 
