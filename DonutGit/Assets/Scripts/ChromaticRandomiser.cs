@@ -9,22 +9,23 @@ public class ChromaticRandomiser : MonoBehaviour {
     [SerializeField]
     [Tooltip("The textures to be randomly applied to the material.")]
     //Array of textures. Indices are integral, rather than in the form of bytes, to maintain 32-bit memory size.
-
     public Texture[] textures;
+    private int indexOfLastUsedElement;
 
     void RandomiseColour()
     {
         //Dictionary of colours to apply to the given material
         Dictionary<int, Color> colours = new Dictionary<int, Color>();
-        colours.Add(0, Color.red);
-        colours.Add(1, Color.green);
+        colours.Add(0, Color.green);
+        colours.Add(1, Color.red);
         //The index of the to be allocated colour
         int chromaticIndex;
         //The number by which we will modulo delta time. This must be equal to the array's length - 1, accounting for the extra number 0.
-        int divisor = colours.Count;// - 1;
+        int divisor = colours.Count + 1;// - 1;
         //The index of the colour. We need it to be an int, in accordance with that an array's index must be integral.
-        chromaticIndex = (int)Mathf.RoundToInt(Time.fixedTime % divisor);
+        chromaticIndex = (int)Mathf.RoundToInt(Time.time % divisor);
         _material.color = colours[chromaticIndex];
+        Debug.Log(colours[chromaticIndex]);
     }
 
     void RandomiseTexture()
@@ -36,8 +37,9 @@ public class ChromaticRandomiser : MonoBehaviour {
             //The number by which we will modulo delta time. This must be equal to the array's length - 1, to account for the extra number 0.
             int divisor = textures.Length;// + 1;
             //The index of the texture. We need it to be an int, in accordance with that an array's index must be integral.
-            texturalIndex = (int)Mathf.RoundToInt(Time.fixedTime % divisor);
+            texturalIndex = Mathf.RoundToInt(Time.time % divisor);
             _material.mainTexture = textures[texturalIndex];
+
         }
         
         
@@ -68,11 +70,16 @@ public class ChromaticRandomiser : MonoBehaviour {
 
     }
 
+    void SetLastColour()
+    {
+        //indexOfLastUsedElement = 
+    }
 
 	// Use this for initialization
 	void Start () {
+        GetComponent<Renderer>().enabled = true;
         _material = GetComponent<Renderer>().material;
-        //Randomise();
+        RandomiseColour();
 
 	}
 	

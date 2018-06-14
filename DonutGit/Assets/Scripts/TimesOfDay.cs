@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class TimesOfDay : MonoBehaviour {
 
+    [SerializeField]
+    float LengthOfADay;
+    [SerializeField]
+    Texture[] textures;
+
+    void SetTimeOfDay()
+    {
+        Dictionary<int, int> TimesOfDay;
+             //TimesOfDay
+        //Time.fixedDeltaTime % textures.Length;
+
+    }
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	

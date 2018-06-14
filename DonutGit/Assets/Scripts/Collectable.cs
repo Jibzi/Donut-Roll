@@ -21,7 +21,8 @@ public class Collectable : MonoBehaviour {
     [Tooltip("The distance from the donut to check for collision")]
     private float zDistance;
     //ToDo: Luke has suggested a collisive offset for the donut, to change the gamefeel.
-
+    //Our lovely event handler, to which we add using the += operator (Page 16 of Player's Guide to C#)
+    public static event EventHandler Collected; 
 
 
 
@@ -50,8 +51,7 @@ public class Collectable : MonoBehaviour {
         
     }
 
-    //Our lovely event handler, to which we add using the += operator (Page 16 of Player's Guide to C#)
-    public static event EventHandler Collected; 
+    
 
     public void OnCollected()
     {
