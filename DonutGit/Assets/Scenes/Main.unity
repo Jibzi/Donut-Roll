@@ -333,7 +333,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -403,7 +403,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4497604786082614, guid: d3042d7d33da1f843bbde8864ae91223, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114937953707520440, guid: d3042d7d33da1f843bbde8864ae91223,
         type: 2}
@@ -610,7 +610,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4823230635509330, guid: 397fc02b970959c4bb4c84702d8f4296, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 397fc02b970959c4bb4c84702d8f4296, type: 2}
@@ -683,7 +683,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008549906990756, guid: f84dae995f01cb74fbbe948579b678af, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4008549906990756, guid: f84dae995f01cb74fbbe948579b678af, type: 2}
       propertyPath: m_LocalScale.x
@@ -747,6 +747,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23240246256937386, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fa2ed4777f6f444a81aa3912e60c8ed, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c29a8a606982045af8868eba3bcaad, type: 2}
   m_IsPrefabParent: 0
@@ -907,7 +912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4772071721508074, guid: 64961093f25a96a4fa25d32af994908f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64961093f25a96a4fa25d32af994908f, type: 2}

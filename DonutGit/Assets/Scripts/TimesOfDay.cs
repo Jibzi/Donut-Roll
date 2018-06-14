@@ -12,9 +12,9 @@ public class TimesOfDay : MonoBehaviour {
     void SetTimeOfDay()
     {
         Dictionary<int, int> TimesOfDay;
-             //TimesOfDay
+        //TimesOfDay
         //Time.fixedDeltaTime % textures.Length;
-
+        //How will I code this? A 
     }
 
 	// Use this for initialization

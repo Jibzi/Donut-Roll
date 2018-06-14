@@ -36,10 +36,11 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play(sounds[0].name);
-        Collectable.Collected += PlayIfAnEventHappens;
+        Collectable.Collected += PlayCollectedSound;
     }
 
-    void PlayIfAnEventHappens(object sender, System.EventArgs eventArgs)
+    //Delegate method to play a sound upon having collected a collectable.
+    void PlayCollectedSound(object sender, System.EventArgs eventArgs)
     {
         Play(sounds[1].name);
     }
