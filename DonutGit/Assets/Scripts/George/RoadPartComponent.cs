@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadPartComponent : MonoBehaviour {
-	
+public class RoadPartComponent : MonoBehaviour
+{
+
+	private PopulateRoad _populateRoad;
 	
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+
+		Debug.Log("Starting RoadPartComponent");
+		Debug.Log(gameObject);
+		_populateRoad = gameObject.GetComponentInParent<PopulateRoad>();
 	}
+
 	
 	// Update is called once per frame
 	void Update ()
@@ -21,6 +28,9 @@ public class RoadPartComponent : MonoBehaviour {
 		{
 			//TODO: Consider also swapping out the mesh for another; to reduce the repition.
 			this.transform.Translate(0, 0, 120);
+			
+			Debug.Log(_populateRoad);
+			_populateRoad.PopulateRoadSegment();
 		}
 	}
 }

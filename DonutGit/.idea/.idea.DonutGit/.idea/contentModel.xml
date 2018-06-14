@@ -7,7 +7,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="DonutSpin.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="Materials" t="Include">
             <e p="Shaders" t="Include">
@@ -200,21 +199,33 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="AnimHelper.cs" t="Include" />
-          <e p="AssetTestCam.cs" t="Include" />
-          <e p="BuildRoad.cs" t="Include" />
-          <e p="Collectable.cs" t="Include" />
-          <e p="Collector.cs" t="Include" />
-          <e p="Donut.cs" t="Include" />
-          <e p="FloatingComponent.cs" t="Include" />
-          <e p="MainMenu.cs" t="Include" />
-          <e p="Obstacle.cs" t="Include" />
-          <e p="PlayerMovement.cs" t="Include" />
-          <e p="PseudoWarp.cs" t="Include" />
-          <e p="RoadPartComponent.cs" t="Include" />
-          <e p="ScoreTracker.cs" t="Include" />
-          <e p="WarpRedux.cs" t="Include" />
-          <e p="WorldBender.cs" t="Include" />
+          <e p="Deprecated" t="Include">
+            <e p="FloatingComponent.cs" t="Include" />
+          </e>
+          <e p="George" t="Include">
+            <e p="AnimHelper.cs" t="Include" />
+            <e p="AssetTestCam.cs" t="Include" />
+            <e p="BuildRoad.cs" t="Include" />
+            <e p="Donut.cs" t="Include" />
+            <e p="DonutSpin.cs" t="Include" />
+            <e p="MainMenu.cs" t="Include" />
+            <e p="PopulateRoad.cs" t="Include" />
+            <e p="PseudoWarp.cs" t="Include" />
+            <e p="RoadPartComponent.cs" t="Include" />
+            <e p="WarpRedux.cs" t="Include" />
+            <e p="WorldBender.cs" t="Include" />
+          </e>
+          <e p="Kieran" t="Include">
+            <e p="Audio.cs" t="Include" />
+            <e p="AudioManager.cs" t="Include" />
+            <e p="ChromaticRandomiser.cs" t="Include" />
+            <e p="Collectable.cs" t="Include" />
+            <e p="Collector.cs" t="Include" />
+            <e p="Obstacle.cs" t="Include" />
+            <e p="PlayerMovement.cs" t="Include" />
+            <e p="ScoreTracker.cs" t="Include" />
+            <e p="TimesOfDay.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
