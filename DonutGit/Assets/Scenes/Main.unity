@@ -635,6 +635,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4772071721508074, guid: 64961093f25a96a4fa25d32af994908f,
     type: 2}
   m_PrefabInternal: {fileID: 2068803850}
+--- !u!135 &726923796 stripped
+SphereCollider:
+  m_PrefabParentObject: {fileID: 135114668623397880, guid: 91c29a8a606982045af8868eba3bcaad,
+    type: 2}
+  m_PrefabInternal: {fileID: 972544742}
 --- !u!1001 &841728276
 Prefab:
   m_ObjectHideFlags: 0
@@ -820,6 +825,46 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7fa2ed4777f6f444a81aa3912e60c8ed, type: 2}
+    - target: {fileID: 114733894699816346, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: SwayLimit
+      value: 34.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733894699816346, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: _moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 135114668623397880, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -22.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 135114668623397880, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.0000012510905
+      objectReference: {fileID: 0}
+    - target: {fileID: 135114668623397880, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: m_Radius
+      value: 259.8734
+      objectReference: {fileID: 0}
+    - target: {fileID: 135114668623397880, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 59.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156231645524964, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: SpinSpeed
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331285065324974, guid: 91c29a8a606982045af8868eba3bcaad,
+        type: 2}
+      propertyPath: SC
+      value: 
+      objectReference: {fileID: 726923796}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c29a8a606982045af8868eba3bcaad, type: 2}
   m_IsPrefabParent: 0
