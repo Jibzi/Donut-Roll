@@ -31,12 +31,6 @@ public class WarpRedux : MonoBehaviour
     [SerializeField]
     private Vector3 RotationSpeed;
 
-    //Tells the object where to appear in the world.
-    //TODO: Add a more robust system for setting the spawn point, maybe load it based on what object this script is attached to.
-    [SerializeField]
-    [Tooltip("This will be where the object appears. Use 0, 1, 120 for most collectables or obstacles")]
-    private Vector3 _startPos;
-
     //Value used to reduce the amplitude of wobbling
     private float WobbleClamper = 100f;
 
@@ -49,11 +43,9 @@ public class WarpRedux : MonoBehaviour
 
     void Start()
     {
-        //Set object to it's start pos.
-        transform.position = _startPos;
 
-        //Initiate realpos with startpos.
-        _realPos = _startPos;
+        //Initiate realpos with current position.
+        _realPos = transform.position;
 
         //Grab the world bender so we can retrieve variables from it during warping. Allows for run-time editing of the 
         //world bender's variable.

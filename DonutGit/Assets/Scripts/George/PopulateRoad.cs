@@ -26,7 +26,7 @@ public class PopulateRoad : MonoBehaviour {
         {
             int rnd = UnityEngine.Random.Range(0, 2);
 
-            int rndVec = UnityEngine.Random.Range(0, 1);
+            int rndVec = UnityEngine.Random.Range(0, 3);
             
             Vector3 vec = new Vector3(
                 _xLanes[rndVec],
