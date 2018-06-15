@@ -30,6 +30,8 @@ public class Donut : MonoBehaviour
 
 	private bool _isLeftMoving;
 	private bool _isRightMoving;
+	private bool _oldLeft;
+	private bool _oldRight;
 	private float _coEf;
 
 	private GameObject _donutGraphics;
@@ -61,12 +63,28 @@ public class Donut : MonoBehaviour
 			
 			_animHelper.DonutJumpStart(0f);
 		}
-	}
+
+	    if (_isLeftMoving &&  !_oldLeft)
+	    {
+		    _animHelper.DonutMoveLeftStart(0f);
+	    }
+
+	    if (_isRightMoving && !_oldRight)
+	    {
+		    _animHelper.DonutMoveRightStart(0f);
+	    }
+
+	    _oldLeft = _isLeftMoving;
+	    _oldRight = _isRightMoving;
+    }
 
 	
 //Method that handles basic player input to move the donut.
 	private void DonutControl()
 	{
+
+		_isLeftMoving = false;
+		_isRightMoving = false;
 		
 		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 		{
