@@ -108,7 +108,7 @@ class InputData
   public void Update()
   {
     this.updateDelta = Time.time - this.lastUpdate;
-    this.positionDelta = Time.time - this.positionDelta;
+    //this.positionDelta = Time.time - this.positionDelta;
     this.lastUpdate = Time.time;
     this.timeDown += this.updateDelta;
   }
@@ -142,7 +142,7 @@ class InputHandler : MonoBehaviour
   }
 
   //Method to get status of a certain key
-  public List<InputData> GetState(string _keyIdentifier)
+  public InputData GetState(string _keyIdentifier)
   {
     return this.inputDict[_keyIdentifier];
   }
