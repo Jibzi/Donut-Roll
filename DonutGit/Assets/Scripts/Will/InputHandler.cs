@@ -7,7 +7,7 @@
   
   NOT READY FOR USE
   
-  Updated InputHandler to contain event firing
+  Fleshed out the update loop for InputHandler
   
   Input Handler will track user input for you and enable you to request data on
   which keys are currently pressed.
@@ -177,6 +177,9 @@ class InputHandler : MonoBehaviour
           */
           break;
         case InputType.Axis:
+          /*
+           input.Value.Position[0] = UnityInput.GetAxisPos(input.Key)[0];
+           */
           break;
         case InputType.Trigger:
           break;
