@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Script that builds the road out of road parts. Simple.
+//
+
 public class BuildRoad : MonoBehaviour
 {
 

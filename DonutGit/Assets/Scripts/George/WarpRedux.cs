@@ -1,7 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//
+//Author: George
+//
+//This script displaces GameObjects by the same algorithm that is used in the "World Bender" shader.
+//This is to give the effect of obstacles and collectables coming over the crest of the hill caused by the 
+//World Bender.
+//
+//This script also handles other aspects of a obstacle's or collectable's movement, such as where it spawns,
+//if it spins, and the parameters for wobbly floating.
+//
+//
 public class WarpRedux : MonoBehaviour
 {
     //Stores two separate positions, needed for warp calculations.

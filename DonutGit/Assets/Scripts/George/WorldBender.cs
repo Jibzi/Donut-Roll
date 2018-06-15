@@ -1,6 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
+//Author: George
+//
+//Component script to feed variables into the "World Bender" shader.
+//X is left/right bending.
+//Y is up/down bending.
+//Falloff determines a buffer area around the BendStart(camera) in which no vertex displacement occurs.
+
+
 
 //This tag makes it effect the editor, for feedback when tweaking the sliders.
 [ExecuteInEditMode]

@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Script that makes the donut spin, simple.
+//
+
+//TODO:Make this more automatic, and rely less on editor input.
+
 public class DonutSpin : MonoBehaviour
 {
 

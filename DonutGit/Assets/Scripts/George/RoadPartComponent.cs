@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+//Author: George
+//
+//Component script that gives behaviour to the road pieces. Mainly the speed at which they move, which in turn is
+//how fast the game is; as it is the world moving, not the player.
+//Also calls the PopulateRoad script when this resets back to the far end of the road, prompting new objects to spawn.
+//
+
 public class RoadPartComponent : MonoBehaviour
 {
 
@@ -11,8 +19,6 @@ public class RoadPartComponent : MonoBehaviour
 	void Start ()
 	{
 
-		Debug.Log("Starting RoadPartComponent");
-		Debug.Log(gameObject);
 		_populateRoad = gameObject.GetComponentInParent<PopulateRoad>();
 	}
 
