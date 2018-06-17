@@ -1,7 +1,8 @@
-﻿using System;   //System because dealing with Eventhandlers
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//System because dealing with EventHandlers
+using System;   
 
 public class Collectable : MonoBehaviour {
 
@@ -21,6 +22,7 @@ public class Collectable : MonoBehaviour {
     [Tooltip("The distance from the donut to check for collision")]
     private float zDistance;
     //ToDo: Luke has suggested a collisive offset for the donut, to change the gamefeel.
+    
     //Our lovely event handler, to which we add using the += operator (Page 16 of Player's Guide to C#)
     public static event EventHandler Collected; 
 
@@ -51,7 +53,38 @@ public class Collectable : MonoBehaviour {
         
     }
 
-    
+    void PrintPlayerPosX()
+    {
+        Debug.Log("PlayerX = " + Player.transform.position.x);
+    }
+
+    void PrintPlayerPosZ()
+    {
+        Debug.Log("Player Z = " + Player.transform.position.z);
+    }
+
+    void PrintCollectablePosX()
+    {
+        Debug.Log("Coin X = " + this.transform.position.x);
+    }
+
+    void PrintCollectablePosZ()
+    {
+        Debug.Log("Coin Z = " + this.transform.position.z);
+    }
+
+    bool CheckCollideZAndGetCollidingOnX()
+    {
+        //Declare a bool.
+        bool isCollidingZ = transform.position.z == Player.transform.position.z;
+        if (isCollidingZ)
+        {
+            Debug.Log("This is colliding on Z");
+        }
+
+
+        return isCollidingZ;
+    }
 
     public void OnCollected()
     {
@@ -105,7 +138,16 @@ public class Collectable : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        CheckIsCollidingThenCollect();
         
+        PrintPlayerPosX();
+        PrintCollectablePosX();
+        PrintPlayerPosZ();
+        PrintCollectablePosZ();
+        CheckCollideZAndGetCollidingOnX();
+    }
+
+    private void FixedUpdate()
+    {
+        CheckIsCollidingThenCollect();
     }
 }
