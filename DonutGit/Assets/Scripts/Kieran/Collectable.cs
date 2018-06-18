@@ -139,15 +139,16 @@ public class Collectable : MonoBehaviour {
     void Update ()
     {
         
-        PrintPlayerPosX();
-        PrintCollectablePosX();
-        PrintPlayerPosZ();
-        PrintCollectablePosZ();
-        CheckCollideZAndGetCollidingOnX();
+        
     }
 
     private void FixedUpdate()
     {
         CheckIsCollidingThenCollect();
+        PrintPlayerPosX();
+        PrintCollectablePosX();
+        PrintPlayerPosZ();
+        PrintCollectablePosZ();
+        CheckCollideZAndGetCollidingOnX();
     }
 }
