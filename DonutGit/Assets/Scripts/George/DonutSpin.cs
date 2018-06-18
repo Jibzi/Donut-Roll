@@ -18,9 +18,9 @@ public class DonutSpin : MonoBehaviour
 	public float SpinSpeed;
 	
 	// Use this for initialization
-	void Start () {
-		
-		_spinSpeed = new Vector3(0,0,0);
+	void Start ()
+	{
+
 	}
 	
 	// Update is called once per frame
