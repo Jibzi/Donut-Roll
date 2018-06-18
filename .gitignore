@@ -5,8 +5,8 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
-#Ignore Assets/Models as the files in there are too large to be stored inside the git
-Assets/Models/
+#Ignore Assets/Models as the files in there are too large to be stored inside the git.
+/Models
 
 # Visual Studio cache directory
 .vs/
