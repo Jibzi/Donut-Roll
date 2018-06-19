@@ -3,7 +3,7 @@
   
   Will Chapman
   14/06/2018
-  17/06/2018
+  19/06/2018
   
   NOT READY FOR USE
   
@@ -32,9 +32,6 @@
             }
 
     );
-  
-  
-  
   
 */
 
@@ -170,7 +167,7 @@ class InputHandler : MonoBehaviour
   }
   
   //Method to add input to the dictionary for tracking
-  public void AddInput(string _keyIdentifier)
+  public void TrackInput(string _keyIdentifier)
   {
     inputDict.Add(
       _keyIdentifier,

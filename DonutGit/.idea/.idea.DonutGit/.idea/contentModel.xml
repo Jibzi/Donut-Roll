@@ -226,6 +226,7 @@
             <e p="TimesOfDay.cs" t="Include" />
           </e>
           <e p="Will" t="Include">
+            <e p="ChappersCam.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
           </e>
         </e>
