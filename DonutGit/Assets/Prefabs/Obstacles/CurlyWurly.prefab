@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4977843433561482}
   - component: {fileID: 33869773374402988}
   - component: {fileID: 23075544163396254}
-  - component: {fileID: 65963525156894966}
   m_Layer: 0
   m_Name: CurlyWurly
   m_TagString: Obstacle
@@ -53,6 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4764319578539306}
   - component: {fileID: 114457510383601134}
+  - component: {fileID: 114830738088559062}
+  - component: {fileID: 65662470472011816}
   m_Layer: 0
   m_Name: CurlyWurly
   m_TagString: Obstacle
@@ -66,9 +67,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949087088815328}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.902832, y: -0.7988281, z: 5.1850586}
-  m_LocalScale: {x: 0.0046, y: 0.0046, z: 0.0046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789583082022212}
   m_Father: {fileID: 0}
@@ -81,8 +82,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549401899308672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0046, y: 0.0046, z: 0.0046}
   m_Children:
   - {fileID: 4977843433561482}
   m_Father: {fileID: 4764319578539306}
@@ -143,18 +144,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931225087447516}
   m_Mesh: {fileID: 4300000, guid: 664f62a6295eef64ab5998f3017f2cfc, type: 3}
---- !u!65 &65963525156894966
+--- !u!65 &65662470472011816
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931225087447516}
+  m_GameObject: {fileID: 1949087088815328}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1270.6748, y: 364.0115, z: 111.372826}
-  m_Center: {x: 369.65457, y: 192.88805, z: 1.9650688}
+  m_Size: {x: 5.4219093, y: 1.5377035, z: 0.5463815}
+  m_Center: {x: 1.6970377, y: 0.8735013, z: 0.018968344}
 --- !u!114 &114457510383601134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,3 +170,14 @@ MonoBehaviour:
   WobbleFrequency: 0
   WobbleAmplitude: 0
   RotationSpeed: {x: 0, y: 0, z: 0}
+--- !u!114 &114830738088559062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949087088815328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

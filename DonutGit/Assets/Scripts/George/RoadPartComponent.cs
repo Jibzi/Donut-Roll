@@ -35,7 +35,7 @@ public class RoadPartComponent : MonoBehaviour
 			//TODO: Consider also swapping out the mesh for another; to reduce the repition.
 			this.transform.Translate(0, 0, 120);
 			
-			Debug.Log(_populateRoad);
+			//Debug.Log(_populateRoad);
 			_populateRoad.PopulateRoadSegment();
 		}
 	}

@@ -46,7 +46,6 @@ public class Donut : MonoBehaviour
 	    
         _leftConstraint = -5f;
         _rightConstraint = 5f;
-
     }
 
 
@@ -79,7 +78,22 @@ public class Donut : MonoBehaviour
 	    _oldRight = _isRightMoving;
     }
 
-	
+	void OnTriggerEnter(Collider other)
+	{
+
+		Debug.Log("trigger no gg");
+		if (other.GetComponent<gg>() != null)
+		{
+			Debug.Log("trigger gg!");
+		}
+	}
+
+	private void OnCollisionEnter(Collision other)
+	{
+		Debug.Log("Collison!");
+	}
+
+
 //Method that handles basic player input to move the donut.
 	private void DonutControl()
 	{
