@@ -33,17 +33,13 @@ public class Donut : MonoBehaviour
 	private bool _oldLeft;
 	private bool _oldRight;
 	private float _coEf;
-
-	private GameObject _donutGraphics;
 	
 	
     void Start()
     {
 
 	    _animHelper = this.GetComponent<AnimHelper>();
-	    
-	    _donutGraphics = GameObject.Find("CharacterModel");
-	    
+	    	    
         _leftConstraint = -5;
         _rightConstraint = 5f;
     }

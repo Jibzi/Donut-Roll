@@ -49,28 +49,28 @@ public class Collectable : MonoBehaviour {
     {
         const string kPlayerTag = "Player";
         Player = GameObject.FindGameObjectWithTag(kPlayerTag);
-        Debug.Log(kPlayerTag);
+        //Debug.Log(kPlayerTag);
         
     }
 
     void PrintPlayerPosX()
     {
-        Debug.Log("PlayerX = " + Player.transform.position.x);
+        //Debug.Log("PlayerX = " + Player.transform.position.x);
     }
 
     void PrintPlayerPosZ()
     {
-        Debug.Log("Player Z = " + Player.transform.position.z);
+        //Debug.Log("Player Z = " + Player.transform.position.z);
     }
 
     void PrintCollectablePosX()
     {
-        Debug.Log("Coin X = " + this.transform.position.x);
+        //Debug.Log("Coin X = " + this.transform.position.x);
     }
 
     void PrintCollectablePosZ()
     {
-        Debug.Log("Coin Z = " + this.transform.position.z);
+        //Debug.Log("Coin Z = " + this.transform.position.z);
     }
 
     bool CheckCollideZAndGetCollidingOnX()
@@ -79,7 +79,7 @@ public class Collectable : MonoBehaviour {
         bool isCollidingZ = transform.position.z == Player.transform.position.z;
         if (isCollidingZ)
         {
-            Debug.Log("This is colliding on Z");
+           //Debug.Log("This is colliding on Z");
         }
 
 
@@ -101,7 +101,7 @@ public class Collectable : MonoBehaviour {
         
         //Destroy the current collectable
         Destroy(this);
-        Debug.Log("Collectable has been destroyed");
+        //Debug.Log("Collectable has been destroyed");
     }
 
     public bool GetIsColliding()
