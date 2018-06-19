@@ -82,10 +82,10 @@ public class Donut : MonoBehaviour
 	{
 
 		Debug.Log("trigger no gg");
-		if (other.GetComponent<gg>() != null)
+		/*if (other.GetComponent<gg>() != null)
 		{
 			Debug.Log("trigger gg!");
-		}
+		}*/
 	}
 
 	private void OnCollisionEnter(Collision other)
