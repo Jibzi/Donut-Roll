@@ -44,8 +44,9 @@ public class Donut : MonoBehaviour
 	    
 	    _donutGraphics = GameObject.Find("CharacterModel");
 	    
-        _leftConstraint = -5;
+        _leftConstraint = -5f;
         _rightConstraint = 5f;
+
     }
 
 
