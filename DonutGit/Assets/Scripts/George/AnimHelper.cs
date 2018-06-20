@@ -20,7 +20,7 @@ public class AnimHelper : MonoBehaviour {
         print("DonutJumpPlay");
         yield return new WaitForSeconds(delay);
         
-        animator.GetComponent<Animator>().Play("DonutJump", -1, 0.0f);
+        animator.GetComponent<Animator>().Play("Jump", -1, 0.0f);
     }
     
     

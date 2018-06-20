@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +10,6 @@ public class ChromaticRandomiser : MonoBehaviour {
     [Tooltip("The textures to be randomly applied to the material.")]
     //Array of textures. Indices are integral, rather than in the form of bytes, to maintain 32-bit memory size.
     public Texture[] textures;
-    System.Random rand = new System.Random();
-    
     private int indexOfLastUsedElement;
 
     void RandomiseColour()
@@ -21,18 +18,14 @@ public class ChromaticRandomiser : MonoBehaviour {
         Dictionary<int, Color> colours = new Dictionary<int, Color>();
         colours.Add(0, Color.green);
         colours.Add(1, Color.red);
-        //The key of the to be allocated colour
-        int chromaticKey;
-        //Max reachable key of dictionary (in accordance with zero-based indexing)
-        int maxReachableKey = colours.Count - 1;
-        //The number by which we will modulo delta time.
-        int divisor = colours.Count;
-        //The index of the colour. We need it to be an int, in accordance with that an array's index must be integral. Clamp it also
-        //chromaticKey =  (int)Mathf.Clamp((Mathf.RoundToInt(Time.time % divisor)), 0 , colours.Count - 1);  
-        chromaticKey = rand.Next(colours.Count);
-        //chromaticKey =  (int)Mathf.Clamp((Mathf.RoundToInt((int)localDate % divisor)), 0 , colours.Count - 1);
-        _material.color = colours[chromaticKey];
-        Debug.Log(chromaticKey);
+        //The index of the to be allocated colour
+        int chromaticIndex;
+        //The number by which we will modulo delta time. This must be equal to the array's length - 1, accounting for the extra number 0.
+        int divisor = colours.Count + 1;// - 1;
+        //The index of the colour. We need it to be an int, in accordance with that an array's index must be integral.
+        chromaticIndex = (int)Mathf.RoundToInt(Time.time % divisor);
+        _material.color = colours[chromaticIndex];
+        Debug.Log(colours[chromaticIndex]);
     }
 
     void RandomiseTexture()
