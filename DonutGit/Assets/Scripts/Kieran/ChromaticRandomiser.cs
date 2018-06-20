@@ -12,7 +12,7 @@ public class ChromaticRandomiser : MonoBehaviour {
     //Array of textures. Indices are integral, rather than in the form of bytes, to maintain 32-bit memory size.
     public Texture[] textures;
     private int indexOfLastUsedElement;
-    public Random rand = new System.Random();
+    public System.Random rand = new System.Random();
     
     void RandomiseColour()
     {
