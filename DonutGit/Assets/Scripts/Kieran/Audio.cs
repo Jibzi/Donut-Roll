@@ -4,22 +4,27 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
-    //Properties will be public, to be reached by other
-    //name of sound
+    //Global volume of all music in the scene.
+    [HideInInspector]
+    public float globalMusicalVolume = 10;  
+    
+ 
+    //Name of sound
     public string name;
-    //the clip to be used
+    //Clip to be used
     public AudioClip clip;
-    //the clip's volume
+    //Clip's volume
     [Range(0f, 1f)]
     public float volume;
-    //the clip's pitch
+    //Clip's pitch
     [Range(0.1f, 3f)]
     public float pitch;
-    //CAN'T REMEMBER WHAT THIS IS!?
+    //Clip's source
     [HideInInspector]
     public AudioSource source;
     //whether to loop. Defaultly true
     public bool loop = true;
+
 }
 
 [System.Serializable]

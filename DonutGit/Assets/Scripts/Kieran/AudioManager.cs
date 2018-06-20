@@ -34,7 +34,9 @@ public class AudioManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //Defaultly play the background music
         Play(sounds[0].name);
+        //Add PlayCollectedSound to the Collected EventHandler
         Collectable.Collected += PlayCollectedSound;
     }
 
