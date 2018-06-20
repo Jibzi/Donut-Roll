@@ -20,11 +20,14 @@ public class MainMenu : MonoBehaviour {
 
     void Start()
     {
-
+        MainMenuObject = gameObject;
+        OptionsMenuObject = GameObject.FindGameObjectWithTag("OptionsMenu");
+        Debug.Log(OptionsMenuObject);
+        DeactivateObject(OptionsMenuObject);
     }
 
 
-
+    //Primary Methods(enabled by button press):
 
     public void PlayGame()
     {
@@ -33,14 +36,21 @@ public class MainMenu : MonoBehaviour {
 
     public void EnterOptionsMenu()
     {
+        DeactivateObject(MainMenuObject);
+        Debug.Log("Main menu is no longer visible!");
 
+        ActivateObject(OptionsMenuObject);
+        Debug.Log("Options menu is now visible!");
     }
 
     public void ExitOptionsMenu()
     {
+        DeactivateObject(OptionsMenuObject);
+        Debug.Log("Options menu is no longer visible!");
 
+        ActivateObject(MainMenuObject);
+        Debug.Log("Main menu is now visible!");
     }
-
 
     public void QuitGame()
     {
@@ -49,4 +59,16 @@ public class MainMenu : MonoBehaviour {
     }
     
     //Secondary Methods:
+
+    void ActivateObject(GameObject menu)
+    {
+        menu.SetActive(kEnabled);
+    }
+
+
+    void DeactivateObject(GameObject menu)
+    {
+        menu.SetActive(kDisabled);
+    }
+
 }
