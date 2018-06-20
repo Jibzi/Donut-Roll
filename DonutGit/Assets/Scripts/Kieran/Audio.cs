@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
-    //Global volume of all music in the scene.
+    //Global volume of all music in the scene. To be changed in the options menu of game.
     [HideInInspector]
     public float globalMusicalVolume = 10;  
     

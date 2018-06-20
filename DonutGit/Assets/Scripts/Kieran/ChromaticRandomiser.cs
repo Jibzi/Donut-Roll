@@ -31,8 +31,15 @@ public class ChromaticRandomiser : MonoBehaviour {
         //chromaticKey =  (int)Mathf.Clamp((Mathf.RoundToInt(Time.time % divisor)), 0 , colours.Count - 1);  
         chromaticKey = rand.Next(colours.Count);
         //chromaticKey =  (int)Mathf.Clamp((Mathf.RoundToInt((int)localDate % divisor)), 0 , colours.Count - 1);
-        _material.color = colours[chromaticKey];
-        Debug.Log(chromaticKey);
+        if (colours.ContainsKey(chromaticKey))
+        {
+            _material.color = colours[chromaticKey];
+            Debug.Log(chromaticKey);
+        }
+        else
+        {
+            Debug.Log(@"chromaticKey value was {chromaticKey}");
+        }   
     }
 
     void RandomiseTexture()
