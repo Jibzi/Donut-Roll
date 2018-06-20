@@ -15,7 +15,7 @@ using UnityEngine;
 public class WarpRedux : MonoBehaviour
 {
     //Stores two separate positions, needed for warp calculations.
-    private Vector3 _realPos;
+    public Vector3 _realPos;
     private Vector3 _warpPos;
 
     [Tooltip("How quickly the coin wobbles up and down. Recommended : 6.")]
@@ -24,7 +24,7 @@ public class WarpRedux : MonoBehaviour
     private float WobbleFrequency;
 
     [Tooltip("How much the coin wobbles up and down. Recommended: 60.")]
-    [Range(0, 100)]
+    [Range(0, 20)]
     [SerializeField]
     private float WobbleAmplitude;
 
@@ -46,6 +46,8 @@ public class WarpRedux : MonoBehaviour
     void Start()
     {
 
+        WobbleAmplitude = WobbleAmplitude / 100f;
+        
         //Initiate realpos with current position.
         _realPos = transform.position;
 
@@ -74,10 +76,11 @@ public class WarpRedux : MonoBehaviour
     //TODO: Add helper functions here so that applying movements to the objects don't requre adding code to this section.
     void Float()
     {
+        
         _realPos.Set(
             _realPos.x,
-            (_realPos.y + (Mathf.Sin(Time.time * WobbleFrequency) / (WobbleClamper - WobbleAmplitude))),
-            (_realPos.z + -_worldMover.WorldSpeed * Time.deltaTime)
+            _realPos.y,
+            _realPos.z + -_worldMover.WorldSpeed * Time.deltaTime
         );
     }
 
@@ -95,7 +98,13 @@ public class WarpRedux : MonoBehaviour
 
         dist = dist * (_wbs.Y * 0.0001f);
 
-        _warpPos.Set(_realPos.x + distx, _realPos.y + dist, _realPos.z);
+        _warpPos.Set(
+            
+            _realPos.x + distx,
+            
+            (_realPos.y + dist) + ((Mathf.Sin(Time.time * WobbleFrequency) * WobbleAmplitude)),
+            
+            _realPos.z);
 
         transform.position = _warpPos;
     }
