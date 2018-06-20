@@ -34,13 +34,8 @@ public class WarpRedux : MonoBehaviour
     //Value used to reduce the amplitude of wobbling
     private float WobbleClamper = 100f;
 
-    //Stores the speed at which the world is currently moving.
-    //TODO: Make this just grab the speed from a manager class or something.
-    private float worldSpeed = -10;
-
     private WorldMover _worldMover;
 
-    private GameObject _wb;
     private WorldBender _wbs;
 
     void Start()
@@ -53,8 +48,7 @@ public class WarpRedux : MonoBehaviour
 
         //Grab the world bender so we can retrieve variables from it during warping. Allows for run-time editing of the 
         //world bender's variable.
-        _wb = GameObject.Find("Bender");
-        _wbs = _wb.GetComponent<WorldBender>();
+        _wbs = GameObject.Find("Bender").GetComponent<WorldBender>();
         _worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
     }
 

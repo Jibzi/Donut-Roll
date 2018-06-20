@@ -210,9 +210,6 @@
             <e p="BuildRoad.cs" t="Include" />
             <e p="Donut.cs" t="Include" />
             <e p="DonutSpin.cs" t="Include" />
-            <e p="gcol.cs" t="Include" />
-            <e p="gCollManager.cs" t="Include" />
-            <e p="gObs.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="PopulateRoad.cs" t="Include" />
             <e p="RoadPartComponent.cs" t="Include" />
