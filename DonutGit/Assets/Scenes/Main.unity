@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 325124253}
   - component: {fileID: 325124255}
   - component: {fileID: 325124254}
+  - component: {fileID: 325124256}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -427,6 +428,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roadPart: {fileID: 1197885475181940, guid: 5079817c81f2620489fe6f69be6416a8, type: 2}
+--- !u!114 &325124256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325124252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0596cb5484c580e479f320aa50513fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldSpeed: 10
+  _worldAcceleration: 0.01
 --- !u!1001 &342593822
 Prefab:
   m_ObjectHideFlags: 0

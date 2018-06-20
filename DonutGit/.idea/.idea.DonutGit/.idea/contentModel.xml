@@ -203,9 +203,6 @@
         <e p="Scripts" t="Include">
           <e p="Deprecated" t="Include">
             <e p="FloatingComponent.cs" t="Include" />
-            <e p="Kieran" t="Include">
-              <e p="FloatingComponent.cs" t="Include" />
-            </e>
           </e>
           <e p="George" t="Include">
             <e p="AnimHelper.cs" t="Include" />
@@ -311,6 +308,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="worldMover.cs" t="Include" />
       </e>
       <e p="DonutGit.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
