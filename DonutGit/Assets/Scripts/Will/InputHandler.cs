@@ -3,11 +3,13 @@
   
   Will Chapman
   14/06/2018
-  15/06/2018
+  19/06/2018
   
   NOT READY FOR USE
   
-  Fleshed out the update loop for InputHandler
+  Events now work <3
+  Need to reconfig InputHandler.Update to go through keys on a list to check, chcek them, then update inputDict as needed.
+  Possibly add MonoBehaviour Update to InputData for this?
   
   Input Handler will track user input for you and enable you to request data on
   which keys are currently pressed.
@@ -20,6 +22,17 @@
   The time the key has been in that position
   The time that key was last updated by the Input Handler
   The time delta between this update and the last
+  
+  Syntax for adding events to key presses is:
+  InputHandler.AddEvent(string key, 
+    
+    delegate (InputData input) //"input" is recommended argument name
+            {
+                //code
+            }
+
+    );
+  
 */
 
 //Using
@@ -32,19 +45,27 @@ using UnityEngine;
 //Enum describing the input types
 public enum InputType
 {
-    Button,
-    Axis,
-    Trigger,
-    Mouse,
-    Touch,
-    Accelerometer
+  Button,
+  Axis,
+  Trigger,
+  Mouse,
+  Touch,
+  Accelerometer
+}
+
+//Enum describing the input event type
+public enum InputEventType
+{
+  Down,
+  Up,
+  Update
 }
 
 // A blank delegate to insert anonymous methods with
-public delegate void Function();
+public delegate void Function(InputData input);
 
 //Class containing all the data for a single input instance
-class InputData
+public class InputData
 {
   //initialise variables
   private string     input;
@@ -115,30 +136,43 @@ class InputData
       
 }
 
-//The main class. Should only be instantiated once; will track all input for you, make requests to it
+/*The main class. Should only be instantiated once; will track all input for you, make requests to it
+
+Only use one otherwise the redundant duplicates will just eat memory and CPU time.
+*/
 class InputHandler : MonoBehaviour
 {
   
   //Initialise variables
-  private bool                             touchScreen   =   false;
-  private Dictionary<string, InputData>    inputDict     =   new Dictionary<string, InputData>();
-  private Dictionary<string, Function>     eventDict     =   new Dictionary<string, Function>();
+  private bool                             touchScreen       =   false;
+  private Dictionary<string, InputData>    inputDict         =   new Dictionary<string, InputData>();
+  private Dictionary<string, Function>     downEventDict     =   new Dictionary<string, Function>();
+  private Dictionary<string, Function>     upEventDict       =   new Dictionary<string, Function>();
+  private Dictionary<string, Function>     updateEventDict   =   new Dictionary<string, Function>();
   
   /*
    Constructor creates an input handler
-   Only use one otherwise the redundant duplicates will just eat memory and CPU time.
+      
    _enableTouchScreen and _enableAccelerometer can be set to true if you want the Input Handler to track touches and
    gyro movements by default, otherwise you will have to enable it later manually.
   */
+  public InputHandler()
+  {
+    
+  }
+  
   public InputHandler(bool _enableTouchScreen, bool _enableAccelerometer)
   {
     
   }
-
+  
   //Method to add input to the dictionary for tracking
-  public void AddInput()
+  public void TrackInput(string _keyIdentifier)
   {
-    
+    inputDict.Add(
+      _keyIdentifier,
+      new InputData(_keyIdentifier, InputType.Button, new float[] {1,0})
+    );
   }
 
   //Method to get status of a certain key
@@ -148,10 +182,24 @@ class InputHandler : MonoBehaviour
   }
   
   // A custom event function to be fired when a key is pressed or input changes
-  // First argument will be the InputData for that key
-  public void AddEvent(string _keyIdentifier, Function _function)
+  // First argument will be the InputData for that key, second defines when the event fires
+  public void AddEvent(string _keyIdentifier, InputEventType _eventType, Function _function)
   {
-    eventDict.Add(_keyIdentifier, _function);
+    switch (_eventType)
+    {
+      case InputEventType.Down:
+        downEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Up:
+        upEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Update:
+        updateEventDict.Add(_keyIdentifier, _function);
+        break;
+      default:
+        Console.WriteLine("INPUT SYSTEM ERROR \"AddEvent\": event has invalid type");
+        break;
+    }
   }
   
   //Updates every input once per frame
@@ -160,6 +208,7 @@ class InputHandler : MonoBehaviour
     foreach(KeyValuePair<string, InputData> input in inputDict)
     {
       // do something with input.Value or input.Key
+      Console.WriteLine("Updating Input Dictionary [{0}]: {1}", input.Key, input.Value);
       
       switch (input.Value.Type)
       {
@@ -167,12 +216,26 @@ class InputHandler : MonoBehaviour
           /*
           if (UnityInput.KeyIsDown(input.Key))
           {
-            
+            if (!inputDict.ContainsKey(input.Key))
+            {
+              Console.WriteLine("Key [{0}] Down", input.Key);
+              if (downEventDict.ContainsKey(input.Key))
+              {
+                Console.WriteLine("Key Down Event Firing:");
+                upEventDict[input.Key](input.Value);
+              }
+            }            
           }
           else
           {
             //Key no longer down, remove from input
             inputDict.Remove(input.Key);
+            Console.WriteLine("Key Up Firing:");
+            if (upEventDict.ContainsKey(input.Key))
+            {
+              Console.WriteLine("Key Up Event Firing:");
+              upEventDict[input.Key](input.Value);
+            }
           }
           */
           break;
@@ -190,8 +253,15 @@ class InputHandler : MonoBehaviour
         case InputType.Accelerometer:
           break;
         default:
-          Console.WriteLine("INPUT SYSTEM ERROR: key[{0}] has invalid type", input.Key);
+          Console.WriteLine("INPUT SYSTEM ERROR \"Update\": key[{0}] has invalid type", input.Key);
           break;
+      }
+      
+      //Do this last so it goes in order: Down, Update(*n) Up
+      if (updateEventDict.ContainsKey(input.Key))
+      {
+        Console.WriteLine("Event Firing:");
+        updateEventDict[input.Key](input.Value);
       }
       
     }

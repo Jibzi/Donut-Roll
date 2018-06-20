@@ -222,12 +222,16 @@
           <e p="Kieran" t="Include">
             <e p="Audio.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
+            <e p="CharacterChooser.cs" t="Include" />
             <e p="ChromaticRandomiser.cs" t="Include" />
             <e p="Collectable.cs" t="Include" />
             <e p="Collector.cs" t="Include" />
             <e p="Obstacle.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="ScoreTracker.cs" t="Include" />
+            <e p="TemporaryScript" t="Include">
+              <e p="CollectableScript.cs" t="Include" />
+            </e>
             <e p="TimesOfDay.cs" t="Include" />
           </e>
           <e p="Will" t="Include">
@@ -304,6 +308,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="worldMover.cs" t="Include" />
       </e>
       <e p="DonutGit.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

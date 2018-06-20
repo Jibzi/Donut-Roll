@@ -38,6 +38,8 @@ public class WarpRedux : MonoBehaviour
     //TODO: Make this just grab the speed from a manager class or something.
     private float worldSpeed = -10;
 
+    private WorldMover _worldMover;
+
     private GameObject _wb;
     private WorldBender _wbs;
 
@@ -51,6 +53,7 @@ public class WarpRedux : MonoBehaviour
         //world bender's variable.
         _wb = GameObject.Find("Bender");
         _wbs = _wb.GetComponent<WorldBender>();
+        _worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
     }
 
     // Update is called once per frame
@@ -74,7 +77,7 @@ public class WarpRedux : MonoBehaviour
         _realPos.Set(
             _realPos.x,
             (_realPos.y + (Mathf.Sin(Time.time * WobbleFrequency) / (WobbleClamper - WobbleAmplitude))),
-            (_realPos.z + worldSpeed * Time.deltaTime)
+            (_realPos.z + -_worldMover.WorldSpeed * Time.deltaTime)
         );
     }
 
