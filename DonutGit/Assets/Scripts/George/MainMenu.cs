@@ -18,7 +18,10 @@ public class MainMenu : MonoBehaviour {
     const bool kEnabled = true;
     const bool kDisabled = false;
 
+    void Start()
+    {
 
+    }
 
 
 
