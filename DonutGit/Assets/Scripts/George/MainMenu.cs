@@ -11,10 +11,33 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    //Menus
+    GameObject MainMenuObject;
+    GameObject OptionsMenuObject;
+    //Const bools to avoid magic numbers. I'll be able to make these local if 
+    const bool kEnabled = true;
+    const bool kDisabled = false;
+
+
+
+
+
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void EnterOptionsMenu()
+    {
+
+    }
+
+    public void ExitOptionsMenu()
+    {
+
+    }
+
 
     public void QuitGame()
     {
@@ -22,4 +45,5 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
     
+    //Secondary Methods:
 }
