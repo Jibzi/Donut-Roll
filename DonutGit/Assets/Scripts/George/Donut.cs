@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
@@ -35,10 +36,15 @@ public class Donut : MonoBehaviour
 	private float _coEf;
 
 	private GameObject _donutGraphics;
+
+	public int Score;
+	private TextMeshProUGUI _scoreHUD;
 	
 	
     void Start()
     {
+	    Score = 0;
+	    _scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
 
 	    _animHelper = this.GetComponent<AnimHelper>();
 	    
@@ -54,6 +60,8 @@ public class Donut : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+
+	    _scoreHUD.text = Score.ToString();
 	    
 	    _isLeftMoving = false;
 	    _isRightMoving = false;
@@ -80,20 +88,15 @@ public class Donut : MonoBehaviour
 	    _oldRight = _isRightMoving;
     }
 
-	void OnTriggerEnter(Collider other)
-	{
-
-		Debug.Log("trigger no gg");
-		if (other.GetComponent<gg>() != null)
+		void OnTriggerEnter(Collider other)
 		{
-			Debug.Log("trigger gg!");
+			Debug.Log(other);
+	
+			if (other.GetComponent<Interactable>() != null)
+			{
+				other.GetComponent<Interactable>().Interact(this);
+			}
 		}
-	}
-
-	private void OnCollisionEnter(Collision other)
-	{
-		Debug.Log("Collison!");
-	}
 
 
 //Method that handles basic player input to move the donut.

@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114166882247866572}
   - component: {fileID: 114034907578861946}
   - component: {fileID: 65618339067329612}
-  - component: {fileID: 114273977929171644}
+  - component: {fileID: 114459488447718160}
   m_Layer: 0
   m_Name: GummyBear
   m_TagString: Collectable
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832008180382944}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.09118855, y: -1.5627478, z: 0.33068204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015006236094376}
@@ -153,7 +153,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832008180382944}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7613103, y: 1.2774905, z: 0.54351544}
@@ -188,7 +188,7 @@ MonoBehaviour:
   maximalCollectableSize: 1
   xDistance: 1
   zDistance: 1
---- !u!114 &114273977929171644
+--- !u!114 &114459488447718160
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1832008180382944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
+  m_Script: {fileID: 11500000, guid: fecdfbb79f9385645a13fbb731bc852e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114766283556725284

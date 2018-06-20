@@ -14,20 +14,25 @@ public class BuildRoad : MonoBehaviour
 
 	public GameObject _roadPart;
 
+	private int _roadLength;
+
 	
 	// Use this for initialization
 	void Start ()
-	{		
-		//Spawn some length of road
-		//TODO:make this variable.
-		for (int i = 0; i < 6; i++)
-		{
-			Instantiate(_roadPart, new Vector3(0, 0, i * 20), Quaternion.identity, this.transform);
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	{
+
+		//Tune the road length here.
+		_roadLength = 6;
 		
+		MakeTheRoad();
+	}
+
+	private void MakeTheRoad()
+	{
+
+		for (int j = 0; j < _roadLength; j++)
+		{
+			Instantiate(_roadPart, new Vector3(0, 0, j * 20), Quaternion.identity, transform);
+		}
 	}
 }

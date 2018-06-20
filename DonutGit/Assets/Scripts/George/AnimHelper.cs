@@ -27,7 +27,6 @@ public class AnimHelper : MonoBehaviour {
     public void DonutMoveLeftStart(float Sdelay)
     {
         
-        print("MoveLeft");
         Component animator = this.GetComponent<Animator>();
         StartCoroutine(DonutMoveLeftPlay(Sdelay, animator));
     }
@@ -44,7 +43,6 @@ public class AnimHelper : MonoBehaviour {
     public void DonutMoveRightStart(float Sdelay)
     {
         
-        print("MoveRight");
         Component animator = this.GetComponent<Animator>();
         StartCoroutine(DonutMoveRightPlay(Sdelay, animator));
     }

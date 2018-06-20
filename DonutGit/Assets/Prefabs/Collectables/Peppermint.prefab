@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 114598840911608564}
   - component: {fileID: 114925339818135970}
   - component: {fileID: 65488490436412064}
-  - component: {fileID: 114993118588112094}
+  - component: {fileID: 114494852619281812}
   m_Layer: 0
   m_Name: Peppermint
   m_TagString: Collectable
@@ -254,11 +254,22 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1842368479146642}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1983984, z: 1.5633223}
   m_Center: {x: -2.9319728e-16, y: 0.08313191, z: 0.14805591}
+--- !u!114 &114494852619281812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842368479146642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23423c8cdab054d4f91d5876476d76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114598840911608564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,14 +300,3 @@ MonoBehaviour:
   WobbleFrequency: 5.8
   WobbleAmplitude: 18.1
   RotationSpeed: {x: 0, y: 300, z: 0}
---- !u!114 &114993118588112094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1842368479146642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

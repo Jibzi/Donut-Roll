@@ -210,6 +210,10 @@
             <e p="BuildRoad.cs" t="Include" />
             <e p="Donut.cs" t="Include" />
             <e p="DonutSpin.cs" t="Include" />
+            <e p="Inter_CurlyWurly.cs" t="Include" />
+            <e p="Inter_GummyBear.cs" t="Include" />
+            <e p="Inter_PepperMint.cs" t="Include" />
+            <e p="Interactable.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="PopulateRoad.cs" t="Include" />
             <e p="RoadPartComponent.cs" t="Include" />
