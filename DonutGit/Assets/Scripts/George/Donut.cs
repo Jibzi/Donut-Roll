@@ -46,6 +46,8 @@ public class Donut : MonoBehaviour
 	    
         _leftConstraint = -5f;
         _rightConstraint = 5f;
+	    
+	    Camera.main.GetComponent<ChappersCam>().RunCamera = true;
     }
 
 

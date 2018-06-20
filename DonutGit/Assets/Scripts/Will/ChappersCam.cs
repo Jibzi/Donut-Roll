@@ -4,10 +4,10 @@
   Will Chapman
   19/06/2018
   
-  NOT READY FOR USE
+  Sets the position of the camera to a distance (*positionFraction) between the origin and donut position,
+  and aims it at the donut(+an offset).
   
-  Sets the position of the camera to a distance (1/positionFraction) between the origin and donut position,
-  and aims it at the donut. The speed at which these change slows the larger targetTween and positionTween are.
+  Movement of the camera's position and target can be smoothed by increasing their SmoothFactors.
   
 */
 
@@ -19,22 +19,27 @@ using UnityEngine;
 public class ChappersCam : MonoBehaviour
 {
 
-	[SerializeField]  private              Vector3      currentTarget;
-	[SerializeField]  private              GameObject   donutCameraTarget;
-	[SerializeField]  private              Camera       donutCamera;
-	[SerializeField]  private              bool         chappersCam;
-	[SerializeField]  static    readonly   Vector3      origin                = new Vector3(0f, 2f, -11f);
-	[SerializeField]  private   const      float        targetTween           = 2f;
-	[SerializeField]  private   const      float        positionTween         = 2f;
-	[SerializeField]  private   const      float        positionFraction      = 4f;
+	//Class Variables
+	[SerializeField]   private     GameObject   donutCameraTarget;
+	[SerializeField]   private     bool         chappersCam;
+	
+	//Camera Position/Origin variables
+	[SerializeField]   private     Vector3      currentTarget;
+	[SerializeField]   private     Vector3      origin                = new Vector3(0f, 8f, -14.3f);
+	[SerializeField]   private     Vector3      donutOffset           = new Vector3(0f, 0.65f, 5.2f);
+	[SerializeField]   private     Vector3      positionFraction      = new Vector3(0.5f, 0.05f, 0.125f);
+	
+	//Smoothing Factors
+	[SerializeField]
+	[Range( 1f, 128f)] private     float        targetSmoothFactor    = 16f;
+	[SerializeField]
+	[Range( 1f, 128f)] private     float        positionSmoothFactor  = 8f;
 
+	//Initialise ChappersCam
 	void Start()
 	{
-		//Initialise ChappersCam, then set RunCamera to true
 		donutCameraTarget = GameObject.Find("Donut");
-		currentTarget = donutCameraTarget.transform.position;
-		donutCamera = Camera.main;
-		chappersCam = false;
+		currentTarget = donutCameraTarget.transform.position+donutOffset;
 	}
 	
 	// Update is called once per frame
@@ -42,27 +47,30 @@ public class ChappersCam : MonoBehaviour
 	{
 		if (this.chappersCam)
 		{
-			//Target Tweening Values
-			Vector3 desiredTarget = donutCameraTarget.transform.position;
-			currentTarget = (desiredTarget - currentTarget ) / targetTween;
+			//Set current target to itself, plus the difference bewteen it and the donut's position(+ an offset), eased by targetTween
+			currentTarget += (donutCameraTarget.transform.position+donutOffset - currentTarget ) / targetSmoothFactor;
 			
-			//Position Tweening Values
+			//Get difference between donut position and origin
 			Vector3 originDifference = donutCameraTarget.transform.position - origin;
+			
+			//Set desired position to the origin, plus a fraction of the difference between the origin and and donut position
+			//Desired position is just a maximum offset from the origin for wherever the donut currently is
 			Vector3 desiredPosition = new Vector3(
-				origin.x + (originDifference.x / positionFraction),
-				origin.y + (originDifference.y / positionFraction),
-				origin.z + (originDifference.z / positionFraction) 
+				origin.x + (originDifference.x * positionFraction.x),
+				origin.y + (originDifference.y * positionFraction.y),
+				origin.z + (originDifference.z * positionFraction.z) 
 			);
-			Vector3 currentPosition = transform.position;
-			Vector3 translatePositionBy = (desiredPosition - currentPosition ) / positionTween;
+			
+			//Need to translate by the difference between the desired position and the current one, eased by positionTween
+			Vector3 translatePositionBy = (desiredPosition - transform.position ) / positionSmoothFactor;
 			
 			//Update position and LookAt
 			transform.Translate(translatePositionBy);	
-			
 			transform.LookAt(currentTarget);
 		}
 	}
 
+	//Won't use this camera trickery when not required.
 	public bool RunCamera
 	{
 		get { return chappersCam;  }

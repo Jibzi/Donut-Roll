@@ -25,25 +25,6 @@ public class Collectable : MonoBehaviour {
     
     //Our lovely event handler, to which we add using the += operator (Page 16 of Player's Guide to C#)
     public static event EventHandler Collected; 
-
-
-
-    //For visual variation, minutely change the size of every collectable
-    void SetSize()
-    {
-        /*A temporary local randomisative modulator - the number by which we modulo
-            total playtime to get our number of different sizes the coin can be.*/
-        const float 
-            randomisitiveModulator = 10f,
-            randomisitiveDivisor = 5f;
-        //Declare a local holder variable for the randomised scale.
-        float rando = Mathf.Clamp((
-            (Time.fixedTime % randomisitiveModulator) / randomisitiveDivisor), 
-            minimalCollectableSize, 
-            maximalCollectableSize
-            );
-        transform.localScale *= rando;
-    }
     
     void FindPlayer()
     {
@@ -125,7 +106,6 @@ public class Collectable : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        SetSize();
         FindPlayer();
         
         Collected += HandleCollected;
