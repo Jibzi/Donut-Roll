@@ -16,7 +16,7 @@ using UnityEngine;
 
 public class PopulateRoad : MonoBehaviour {
 
-    public GameObject[] Obstacles = new GameObject[2];
+    public GameObject[] Obstacles = new GameObject[6];
 
     private readonly float[] _xLanes = new float[3] {-5f, 0f, 5f};
 
@@ -25,7 +25,7 @@ public class PopulateRoad : MonoBehaviour {
 
         for (int i = 0; i < 4; i++)
         {
-            int rnd = UnityEngine.Random.Range(0, 2);
+            int rnd = UnityEngine.Random.Range(0, Obstacles.Length);
 
             int rndVec = UnityEngine.Random.Range(0, 3);
             

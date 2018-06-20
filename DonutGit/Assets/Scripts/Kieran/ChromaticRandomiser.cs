@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ChromaticRandomiser : MonoBehaviour {
     
@@ -11,10 +11,9 @@ public class ChromaticRandomiser : MonoBehaviour {
     [Tooltip("The textures to be randomly applied to the material.")]
     //Array of textures. Indices are integral, rather than in the form of bytes, to maintain 32-bit memory size.
     public Texture[] textures;
-    System.Random rand = new System.Random();
-    
     private int indexOfLastUsedElement;
-
+    public Random rand = new System.Random();
+    
     void RandomiseColour()
     {
         //Dictionary of colours to apply to the given material

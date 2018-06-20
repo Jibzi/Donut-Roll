@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114766283556725284}
   m_Layer: 0
   m_Name: GummyBear
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +54,8 @@ GameObject:
   - component: {fileID: 4021456201942306}
   - component: {fileID: 114166882247866572}
   - component: {fileID: 114034907578861946}
+  - component: {fileID: 65618339067329612}
+  - component: {fileID: 114273977929171644}
   m_Layer: 0
   m_Name: GummyBear
   m_TagString: Collectable
@@ -115,6 +117,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 7f1ecb9d7107d04488fbf9c888a84203, type: 2}
   m_StaticBatchInfo:
@@ -143,6 +146,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720703326976216}
   m_Mesh: {fileID: 4300000, guid: 90fae1216106c394ea57215ba4a2bf8b, type: 3}
+--- !u!65 &65618339067329612
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832008180382944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5883343, y: 1.8077414, z: 1.2857585}
+  m_Center: {x: 1.4625788, y: -0.0468601, z: -0.27460217}
 --- !u!114 &114034907578861946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,7 +172,6 @@ MonoBehaviour:
   WobbleFrequency: 4.99
   WobbleAmplitude: 69.5
   RotationSpeed: {x: 0, y: 300, z: 0}
-  _startPos: {x: 0, y: 1, z: 120}
 --- !u!114 &114166882247866572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,6 +187,17 @@ MonoBehaviour:
   maximalCollectableSize: 1
   xDistance: 1
   zDistance: 1
+--- !u!114 &114273977929171644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832008180382944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114766283556725284
 MonoBehaviour:
   m_ObjectHideFlags: 1

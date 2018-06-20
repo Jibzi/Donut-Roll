@@ -227,6 +227,7 @@
             <e p="Collectable.cs" t="Include" />
             <e p="Collector.cs" t="Include" />
             <e p="Obstacle.cs" t="Include" />
+            <e p="OptionsMenu.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="ScoreTracker.cs" t="Include" />
             <e p="TemporaryScript" t="Include">

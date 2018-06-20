@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4823230635509330}
   - component: {fileID: 114405806567847052}
+  - component: {fileID: 65915382098535396}
+  - component: {fileID: 114187075235702634}
   m_Layer: 0
   m_Name: Snickers
   m_TagString: Obstacle
@@ -78,22 +80,22 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636846758661776}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.5520824, z: 0, w: 0.8337895}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4364717744979932}
   m_Father: {fileID: 4823230635509330}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 67.02, z: 0}
 --- !u!4 &4823230635509330
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090192809133776}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.45, y: 0.49, z: 2.77}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.352832, y: -0.30882812, z: 7.955059}
   m_LocalScale: {x: 0.0046, y: 0.0046, z: 0.0046}
   m_Children:
   - {fileID: 4447795066394862}
@@ -113,6 +115,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 42d54f2e1f6247b438721513ae2048ad, type: 2}
   m_StaticBatchInfo:
@@ -141,6 +144,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914854959780794}
   m_Mesh: {fileID: 4300000, guid: c0b882a35bc3cb342b3339fb917f1621, type: 3}
+--- !u!65 &65915382098535396
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090192809133776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 274.2929, y: 183.99591, z: 784.6218}
+  m_Center: {x: 39.878098, y: 99.157295, z: 28.812366}
+--- !u!114 &114187075235702634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090192809133776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114405806567847052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,4 +181,3 @@ MonoBehaviour:
   WobbleFrequency: 0
   WobbleAmplitude: 0
   RotationSpeed: {x: 0, y: 0, z: 0}
-  _startPos: {x: 1.62, y: 0.3, z: 100}
