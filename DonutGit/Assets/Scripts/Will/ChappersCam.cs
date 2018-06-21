@@ -28,28 +28,15 @@ public class ChappersCam : MonoBehaviour
 	[SerializeField]   private     Vector3      origin                = new Vector3(0f, 8f, -14.3f);
 	[SerializeField]   private     Vector3      donutOffset           = new Vector3(0f, 0.65f, 5.2f);
 	[SerializeField]   private     Vector3      positionFraction      = new Vector3(0.5f, 0.05f, 0.125f);
-<<<<<<< HEAD
 	[SerializeField]   private     float        targetSmoothFactor    = Mathf.Clamp(4f, 1f, 128f);
 	[SerializeField]   private     float        positionSmoothFactor  = Mathf.Clamp(4f, 1f, 128f);
-=======
-	
-	//Smoothing Factors
-	[SerializeField]
-	[Range( 1f, 128f)] private     float        targetSmoothFactor    = 16f;
-	[SerializeField]
-	[Range( 1f, 128f)] private     float        positionSmoothFactor  = 8f;
->>>>>>> d8879a88d2a9c82b6dbc476c4af06c21ee1e1d44
 
-	//Initialise ChappersCam
 	void Start()
 	{
+		//Initialise ChappersCam, then set RunCamera to true
 		donutCameraTarget = GameObject.Find("Donut");
-<<<<<<< HEAD
 		currentTarget = donutCameraTarget.transform.position;
 		chappersCam = true;
-=======
-		currentTarget = donutCameraTarget.transform.position+donutOffset;
->>>>>>> d8879a88d2a9c82b6dbc476c4af06c21ee1e1d44
 	}
 	
 	// Update is called once per frame
