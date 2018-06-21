@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4823230635509330}
   - component: {fileID: 114405806567847052}
   - component: {fileID: 65915382098535396}
-  - component: {fileID: 114187075235702634}
+  - component: {fileID: 114216873244977384}
   m_Layer: 0
   m_Name: Snickers
   m_TagString: Obstacle
@@ -156,7 +156,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1379671, y: 0.6924212, z: 3.2954962}
   m_Center: {x: 0.22905302, y: 0.76775444, z: 0.120983005}
---- !u!114 &114187075235702634
+--- !u!114 &114216873244977384
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1090192809133776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 296aad76eccd1994cbcdfd14f3e32a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114405806567847052
