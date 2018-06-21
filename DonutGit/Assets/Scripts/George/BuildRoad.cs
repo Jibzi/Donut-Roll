@@ -6,7 +6,7 @@ using UnityEngine;
 //
 //Author: George
 //
-//Script that builds the road out of road parts. Simple.
+//Script that builds the road out of road parts. Simple loop that instantiates prefab road parts.
 //
 
 public class BuildRoad : MonoBehaviour

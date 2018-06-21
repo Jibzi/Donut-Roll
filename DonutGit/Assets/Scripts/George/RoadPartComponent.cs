@@ -28,7 +28,6 @@ public class RoadPartComponent : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-//TODO: Make this speed a variable so that we can get faster and slower during gameplay.
         this.transform.Translate(0,0, (-_worldMover.WorldSpeed * Time.deltaTime));
 
         //Teleport any road parts that are behind the camera to the far end of the road.
