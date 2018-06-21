@@ -11,7 +11,7 @@ public class Inter_GummyBear : Interactable
         base.Interact(interactor);
         
         //Do effect
-        interactor.Score++;
+        interactor.Score+= 10;
         
         
         //Do visuals
