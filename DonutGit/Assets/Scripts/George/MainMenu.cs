@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 //
-//Author: George
+//Author: George & Kieran
 //
 //Script that adds functionality to the main menu.
 //
@@ -85,10 +85,20 @@ public class MainMenu : MonoBehaviour {
         Debug.Log("The volume has been changed");
     }   
     //
-    //
+    //Mute or unmute the script dynamically, when the speaker icon is pressed
     public void MuteOrUnmuteVolume()
     {
-        if (audioMixer.GetFloat(,)) ;
+        //if (volumeIsMuted) 
+        //{
+            //void Unmute()
+            //{
+                //volume = lastVolume
+                //Destroy(lastVolume)
+            //}
+        //else
+        //{
+            //void Mute() //Set volume to const float kMinimalVolume = 80f; //Set float lastVolume to volumre.
+        //}
     }
     //
     
