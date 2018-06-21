@@ -12,6 +12,7 @@ using UnityEngine.PostProcessing;
 //Also handles playing certain animations, like jump.
 //
 
+
 public class Donut : MonoBehaviour
 {
 
@@ -33,68 +34,84 @@ public class Donut : MonoBehaviour
 	private bool _isRightMoving;
 	private bool _oldLeft;
 	private bool _oldRight;
-	private float _coEf;
-
-	private GameObject _donutGraphics;
 
 	public int Score;
 	private TextMeshProUGUI _scoreHUD;
+
+	public bool IsJumping;
 	
 	
     void Start()
     {
+	    
+	    //Initialise the score and UI to display it.
 	    Score = 0;
 	    _scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
 
+	    //Grab the AnimHelper, adds some functionality to calling animations.
 	    _animHelper = this.GetComponent<AnimHelper>();
 	    
-	    _donutGraphics = GameObject.Find("CharacterModel");
-	    
+	    //Initialise th left and right constrains, or "walls".
         _leftConstraint = -5f;
         _rightConstraint = 5f;
 	    
+	    //Communicate to the "ChappersCam" that we want that script enabled.
 	    Camera.main.GetComponent<ChappersCam>().RunCamera = true;
+
+	    //Initialise IsJumping.
+	    IsJumping = false;
     }
 
 
-    // Update is called once per frame
     void Update ()
     {
-
+		
+	    //Update the score counter.
 	    _scoreHUD.text = Score.ToString();
-	    
-	    _isLeftMoving = false;
-	    _isRightMoving = false;
 
 	    DonutControl();
 
+	    //Jump
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			
 			_animHelper.DonutJumpStart(0f);
 		}
 
+	    //Move left.
 	    if (_isLeftMoving &&  !_oldLeft)
 	    {
+		    
 		    _animHelper.DonutMoveLeftStart(0f);
 	    }
 
+	    //Move right.
 	    if (_isRightMoving && !_oldRight)
 	    {
+		    
 		    _animHelper.DonutMoveRightStart(0f);
 	    }
 
+	    //Store our current left and right bools, so we can use the delta between this frame and next frame, on next frame.
 	    _oldLeft = _isLeftMoving;
 	    _oldRight = _isRightMoving;
     }
 
+
+	//Where the donut checks for collisions with "Interactables". While jumping, collision checking is turned off.
+	//The donut will collide with any collider with the "Is Trigger" option ticked. The donut will then check for
+	//any script that derrives from the Interactable class, then call Interact(); on that, meaning many, unique, scripts
+	//can all be called through one line of code!
 		void OnTriggerEnter(Collider other)
 		{
-			Debug.Log(other);
-	
-			if (other.GetComponent<Interactable>() != null)
+			
+			if (!IsJumping)
 			{
-				other.GetComponent<Interactable>().Interact(this);
+				
+				if (other.GetComponent<Interactable>() != null)
+				{
+					other.GetComponent<Interactable>().Interact(this);
+				}
 			}
 		}
 
@@ -103,6 +120,7 @@ public class Donut : MonoBehaviour
 	private void DonutControl()
 	{
 
+		//Reset left and right bools, so they are ready to be set properly below.
 		_isLeftMoving = false;
 		_isRightMoving = false;
 		
