@@ -30,3 +30,4 @@ public class Sound
     //whether to loop. Defaultly true
     public bool loop = true;
 }
+

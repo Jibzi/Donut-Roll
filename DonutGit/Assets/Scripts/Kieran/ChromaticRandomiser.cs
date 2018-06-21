@@ -20,6 +20,9 @@ public class ChromaticRandomiser : MonoBehaviour {
         Dictionary<int, Color> colours = new Dictionary<int, Color>();
         colours.Add(0, Color.green);
         colours.Add(1, Color.red);
+        colours.Add(2, Color.blue);
+        colours.Add(3, Color.yellow);
+        colours.Add(4, Color.white);
         //The key of the to be allocated colour
         int chromaticKey;
         //Max reachable key of dictionary (in accordance with zero-based indexing)
