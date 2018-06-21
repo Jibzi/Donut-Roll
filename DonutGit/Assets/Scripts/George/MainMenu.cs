@@ -88,7 +88,7 @@ public class MainMenu : MonoBehaviour {
     //
     public void MuteOrUnmuteVolume()
     {
-
+        if (audioMixer.GetFloat(,)) ;
     }
     //
     

@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 114598840911608564}
   - component: {fileID: 114925339818135970}
   - component: {fileID: 65488490436412064}
-  - component: {fileID: 114993118588112094}
+  - component: {fileID: 114494852619281812}
   m_Layer: 0
   m_Name: Peppermint
   m_TagString: Collectable
@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1842368479146642}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.8485541, y: 1.4311879, z: 1.1991224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4669300741201542}
@@ -155,14 +155,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562937050903080}
-  m_LocalRotation: {x: 0, y: 0.5, z: -0.7071068, w: 0.5}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.10451715, y: 0.6993398, z: -0.6993398, w: 0.10451715}
+  m_LocalPosition: {x: -0, y: 1.3, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4647255758043974}
   m_Father: {fileID: 4540078920226340}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: -90}
+  m_LocalEulerAnglesHint: {x: 73, y: 90, z: -90}
 --- !u!23 &23191696529890574
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -254,11 +254,22 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1842368479146642}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1983984, z: 1.5633223}
   m_Center: {x: -2.9319728e-16, y: 0.08313191, z: 0.14805591}
+--- !u!114 &114494852619281812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842368479146642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23423c8cdab054d4f91d5876476d76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114598840911608564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,17 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba134213cc4b8479ee3cefb0d271f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WobbleFrequency: 4.99
-  WobbleAmplitude: 69.5
+  _realPos: {x: 0, y: 0, z: 0}
+  WobbleFrequency: 5.8
+  WobbleAmplitude: 18.1
   RotationSpeed: {x: 0, y: 300, z: 0}
---- !u!114 &114993118588112094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1842368479146642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -36,11 +36,11 @@ public class ChromaticRandomiser : MonoBehaviour {
         if (colours.ContainsKey(chromaticKey))
         {
             _material.color = colours[chromaticKey];
-            Debug.Log(chromaticKey);
+            //Debug.Log(chromaticKey);
         }
         else
         {
-            Debug.Log(@"chromaticKey value was {chromaticKey}");
+            //Debug.Log(@"chromaticKey value was {chromaticKey}");
         }   
     }
 

@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114457510383601134}
   - component: {fileID: 114830738088559062}
   - component: {fileID: 65662470472011816}
+  - component: {fileID: 114254157147061862}
   m_Layer: 0
   m_Name: CurlyWurly
   m_TagString: Obstacle
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949087088815328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789583082022212}
@@ -82,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549401899308672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 0.0046, y: 0.0046, z: 0.0046}
   m_Children:
   - {fileID: 4977843433561482}
@@ -156,6 +157,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.4219093, y: 1.5377035, z: 0.5463815}
   m_Center: {x: 1.6970377, y: 0.8735013, z: 0.018968344}
+--- !u!114 &114254157147061862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949087088815328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1ebcc1f6a5e904fa811c970d5ecfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114457510383601134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba134213cc4b8479ee3cefb0d271f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _realPos: {x: 0, y: 0, z: 0}
   WobbleFrequency: 0
   WobbleAmplitude: 0
   RotationSpeed: {x: 0, y: 0, z: 0}

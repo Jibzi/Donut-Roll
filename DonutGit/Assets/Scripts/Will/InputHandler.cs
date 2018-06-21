@@ -3,16 +3,17 @@
   
   Will Chapman
   14/06/2018
-  19/06/2018
+  20/06/2018
   
-  NOT READY FOR USE
-  
-  Events now work <3
-  Need to reconfig InputHandler.Update to go through keys on a list to check, chcek them, then update inputDict as needed.
-  Possibly add MonoBehaviour Update to InputData for this?
+    
+  Now Works!
+  Need to add other input types in future
   
   Input Handler will track user input for you and enable you to request data on
   which keys are currently pressed.
+  
+  Create a new handler, then add keys to be tracked. You can inspect the status of these keys at any time, and add
+  events to fire when the lkey is pressed, goes up, or on every frame.
   
   You are able to see which keys are pressed, and for each of those keys enquire:
   The Key itself
@@ -58,6 +59,7 @@ public enum InputEventType
 {
   Down,
   Up,
+  Changed,
   Update
 }
 
@@ -68,76 +70,112 @@ public delegate void Function(InputData input);
 public class InputData
 {
   //initialise variables
+  
+  //The string of the input
   private string     input;
+  //The type of the input
   private InputType  type;
+  //The position of the input
   private float[]    position;
+  //The delta position between last frame and this frame
   private float[]    positionDelta;
-  private float      timeDown;
+  //The time the key has been in its current position
+  private float      positionTime;
+  //The total time the key has been tracked for
+  private float      timeTracked;
+  //The timestamp of the last update
   private float      lastUpdate;
-  private float      updateDelta;
     
   //Constructor takes input identifier, input type, and input position
-  public InputData(string _keyIdentifier, InputType _type, float[] _position)
+  public InputData(string _keyIdentifier, InputType _type, float[] _position )
   {
-  this.input        =   _keyIdentifier;
-  this.type         =   _type;
-  this.position     =   _position;
-  this.timeDown     =   0;
-  this.lastUpdate   =   Time.time;
-  this.updateDelta  =   0;
+    input        =   _keyIdentifier;
+    type         =   _type;
+    position     =   _position;
+    positionTime =   0;
+    timeTracked  =   0;
+    lastUpdate   =   Time.time;
   }
   
+  //The string of the input
   public string Input
   {
-    get { return this.input; }
-    set { this.input = value; }
+    get { return input; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set INPUT of " + input + " Property is readonly"); }
   }
   
+  //The type of the input
   public InputType Type
   {
-    get { return this.type; }
-    set { this.type = value; }
+    get { return type; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TYPE of " + input + " Property is readonly"); }
   }
   
+  //The position of the input
   public float[] Position
   {
-    get { return this.position; }
-    set { this.position = value; }
+    get { return position; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITION of " + input + " Property is readonly"); }
   }
   
+  //The delta position between last frame and this frame
   public float[] PositionDelta
   {
-    get { return this.positionDelta; }
+    get { return positionDelta; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONDELTA of " + input + " Property is readonly"); }
   }
   
-  public float TimeDown
+  //The time the key has been in its current position
+  public float PositionTime
   {
-    get { return this.timeDown; }
-    set { this.timeDown = value; }
+    get { return positionTime; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONTIME of " + input + " Property is readonly"); }
   }
   
+  //The total time the key has been tracked for
+  public float TimeTracked
+  {
+    get { return timeTracked; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TIMETRACKED of " + input + " Property is readonly"); }
+  }
+  
+  //The timestamp of the last update
   public float LastUpdate
   {
-    get { return this.lastUpdate; }
+    get { return lastUpdate; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set LASTUPDATE of " + input + " Property is readonly"); }
   }
   
+  //The time delta between the last update and now
   public float UpdateDelta
   {
-    get { return this.updateDelta; }
+    get { return Time.time - LastUpdate; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set UPDATEDELTA of " + input + " Property is readonly"); }
   }
   
-  public void Update()
+  //Called by InputHandler, should not really be invoked by user
+  public void Update(float[] _newPosition)
   {
-    this.updateDelta = Time.time - this.lastUpdate;
-    //this.positionDelta = Time.time - this.positionDelta;
-    this.lastUpdate = Time.time;
-    this.timeDown += this.updateDelta;
+    //Update position delta
+    positionDelta[0] = _newPosition[0] - Position[0];
+    positionDelta[1] = _newPosition[1] - Position[1];
+    //Update position
+    position = _newPosition;
+    //Update Position Time
+    if (positionDelta[0] == 0 && positionDelta[1] == 0)
+    {
+      positionTime += Time.deltaTime;
+    }
+    //Update Time Tracked
+    timeTracked += Time.deltaTime;
+    //Update LastUpdate
+    lastUpdate = Time.time;
   }
       
 }
 
-/*The main class. Should only be instantiated once; will track all input for you, make requests to it
-
+/*
+The main class. Should only be instantiated once; will track all input for you, make requests to it
 Only use one otherwise the redundant duplicates will just eat memory and CPU time.
 */
 class InputHandler : MonoBehaviour
@@ -148,31 +186,31 @@ class InputHandler : MonoBehaviour
   private Dictionary<string, InputData>    inputDict         =   new Dictionary<string, InputData>();
   private Dictionary<string, Function>     downEventDict     =   new Dictionary<string, Function>();
   private Dictionary<string, Function>     upEventDict       =   new Dictionary<string, Function>();
+  private Dictionary<string, Function>     changedEventDict  =   new Dictionary<string, Function>();
   private Dictionary<string, Function>     updateEventDict   =   new Dictionary<string, Function>();
   
-  /*
-   Constructor creates an input handler
-      
-   _enableTouchScreen and _enableAccelerometer can be set to true if you want the Input Handler to track touches and
-   gyro movements by default, otherwise you will have to enable it later manually.
-  */
+  //Constructor creates an input handler
   public InputHandler()
   {
     
   }
   
-  public InputHandler(bool _enableTouchScreen, bool _enableAccelerometer)
-  {
-    
-  }
-  
   //Method to add input to the dictionary for tracking
-  public void TrackInput(string _keyIdentifier)
+  public void TrackInput(string _keyIdentifier, InputType _inputType)
   {
     inputDict.Add(
       _keyIdentifier,
-      new InputData(_keyIdentifier, InputType.Button, new float[] {1,0})
+      new InputData(_keyIdentifier, _inputType, new float[] {1,0})
     );
+  }
+  
+  //Method to remove input from the dictionary
+  public void IgnoreInput(string _keyIdentifier)
+  {
+    if (inputDict.ContainsKey(_keyIdentifier))
+    {
+      inputDict.Remove(_keyIdentifier); 
+    }
   }
 
   //Method to get status of a certain key
@@ -181,8 +219,14 @@ class InputHandler : MonoBehaviour
     return this.inputDict[_keyIdentifier];
   }
   
-  // A custom event function to be fired when a key is pressed or input changes
-  // First argument will be the InputData for that key, second defines when the event fires
+  //Method to get just position of a certain key
+  float[] Position(string _keyIdentifier)
+  {
+    return this.inputDict[_keyIdentifier].Position;
+  }
+  
+  //Method to add a custom event function to be fired when a key goes down, up or each frame
+  //Event function will have the InputData for that key passsed to it as the first argument when fired
   public void AddEvent(string _keyIdentifier, InputEventType _eventType, Function _function)
   {
     switch (_eventType)
@@ -192,6 +236,9 @@ class InputHandler : MonoBehaviour
         break;
       case InputEventType.Up:
         upEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Changed:
+        changedEventDict.Add(_keyIdentifier, _function);
         break;
       case InputEventType.Update:
         updateEventDict.Add(_keyIdentifier, _function);
@@ -213,31 +260,34 @@ class InputHandler : MonoBehaviour
       switch (input.Value.Type)
       {
         case InputType.Button:
-          /*
-          if (UnityInput.KeyIsDown(input.Key))
+          if (Input.GetKey(input.Value.Input))
           {
-            if (!inputDict.ContainsKey(input.Key))
+            //Key Down
+            if (inputDict[input.Key].Position[0] == 0)
             {
+              //Key down for first time
               Console.WriteLine("Key [{0}] Down", input.Key);
               if (downEventDict.ContainsKey(input.Key))
               {
                 Console.WriteLine("Key Down Event Firing:");
-                upEventDict[input.Key](input.Value);
+                downEventDict[input.Key](input.Value);
               }
-            }            
+            }
           }
           else
           {
-            //Key no longer down, remove from input
-            inputDict.Remove(input.Key);
-            Console.WriteLine("Key Up Firing:");
-            if (upEventDict.ContainsKey(input.Key))
+            //Key Up
+            if (inputDict[input.Key].Position[0] == 1)
             {
-              Console.WriteLine("Key Up Event Firing:");
-              upEventDict[input.Key](input.Value);
+              //Key up for first time
+              Console.WriteLine("Key [{0}] Up", input.Key);
+              if (upEventDict.ContainsKey(input.Key))
+              {
+                Console.WriteLine("Key Up Event Firing:");
+                upEventDict[input.Key](input.Value);
+              }
             }
           }
-          */
           break;
         case InputType.Axis:
           /*
@@ -253,7 +303,7 @@ class InputHandler : MonoBehaviour
         case InputType.Accelerometer:
           break;
         default:
-          Console.WriteLine("INPUT SYSTEM ERROR \"Update\": key[{0}] has invalid type", input.Key);
+          Debug.LogWarning("INPUT SYSTEM ERROR \"Update\": key["+input.Key+"] has invalid type");
           break;
       }
       
@@ -267,7 +317,6 @@ class InputHandler : MonoBehaviour
     }
   }
 }
-
 
 
 
