@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
@@ -21,6 +22,10 @@ public class Donut : MonoBehaviour
 	public float SwayLimit = 90f;
 	
 	[SerializeField]
+	[Range(1f, 100f)]
+	public float testShakeAmount = 10f;
+	
+	[SerializeField]
     private float _moveSpeed;
 
     [SerializeField][Tooltip("Distance the path's centre to the right, at which the donut is stopped from going out of bounds. ")]
@@ -35,10 +40,13 @@ public class Donut : MonoBehaviour
 	private bool _oldLeft;
 	private bool _oldRight;
 
+	[SerializeField]
 	public int Score;
 	private TextMeshProUGUI _scoreHUD;
 
 	public bool IsJumping;
+	
+	InputHandler inh = new InputHandler();
 	
 	
     void Start()
@@ -60,6 +68,14 @@ public class Donut : MonoBehaviour
 
 	    //Initialise IsJumping.
 	    IsJumping = false;
+	    
+	    
+	    inh.TrackInput(KeyCode.L, InputType.Button);
+	    inh.AddEvent(KeyCode.L, InputEventType.Down, delegate (InputData inp){
+				Console.WriteLine("L Pressed");
+			    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
+		    }
+	    );
     }
 
 
@@ -72,11 +88,18 @@ public class Donut : MonoBehaviour
 	    DonutControl();
 
 	    //Jump
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
+	    if (Input.GetKeyDown(KeyCode.Space))
+	    {
 			
-			_animHelper.DonutJumpStart(0f);
-		}
+		    _animHelper.DonutJumpStart(0f);
+	    }
+	    
+	    //Shake
+	    if (Input.GetKeyDown(KeyCode.K))
+	    {
+			Debug.Log("Shake K");
+		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
+	    }
 
 	    //Move left.
 	    if (_isLeftMoving &&  !_oldLeft)

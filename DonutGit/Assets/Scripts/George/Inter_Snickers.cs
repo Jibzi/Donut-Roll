@@ -15,6 +15,7 @@ public class Inter_Snickers : Interactable
 
 
         //Do visuals
+        Camera.main.GetComponent<ChappersCam>().Shake(25f);
 
 
         //Destroy self

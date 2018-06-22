@@ -15,6 +15,7 @@ public class Inter_CurlyWurly : Interactable
         
         
         //Do visuals
+        Camera.main.GetComponent<ChappersCam>().Shake(50f);
         
         
         //Destroy self

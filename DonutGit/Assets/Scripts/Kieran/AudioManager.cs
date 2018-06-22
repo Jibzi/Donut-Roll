@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
     //Delegate method to play a sound upon having collected a collectable.
     void PlayCollectedSound(object sender, System.EventArgs eventArgs)
     {
+        Debug.Log("Collectable Pickup Sound");
         Play(sounds[1].name);
     }
 

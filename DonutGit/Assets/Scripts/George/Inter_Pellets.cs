@@ -15,6 +15,7 @@ public class Inter_Pellets : Interactable
 
 
         //Do visuals
+        Camera.main.GetComponent<ChappersCam>().Shake(10f);
 
 
         //Destroy self

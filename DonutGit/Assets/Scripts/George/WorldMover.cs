@@ -7,6 +7,7 @@ public class WorldMover : MonoBehaviour
 
 	//
 	//Author: George
+	//		  Will
 	//
 	//Manager script that handles the world speed variable that the road peices can grab, so they can slowly ramp up in speed.
 	//
@@ -16,7 +17,7 @@ public class WorldMover : MonoBehaviour
 	[SerializeField]
 	[Range(0f, 1f)]
 	[Tooltip(
-		"How much extra speed is added to the world speed every second. Recommended 0.1")]
+		"How much extra speed is added to the world speed every second. Recommended 0.075")]
 	private float _worldAcceleration;
 
 	
@@ -25,7 +26,7 @@ public class WorldMover : MonoBehaviour
 	void Start ()
 	{
 
-		WorldSpeed = 10f;
+		WorldSpeed = 15f;
 	}
 	
 	

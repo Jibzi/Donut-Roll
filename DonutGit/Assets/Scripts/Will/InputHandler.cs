@@ -72,7 +72,7 @@ public class InputData
   //initialise variables
   
   //The string of the input
-  private string     input;
+  private KeyCode    input;
   //The type of the input
   private InputType  type;
   //The position of the input
@@ -87,7 +87,7 @@ public class InputData
   private float      lastUpdate;
     
   //Constructor takes input identifier, input type, and input position
-  public InputData(string _keyIdentifier, InputType _type, float[] _position )
+  public InputData(KeyCode _keyIdentifier, InputType _type, float[] _position )
   {
     input        =   _keyIdentifier;
     type         =   _type;
@@ -98,59 +98,59 @@ public class InputData
   }
   
   //The string of the input
-  public string Input
+  public KeyCode Input
   {
     get { return input; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set INPUT of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set INPUT. Property is readonly"); }
   }
   
   //The type of the input
   public InputType Type
   {
     get { return type; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set TYPE of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TYPE. Property is readonly"); }
   }
   
   //The position of the input
   public float[] Position
   {
     get { return position; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set POSITION of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITION. Property is readonly"); }
   }
   
   //The delta position between last frame and this frame
   public float[] PositionDelta
   {
     get { return positionDelta; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONDELTA of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONDELTA. Property is readonly"); }
   }
   
   //The time the key has been in its current position
   public float PositionTime
   {
     get { return positionTime; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONTIME of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONTIME. Property is readonly"); }
   }
   
   //The total time the key has been tracked for
   public float TimeTracked
   {
     get { return timeTracked; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set TIMETRACKED of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TIMETRACKED. Property is readonly"); }
   }
   
   //The timestamp of the last update
   public float LastUpdate
   {
     get { return lastUpdate; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set LASTUPDATE of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set LASTUPDATE. Property is readonly"); }
   }
   
   //The time delta between the last update and now
   public float UpdateDelta
   {
     get { return Time.time - LastUpdate; }
-    set { /*readonly*/ Debug.LogWarning("Cannot set UPDATEDELTA of " + input + " Property is readonly"); }
+    set { /*readonly*/ Debug.LogWarning("Cannot set UPDATEDELTA. Property is readonly"); }
   }
   
   //Called by InputHandler, should not really be invoked by user
@@ -182,12 +182,11 @@ class InputHandler : MonoBehaviour
 {
   
   //Initialise variables
-  private bool                             touchScreen       =   false;
-  private Dictionary<string, InputData>    inputDict         =   new Dictionary<string, InputData>();
-  private Dictionary<string, Function>     downEventDict     =   new Dictionary<string, Function>();
-  private Dictionary<string, Function>     upEventDict       =   new Dictionary<string, Function>();
-  private Dictionary<string, Function>     changedEventDict  =   new Dictionary<string, Function>();
-  private Dictionary<string, Function>     updateEventDict   =   new Dictionary<string, Function>();
+  private Dictionary<KeyCode, Function>     downEventDict     =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     upEventDict       =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     changedEventDict  =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     updateEventDict   =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, InputData>    inputDict         =   new Dictionary<KeyCode, InputData>();
   
   //Constructor creates an input handler
   public InputHandler()
@@ -196,16 +195,17 @@ class InputHandler : MonoBehaviour
   }
   
   //Method to add input to the dictionary for tracking
-  public void TrackInput(string _keyIdentifier, InputType _inputType)
+  public void TrackInput(KeyCode _keyIdentifier, InputType _inputType)
   {
+    Debug.Log("Received Track Request");
     inputDict.Add(
       _keyIdentifier,
-      new InputData(_keyIdentifier, _inputType, new float[] {1,0})
+      new InputData(_keyIdentifier, _inputType, new float[] {0f,0f})
     );
   }
   
   //Method to remove input from the dictionary
-  public void IgnoreInput(string _keyIdentifier)
+  public void IgnoreInput(KeyCode _keyIdentifier)
   {
     if (inputDict.ContainsKey(_keyIdentifier))
     {
@@ -214,20 +214,20 @@ class InputHandler : MonoBehaviour
   }
 
   //Method to get status of a certain key
-  public InputData GetState(string _keyIdentifier)
+  public InputData GetState(KeyCode _keyIdentifier)
   {
     return this.inputDict[_keyIdentifier];
   }
   
   //Method to get just position of a certain key
-  float[] Position(string _keyIdentifier)
+  float[] Position(KeyCode _keyIdentifier)
   {
     return this.inputDict[_keyIdentifier].Position;
   }
   
   //Method to add a custom event function to be fired when a key goes down, up or each frame
   //Event function will have the InputData for that key passsed to it as the first argument when fired
-  public void AddEvent(string _keyIdentifier, InputEventType _eventType, Function _function)
+  public void AddEvent(KeyCode _keyIdentifier, InputEventType _eventType, Function _function)
   {
     switch (_eventType)
     {
@@ -244,7 +244,7 @@ class InputHandler : MonoBehaviour
         updateEventDict.Add(_keyIdentifier, _function);
         break;
       default:
-        Console.WriteLine("INPUT SYSTEM ERROR \"AddEvent\": event has invalid type");
+        Debug.Log("INPUT SYSTEM ERROR \"AddEvent\": event has invalid type");
         break;
     }
   }
@@ -252,41 +252,43 @@ class InputHandler : MonoBehaviour
   //Updates every input once per frame
   private void Update ()
   {
-    foreach(KeyValuePair<string, InputData> input in inputDict)
+    foreach(KeyValuePair<KeyCode, InputData> input in inputDict)
     {
       // do something with input.Value or input.Key
-      Console.WriteLine("Updating Input Dictionary [{0}]: {1}", input.Key, input.Value);
+      //Debug.Log("Updating Input Dictionary ["+input.Key+"]: ", input.Value.ToString());
       
       switch (input.Value.Type)
       {
         case InputType.Button:
-          if (Input.GetKey(input.Value.Input))
+          if (Input.GetKeyDown(input.Value.Input))
           {
             //Key Down
             if (inputDict[input.Key].Position[0] == 0)
             {
               //Key down for first time
-              Console.WriteLine("Key [{0}] Down", input.Key);
+              Debug.Log("Key Down");
               if (downEventDict.ContainsKey(input.Key))
               {
-                Console.WriteLine("Key Down Event Firing:");
+                Debug.Log("Key Down Event Firing:");
                 downEventDict[input.Key](input.Value);
               }
             }
+            inputDict[input.Key].Update(new float[] {1f,0f});
           }
           else
           {
             //Key Up
-            if (inputDict[input.Key].Position[0] == 1)
+            if (inputDict[input.Key].Position[0] == 1f)
             {
               //Key up for first time
-              Console.WriteLine("Key [{0}] Up", input.Key);
+              Debug.Log("Key Up");
               if (upEventDict.ContainsKey(input.Key))
               {
-                Console.WriteLine("Key Up Event Firing:");
+                Debug.Log("Key Up Event Firing:");
                 upEventDict[input.Key](input.Value);
               }
             }
+            inputDict[input.Key].Update(new float[] {0f,0f});
           }
           break;
         case InputType.Axis:
@@ -303,14 +305,14 @@ class InputHandler : MonoBehaviour
         case InputType.Accelerometer:
           break;
         default:
-          Debug.LogWarning("INPUT SYSTEM ERROR \"Update\": key["+input.Key+"] has invalid type");
+          Debug.LogWarning("INPUT SYSTEM ERROR \"Update\": key has invalid type");
           break;
       }
       
       //Do this last so it goes in order: Down, Update(*n) Up
       if (updateEventDict.ContainsKey(input.Key))
       {
-        Console.WriteLine("Event Firing:");
+        Debug.Log("Event Firing:");
         updateEventDict[input.Key](input.Value);
       }
       
