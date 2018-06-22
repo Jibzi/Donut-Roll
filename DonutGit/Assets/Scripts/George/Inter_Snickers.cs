@@ -11,11 +11,11 @@ public class Inter_Snickers : Interactable
         base.Interact(interactor);
 
         //Do effect
-        interactor.Score -= 100;
+        interactor.Score = 0;
 
 
         //Do visuals
-        Camera.main.GetComponent<ChappersCam>().Shake(25f);
+        Camera.main.GetComponent<ChappersCam>().Shake(8f);
 
 
         //Destroy self

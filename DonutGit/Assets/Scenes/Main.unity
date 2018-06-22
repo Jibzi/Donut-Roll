@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldSpeed: 10
-  _worldAcceleration: 0.04
+  _worldAcceleration: 0.17
 --- !u!1001 &342593822
 Prefab:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
-    loop: 1
+    loop: 0
 --- !u!4 &1131561849
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,12 +1139,12 @@ Prefab:
     - target: {fileID: 135215214431089988, guid: 91c29a8a606982045af8868eba3bcaad,
         type: 2}
       propertyPath: m_Radius
-      value: 0.6
+      value: 0.6446403
       objectReference: {fileID: 0}
     - target: {fileID: 135215214431089988, guid: 91c29a8a606982045af8868eba3bcaad,
         type: 2}
       propertyPath: m_Center.y
-      value: -0.4
+      value: -0.35535967
       objectReference: {fileID: 0}
     - target: {fileID: 135215214431089988, guid: 91c29a8a606982045af8868eba3bcaad,
         type: 2}

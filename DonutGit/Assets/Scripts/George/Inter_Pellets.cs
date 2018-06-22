@@ -11,11 +11,11 @@ public class Inter_Pellets : Interactable
         base.Interact(interactor);
 
         //Do effect
-        interactor.Score -= 50;
+        interactor.Score = 0;
 
 
         //Do visuals
-        Camera.main.GetComponent<ChappersCam>().Shake(10f);
+        Camera.main.GetComponent<ChappersCam>().Shake(6f);
 
 
         //Destroy self
