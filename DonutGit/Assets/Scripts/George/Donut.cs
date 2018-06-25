@@ -136,7 +136,7 @@ public class Donut : MonoBehaviour
 	    );
 
     }
-
+	
 
 	//Where the donut checks for collisions with "Interactables". While jumping, collision checking is turned off.
 	//The donut will collide with any collider with the "Is Trigger" option ticked. The donut will then check for

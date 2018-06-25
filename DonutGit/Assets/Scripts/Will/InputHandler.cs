@@ -3,7 +3,7 @@
   
   Will Chapman
   14/06/2018
-  20/06/2018
+  25/06/2018
   
     
   Now Works!
@@ -180,12 +180,15 @@ Only use one otherwise the redundant duplicates will just eat memory and CPU tim
 class InputHandler : MonoBehaviour
 {
   
-  //Initialise variables
+  //Initialise Event Dictionaries
   private Dictionary<KeyCode, Function>     downEventDict     =   new Dictionary<KeyCode, Function>();
   private Dictionary<KeyCode, Function>     upEventDict       =   new Dictionary<KeyCode, Function>();
   private Dictionary<KeyCode, Function>     changedEventDict  =   new Dictionary<KeyCode, Function>();
   private Dictionary<KeyCode, Function>     updateEventDict   =   new Dictionary<KeyCode, Function>();
   private Dictionary<KeyCode, InputData>    inputDict         =   new Dictionary<KeyCode, InputData>();
+  
+  //Store Current KeyMap
+  private KeyMap map;
   
   //Constructor creates an input handler
   public InputHandler()

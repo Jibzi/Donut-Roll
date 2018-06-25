@@ -3,6 +3,7 @@
   
   Will Chapman
   19/06/2018
+  25/06/2018
   
   Sets the position of the camera to a distance (*positionFraction) between the origin and donut position,
   and aims it at the donut(+an offset).
