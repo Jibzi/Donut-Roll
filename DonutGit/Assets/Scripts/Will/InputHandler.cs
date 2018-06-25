@@ -25,14 +25,12 @@
   The time delta between this update and the last
   
   Syntax for adding events to key presses is:
-  InputHandler.AddEvent(string key, 
-    
-    delegate (InputData input) //"input" is recommended argument name
-            {
-                //code
-            }
-
-    );
+  
+	   InputHandler.AddEvent(KeyCode, InputEventType, delegate (InputData inp)
+	   {
+        Debug.Log("L Down");
+        Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
+     });
   
 */
 
