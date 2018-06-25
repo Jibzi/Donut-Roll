@@ -18,10 +18,6 @@ public class Donut : MonoBehaviour
 {
 
 	[SerializeField]
-	[Range(0, 90)]
-	public float SwayLimit = 90f;
-	
-	[SerializeField]
 	[Range(1f, 100f)]
 	public float testShakeAmount = 10f;
 	
@@ -88,12 +84,16 @@ public class Donut : MonoBehaviour
 	    DonutControl();
 
 	    //Jump
-	    if (Input.GetKeyDown(KeyCode.Space))
+	    if (!IsJumping)
 	    {
-			
-		    _animHelper.DonutJumpStart(0f);
+		    
+		    if (Input.GetKeyDown(KeyCode.Space))
+		    {
+
+			    _animHelper.DonutJumpStart(0f);
+		    }
 	    }
-	    
+
 	    //Shake
 	    if (Input.GetKeyDown(KeyCode.K))
 	    {
