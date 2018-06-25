@@ -220,7 +220,7 @@ class InputHandler : MonoBehaviour
   }
   
   //Method to get just position of a certain key
-  float[] Position(KeyCode _keyIdentifier)
+  public float[] Position(KeyCode _keyIdentifier)
   {
     return this.inputDict[_keyIdentifier].Position;
   }
@@ -260,8 +260,10 @@ class InputHandler : MonoBehaviour
       switch (input.Value.Type)
       {
         case InputType.Button:
-          if (Input.GetKeyDown(input.Value.Input))
+          Debug.Log("Was a button");
+          if (Input.GetKeyDown(input.Key))
           {
+            Debug.Log("Found Key");
             //Key Down
             if (inputDict[input.Key].Position[0] == 0)
             {

@@ -26,10 +26,12 @@ public class ChappersCam : MonoBehaviour
 	                   private     System.Random rand                  = new System.Random();
 	
 	//Camera Position/Origin variables
+	[SerializeField]   private     Vector3       shakeFactor;
 	[SerializeField]   private     Vector3       currentTarget;
 	[SerializeField]   private     Vector3       origin                = new Vector3(0f, 14f, -14.3f);
 	[SerializeField]   private     Vector3       donutOffset           = new Vector3(0f, 0.65f, 5.2f);
 	[SerializeField]   private     Vector3       positionFraction      = new Vector3(0.5f, 0.05f, 0.125f);
+
 	
 	//Smoothing Variables
 	[SerializeField]
@@ -38,16 +40,11 @@ public class ChappersCam : MonoBehaviour
 	[SerializeField]
 	[Range(1f, 128f)]
 	private     float         positionSmoothFactor  = 4f;
-	[SerializeField]
-	[Range(1f, 128f)]
-	private     Vector3       shakeFactor;
-
 	void Start()
 	{
 		//Initialise ChappersCam, then set RunCamera to true
 		donutCameraTarget = GameObject.Find("Donut");
 		currentTarget = donutCameraTarget.transform.position;
-		chappersCam = true;
 	}
 
 	//Won't use this camera trickery when not required.

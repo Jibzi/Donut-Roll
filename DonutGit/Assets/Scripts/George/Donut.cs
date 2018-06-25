@@ -8,6 +8,7 @@ using UnityEngine.PostProcessing;
 
 //
 //Author: George
+//		  Will
 //
 //Adds user input to the donut. Handles left and right movement, and jumping. Contrains the player to the road.
 //Also handles playing certain animations, like jump.
@@ -55,7 +56,7 @@ public class Donut : MonoBehaviour
 	    //Grab the AnimHelper, adds some functionality to calling animations.
 	    _animHelper = this.GetComponent<AnimHelper>();
 	    
-	    //Initialise th left and right constrains, or "walls".
+	    //Initialise the left and right constrains, or "walls".
         _leftConstraint = -5f;
         _rightConstraint = 5f;
 	    
@@ -68,7 +69,7 @@ public class Donut : MonoBehaviour
 	    
 	    inh.TrackInput(KeyCode.L, InputType.Button);
 	    inh.AddEvent(KeyCode.L, InputEventType.Down, delegate (InputData inp){
-				Console.WriteLine("L Pressed");
+				Debug.Log("L Pressed");
 			    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
 		    }
 	    );
@@ -97,7 +98,14 @@ public class Donut : MonoBehaviour
 	    //Shake
 	    if (Input.GetKeyDown(KeyCode.K))
 	    {
-			Debug.Log("Shake K");
+		    Debug.Log("Shake K");
+		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
+	    }
+
+	    //Shake L IF
+	    if (inh.Position(KeyCode.L)[0] == 1f)
+	    {
+		    Debug.Log("Shake L IF");
 		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
 	    }
 
@@ -131,7 +139,8 @@ public class Donut : MonoBehaviour
 			if (!IsJumping)
 			{
 				
-				if (other.GetComponent<Interactable>() != null)
+				//Check to see if it's Interactable and CanCollide
+				if (other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().CanCollide)
 				{
 					other.GetComponent<Interactable>().Interact(this);
 				}

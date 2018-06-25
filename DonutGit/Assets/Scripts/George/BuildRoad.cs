@@ -21,8 +21,8 @@ public class BuildRoad : MonoBehaviour
 	void Start ()
 	{
 
-		//Tune the road length here.
-		_roadLength = 6;
+		//Tune the road length here. Updated to 7 to allow for Road behind camera - Will
+		_roadLength = 7;
 		
 		MakeTheRoad();
 	}

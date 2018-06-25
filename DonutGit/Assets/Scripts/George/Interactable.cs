@@ -7,15 +7,20 @@ public class Interactable : MonoBehaviour
 
     //
     //Author: George
+    //        Will
     //
     //Purely to set the structor of children that inherit from this, so that unique scripts can be called all through 
     //this one virtual function.
     //
+<<<<<<< HEAD
 
     //The AudioManager
     private AudioManager AMa;
     //Whether the inheritor is an obstacle or collectable.
     protected bool isCollectable;
+=======
+    private bool canCollide = true;
+>>>>>>> cccd3d358b6c5acf0fbd14d8b8b1ec3c51a55f17
     
 
     private void Awake()
@@ -28,6 +33,7 @@ public class Interactable : MonoBehaviour
         
     }
 
+<<<<<<< HEAD
     protected void CheckTypeThenPlaySound()
     {
         if (isCollectable)
@@ -62,4 +68,11 @@ public class Interactable : MonoBehaviour
         AMa = GetComponent<AudioManager>();
     }
 
+=======
+    public bool CanCollide
+    {
+        get { return canCollide; }
+        set { canCollide = value; }
+    }
+>>>>>>> cccd3d358b6c5acf0fbd14d8b8b1ec3c51a55f17
 }

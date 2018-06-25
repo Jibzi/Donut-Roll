@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class WorldMover : MonoBehaviour
 	[Range(0f, 1f)]
 	[Tooltip(
 		"How much extra speed is added to the world speed every second. Recommended 0.075")]
-	private float _worldAcceleration;
+	public float WorldAcceleration;
 
 	
 	
@@ -26,7 +27,8 @@ public class WorldMover : MonoBehaviour
 	void Start ()
 	{
 
-		WorldSpeed = 10f;
+		WorldSpeed = 13f;
+		WorldAcceleration = 0.075f;
 	}
 	
 	
@@ -34,6 +36,6 @@ public class WorldMover : MonoBehaviour
 	void Update ()
 	{
 
-			WorldSpeed += (Time.deltaTime * _worldAcceleration);
+		WorldSpeed = Mathf.Clamp(WorldSpeed + (Time.deltaTime * WorldAcceleration), 0f, Mathf.Infinity);
 	}
 }
