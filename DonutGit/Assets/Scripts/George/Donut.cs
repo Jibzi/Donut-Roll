@@ -91,7 +91,7 @@ public class Donut : MonoBehaviour
 		    if (Input.GetKeyDown(KeyCode.Space))
 		    {
 
-			    _animHelper.DonutJumpStart(0f);
+			    _animHelper.Donut_Jump_Start(0f);
 		    }
 	    }
 
@@ -113,14 +113,14 @@ public class Donut : MonoBehaviour
 	    if (_isLeftMoving &&  !_oldLeft)
 	    {
 		    
-		    _animHelper.DonutMoveLeftStart(0f);
+		    _animHelper.Donut_BeginMoveLeft_Start(0f);
 	    }
 
 	    //Move right.
 	    if (_isRightMoving && !_oldRight)
 	    {
 		    
-		    _animHelper.DonutMoveRightStart(0f);
+		    _animHelper.Donut_BeginMoveRight_Start(0f);
 	    }
 
 	    //Store our current left and right bools, so we can use the delta between this frame and next frame, on next frame.

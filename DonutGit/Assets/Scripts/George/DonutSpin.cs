@@ -14,6 +14,7 @@ public class DonutSpin : MonoBehaviour
 {
 
 	private Vector3 _spinSpeed;
+	private WorldMover _worldMover;
 
 	public float SpinSpeed;
 	
@@ -21,6 +22,7 @@ public class DonutSpin : MonoBehaviour
 	void Start ()
 	{
 
+		_worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +31,6 @@ public class DonutSpin : MonoBehaviour
 
 		_spinSpeed.y = SpinSpeed * Time.deltaTime;
 		
-		transform.Rotate(_spinSpeed);
+		transform.Rotate(_spinSpeed * (_worldMover.WorldSpeed / 10));
 	}
 }

@@ -52,7 +52,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4764319578539306}
   - component: {fileID: 114457510383601134}
-  - component: {fileID: 114830738088559062}
   - component: {fileID: 65662470472011816}
   - component: {fileID: 114254157147061862}
   m_Layer: 0
@@ -183,14 +182,3 @@ MonoBehaviour:
   WobbleFrequency: 0
   WobbleAmplitude: 0
   RotationSpeed: {x: 0, y: 0, z: 0}
---- !u!114 &114830738088559062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949087088815328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bd8b88f753e9479d10d7a60a6ac6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
