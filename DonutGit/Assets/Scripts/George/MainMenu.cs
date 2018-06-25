@@ -21,7 +21,6 @@ public class MainMenu : MonoBehaviour {
     const bool kDisabled = false;
     //
     //Audio
-    [SerializeField]
     AudioMixer audioMixer;
     float volume;
     float lastVolume;
@@ -143,6 +142,13 @@ public class MainMenu : MonoBehaviour {
     private void UnMuteVolume()
     {
         volume = lastVolume;
+    }
+    //
+    //Make sure the AudioMixer is valid. Print an error if it is not.
+    private void FindAudioMixer()
+    {
+        audioMixer = GetComponent<AudioMixer>();
+        if (!audioMixer) { Debug.LogError("Error: audioMixer is invalid"); }
     }
     //
     //

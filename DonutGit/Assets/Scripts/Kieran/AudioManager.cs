@@ -19,8 +19,8 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        //
-        DontDestroyOnLoad(gameObject);  //Forbid the gameObject from being destroyed on having loaded
+        //Forbid the gameObject from being destroyed on having loaded
+        DontDestroyOnLoad(gameObject);  
         //Changed the foreach loop to a for loop. Iteratively link the properties of the given sound's properties and those of its source.
         for (int iterator = 0; iterator < sounds.Length; iterator++)
         {
