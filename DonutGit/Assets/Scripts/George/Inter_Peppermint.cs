@@ -13,6 +13,8 @@ public class Inter_Peppermint : Interactable
         //Do effect
         interactor.Score += 50;
         
+        //Play sound
+        PlayTypeSound();
         
         //Do visuals
         

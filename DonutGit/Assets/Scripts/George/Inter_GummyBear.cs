@@ -13,6 +13,8 @@ public class Inter_GummyBear : Interactable
         //Do effect
         interactor.Score+= 10;
         
+        //Play sound
+        PlayTypeSound();
         
         //Do visuals
         

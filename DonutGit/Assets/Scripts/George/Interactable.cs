@@ -25,7 +25,8 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        FindAudioManager();
+        //Init Audio manager
+        AMa = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
 
@@ -35,7 +36,7 @@ public class Interactable : MonoBehaviour
     }
 
 
-    protected void CheckTypeThenDoThings()
+    protected void PlayTypeSound()
     {
         if (isCollectable)
         {
@@ -50,7 +51,7 @@ public class Interactable : MonoBehaviour
     private void PlayCollectableSound()
     {
         //The constant index of the pickup
-            //const int kPickupIndex = 2;
+            //const int kPickupIndex = 1;
         //Play the pickup noise
         AMa.Play("Pickup");
     }
@@ -62,13 +63,6 @@ public class Interactable : MonoBehaviour
         //Play the obstacle noise
         AMa.Play("Crash");
     }
-
-
-    private void FindAudioManager()
-    {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>();
-    }
-
 
     public bool Triggerable
     {

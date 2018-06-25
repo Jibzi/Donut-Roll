@@ -43,7 +43,7 @@ public class Donut : MonoBehaviour
 
 	public bool IsJumping;
 	
-	InputHandler inh = new InputHandler();
+	InputHandler inh;
 	
 	
     void Start()
@@ -66,10 +66,18 @@ public class Donut : MonoBehaviour
 	    //Initialise IsJumping.
 	    IsJumping = false;
 	    
+	    //Initialise Input handler
+	    inh = GameObject.Find("Player").AddComponent<InputHandler>();
+	    
 	    
 	    inh.TrackInput(KeyCode.L, InputType.Button);
 	    inh.AddEvent(KeyCode.L, InputEventType.Down, delegate (InputData inp){
-				Debug.Log("L Pressed");
+			    Debug.Log("L Down");
+			    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
+		    }
+	    );
+	    inh.AddEvent(KeyCode.L, InputEventType.Up, delegate (InputData inp){
+			    Debug.Log("L Up");
 			    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
 		    }
 	    );
@@ -95,19 +103,12 @@ public class Donut : MonoBehaviour
 		    }
 	    }
 
-	    //Shake
-	    if (Input.GetKeyDown(KeyCode.K))
-	    {
-		    Debug.Log("Shake K");
-		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
-	    }
-
-	    //Shake L IF
+	    /*Shake L IF
 	    if (inh.Position(KeyCode.L)[0] == 1f)
 	    {
 		    Debug.Log("Shake L IF");
 		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
-	    }
+	    }*/
 
 	    //Move left.
 	    if (_isLeftMoving &&  !_oldLeft)

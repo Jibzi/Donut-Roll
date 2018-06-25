@@ -89,12 +89,13 @@ public class InputData
   //Constructor takes input identifier, input type, and input position
   public InputData(KeyCode _keyIdentifier, InputType _type, float[] _position )
   {
-    input        =   _keyIdentifier;
-    type         =   _type;
-    position     =   _position;
-    positionTime =   0;
-    timeTracked  =   0;
-    lastUpdate   =   Time.time;
+    input          =   _keyIdentifier;
+    type           =   _type;
+    position       =   _position;
+    positionDelta  =   new [] {0f, 0f};
+    positionTime   =   0;
+    timeTracked    =   0;
+    lastUpdate     =   Time.time;
   }
   
   //The string of the input
@@ -200,7 +201,7 @@ class InputHandler : MonoBehaviour
     Debug.Log("Received Track Request");
     inputDict.Add(
       _keyIdentifier,
-      new InputData(_keyIdentifier, _inputType, new float[] {0f,0f})
+      new InputData(_keyIdentifier, _inputType, new []{0f, 0f})
     );
   }
   
@@ -256,56 +257,58 @@ class InputHandler : MonoBehaviour
     {
       // do something with input.Value or input.Key
       //Debug.Log("Updating Input Dictionary ["+input.Key+"]: ", input.Value.ToString());
-      
+
       switch (input.Value.Type)
       {
         case InputType.Button:
-          Debug.Log("Was a button");
-          if (Input.GetKeyDown(input.Key))
+          //Key Down
+          if (Input.GetKey(input.Key))
           {
-            Debug.Log("Found Key");
-            //Key Down
-            if (inputDict[input.Key].Position[0] == 0)
+            
+            //Fire event if it exists and was up before
+            if (inputDict[input.Key].Position[0] == 0f && downEventDict.ContainsKey(input.Key))
             {
-              //Key down for first time
-              Debug.Log("Key Down");
-              if (downEventDict.ContainsKey(input.Key))
-              {
-                Debug.Log("Key Down Event Firing:");
-                downEventDict[input.Key](input.Value);
-              }
+              Debug.Log("Key Down Event Firing");  
+              downEventDict[input.Key](input.Value);
             }
-            inputDict[input.Key].Update(new float[] {1f,0f});
+            
+            inputDict[input.Key].Update(new []{1f, 0f});
+            
           }
+          //Key Up
           else
           {
-            //Key Up
-            if (inputDict[input.Key].Position[0] == 1f)
+            
+            //Fire event if it exists and was down before
+            if (inputDict[input.Key].Position[0] == 1f && upEventDict.ContainsKey(input.Key))
             {
-              //Key up for first time
-              Debug.Log("Key Up");
-              if (upEventDict.ContainsKey(input.Key))
-              {
-                Debug.Log("Key Up Event Firing:");
-                upEventDict[input.Key](input.Value);
-              }
+              Debug.Log("Key Up Event Firing");
+              upEventDict[input.Key](input.Value);
             }
-            inputDict[input.Key].Update(new float[] {0f,0f});
+
+            inputDict[input.Key].Update(new []{0f, 0f});
+            
           }
           break;
+        
         case InputType.Axis:
           /*
            input.Value.Position[0] = UnityInput.GetAxisPos(input.Key)[0];
            */
           break;
+        
         case InputType.Trigger:
           break;
+        
         case InputType.Mouse:
           break;
+        
         case InputType.Touch:
           break;
+        
         case InputType.Accelerometer:
           break;
+        
         default:
           Debug.LogWarning("INPUT SYSTEM ERROR \"Update\": key has invalid type");
           break;

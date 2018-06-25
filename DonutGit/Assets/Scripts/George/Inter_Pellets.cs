@@ -13,12 +13,15 @@ public class Inter_Pellets : Interactable
         //Do effect
         interactor.Score = 0;
 
+        //Play sound
+        PlayTypeSound();
 
         //Do visuals
         Camera.main.GetComponent<ChappersCam>().Shake(6f);
 
 
-        //Destroy self
-        Destroy(gameObject);
+        //Don't destroy self
+        Triggerable = false;
+        //Destroy(gameObject);
     }
 }
