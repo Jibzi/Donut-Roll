@@ -10,13 +10,13 @@ public class Inter_CurlyWurly : Interactable
     {
         base.Interact(interactor);
         this.isCollectable = false;
-
+        AudioManager AMa = base.AMa;
 
         //Do effect
         interactor.Score = 0;
 
         //Play sound
-        CheckTypeThenPlaySound();
+        CheckTypeThenDoThings();
 
         //Do visuals
         Camera.main.GetComponent<ChappersCam>().Shake(10f);
@@ -24,13 +24,13 @@ public class Inter_CurlyWurly : Interactable
         GameObject.Find("Player").GetComponent<AnimHelper>().DonutJumpStart(0f);
         GameObject.Find("Donut").GetComponent<DonutSpin>().SpinSpeed = 0f;
         
-        AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        //AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
             
-        am.Play("deathsound");
+        
         
         
         //Don't destroy self
-        CanCollide = false;
+        Triggerable = false;
         //Destroy(gameObject);
     }
 }

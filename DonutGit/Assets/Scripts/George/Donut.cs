@@ -140,7 +140,7 @@ public class Donut : MonoBehaviour
 			{
 				
 				//Check to see if it's Interactable and CanCollide
-				if (other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().CanCollide)
+				if (other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().Triggerable)
 				{
 					other.GetComponent<Interactable>().Interact(this);
 				}
