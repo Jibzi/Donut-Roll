@@ -10,7 +10,8 @@
   Add events to the virtual buttons/check their state
   
   ToDo: Add detail to virtual buttons
-  TODO: Update details of virtual buttons on MonoBehaviour.Update()
+  ToDo: Update virtual name change to effect keymap dictionary
+  ToDo: Update details of virtual buttons on MonoBehaviour.Update()
   ToDo: Connect IH events to virtual button events
   
 */
@@ -25,17 +26,29 @@ using UnityEngine;
 
 
 //Holds all stats for a virtual button
-class VirtualButton
+//Inherits from Input Data, sets keycode to keyCode.None as not likely to be used anywhere else
+class VirtualButton : InputData
 {
+  
+  //The name of the input
   private string name;
+  //A list of all the keycodes that contribute to this virtual button 
   private List<KeyCode> keys;
   
-  public VirtualButton(string _name, List<KeyCode> _keys)
+  //
+  public VirtualButton(string _name, List<KeyCode> _keys) : base (KeyCode.None, InputType.Virtual, new [] {0f, 0f})
   {
     name = _name;
     keys = _keys;
   }
 
+  
+  //The name of the input
+  public string Name
+  {
+    get { return name; }
+    set { name = value; }
+  }
 
   public void AddKey(KeyCode _key)
   {
@@ -60,6 +73,25 @@ class VirtualButton
       Debug.LogWarning("Virtual key \""+ name + "\" does not contain this key! Aborting Attempt");
     }
   }
+  
+  /*Called by KeyMap, should not really be invoked by user
+  public void override Update(float[] _newPosition)
+  {
+    //Update position delta
+    positionDelta[0] = _newPosition[0] - Position[0];
+    positionDelta[1] = _newPosition[1] - Position[1];
+    //Update position
+    position = _newPosition;
+    //Update Position Time
+    if (positionDelta[0] == 0 && positionDelta[1] == 0)
+    {
+      positionTime += Time.deltaTime;
+    }
+    //Update Time Tracked
+    timeTracked += Time.deltaTime;
+    //Update LastUpdate
+    lastUpdate = Time.time;
+  }*/
   
 }
 

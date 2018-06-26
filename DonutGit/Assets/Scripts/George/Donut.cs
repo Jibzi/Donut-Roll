@@ -88,7 +88,7 @@ public class Donut : MonoBehaviour
 			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Down, delegate(InputData inp)
 			{
 				_moveDirection = -1f;
-				_animHelper.Donut_BeginMoveLeft_Start(0f);
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
 			});
 			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Up, delegate(InputData inp)
 			{
@@ -98,7 +98,7 @@ public class Donut : MonoBehaviour
 			inh.AddEvent(KeyCode.A, InputEventType.Down, delegate(InputData inp)
 			{
 				_moveDirection = -1f;
-				_animHelper.Donut_BeginMoveLeft_Start(0f);
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
 			});
 			inh.AddEvent(KeyCode.A, InputEventType.Up, delegate(InputData inp)
 			{
@@ -109,7 +109,7 @@ public class Donut : MonoBehaviour
 			inh.AddEvent(KeyCode.RightArrow, InputEventType.Down, delegate(InputData inp)
 			{
 				_moveDirection = 1f;
-				_animHelper.Donut_BeginMoveRight_Start(0f);
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
 			});
 			inh.AddEvent(KeyCode.RightArrow, InputEventType.Up, delegate(InputData inp)
 			{
@@ -119,7 +119,7 @@ public class Donut : MonoBehaviour
 			inh.AddEvent(KeyCode.D, InputEventType.Down, delegate(InputData inp)
 			{
 				_moveDirection = 1f;
-				_animHelper.Donut_BeginMoveRight_Start(0f);
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
 			});
 			inh.AddEvent(KeyCode.D, InputEventType.Up, delegate(InputData inp)
 			{
@@ -143,14 +143,17 @@ public class Donut : MonoBehaviour
 		
 	    //Update the score counter.
 	    _scoreHUD.text = Score.ToString();
-	    
-	    //Move the donut
-	    transform.Translate
-	    (
-		    Mathf.Clamp(transform.position.x + (_moveSpeed * Time.deltaTime * _moveDirection), _leftConstraint, _rightConstraint) - transform.position.x, 
-		    0, 
-		    0
-	    );
+
+	    if (!IsDead)
+	    {
+		    //Move the donut
+		    transform.Translate
+		    (
+			    Mathf.Clamp(transform.position.x + (_moveSpeed * Time.deltaTime * _moveDirection), _leftConstraint, _rightConstraint) - transform.position.x, 
+			    0, 
+			    0
+		    );
+	    }
 
     }
 	

@@ -49,7 +49,8 @@ public enum InputType
   Trigger,
   Mouse,
   Touch,
-  Accelerometer
+  Accelerometer,
+  Virtual
 }
 
 //Enum describing the input event type
@@ -69,7 +70,7 @@ public class InputData
 {
   //initialise variables
   
-  //The string of the input
+  //The KeyCode of the input
   private KeyCode    input;
   //The type of the input
   private InputType  type;
@@ -96,7 +97,7 @@ public class InputData
     lastUpdate     =   Time.time;
   }
   
-  //The string of the input
+  //The keycode of the input
   public KeyCode Input
   {
     get { return input; }
