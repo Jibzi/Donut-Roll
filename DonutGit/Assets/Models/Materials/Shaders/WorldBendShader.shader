@@ -8,70 +8,83 @@
 //
 
 
-shader "Custom/Bender"
-{
-Properties{
-_Color ("Main Color", Color) = (1,1,1,1)
-_MainTex ("Base (RGB)", 2D) = "white" {}
-}
+shader "Custom/Bender"{
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+        _BumpMap ("Bumpmap", 2D) = "bump" {}
+        _GlossTex ("Gloss", 2D) = "white" {}
+        _SpecTex ("Specular", 2D) = "white" {}
+    }
 
-SubShader
-{
-Tags { "RenderType" = "Opaque" }
-LOD 200
+    SubShader
+    {
+        Tags { "RenderType" = "Opaque" }
+        LOD 200
 
-CGPROGRAM
-#pragma surface surf Lambert vertex:vert addshadow
+        CGPROGRAM
+        #pragma surface surf BlinnPhong vertex:vert addshadow
 
-//Globals
-uniform float2 _BendAmount;
-uniform float3 _BendStart;
-uniform float _BendFalloff;
+        //Globals
+        uniform float2 _BendAmount;
+        uniform float3 _BendStart;
+        uniform float _BendFalloff;
 
-sampler2D _MainTex;
-fixed4 _Color;
+        struct Input
+        {
+            float2 uv_MainTex;
+            float2 uv_BumpMap;
+            float2 uv_GlossTex;
+            float2 uv_SpecTex;
+        };
 
-struct Input{
-float2 uv_MainTex;
-};
+        sampler2D _MainTex;
+        sampler2D _BumpMap;
+        sampler2D _GlossTex;
+        sampler2D _SpecTex;
+       
 
-float4 Warp(float4 v){
+        float4 Warp(float4 v)
+        {
 
-//reduce bend amount from an easily changed editor value to one that works for the maths.
-_BendAmount *= 0.0001;
+            //reduce bend amount from an easily changed editor value to one that works for the maths.
+            _BendAmount *= 0.0001;
 
-//Get verts world space position
-float4 world = mul(unity_ObjectToWorld, v);
+            //Get verts world space position
+            float4 world = mul(unity_ObjectToWorld, v);
 
-//Calulate the difference between the world position of the vertex and the BendStart, which should be set to the camera.
-float dist = length(world.xz-_BendStart.xz);
+            //Calulate the difference between the world position of the vertex and the BendStart, which should be set to the camera.
+            float dist = length(world.xz-_BendStart.xz);
 
-//Apply falloff, which is a grace area where no warping happens.
-dist = max(0, dist-_BendFalloff);
+            //Apply falloff, which is a grace area where no warping happens.
+            dist = max(0, dist-_BendFalloff);
 
-//Distance squared, so the warp curves and is not linear.
-dist = dist*dist;
+           //Distance squared, so the warp curves and is not linear.
+            dist = dist*dist;
 
-//Set the new world position for the vertex.
-world.xy += dist*_BendAmount;
+            //Set the new world position for the vertex.
+            world.xy += dist*_BendAmount;
 
-return mul(unity_WorldToObject, world);
-}
+            return mul(unity_WorldToObject, world);
+        }
 
-void vert(inout appdata_full v){
+        void vert(inout appdata_full v)
+        {
 
-//Handle input of verts and hand them over the warp function.
-v.vertex = Warp(v.vertex);
-}
+            //Handle input of verts and hand them over the warp function.
+            v.vertex = Warp(v.vertex);
+        }
 
-//Basic surface shader, does colour and albedo map.
-void surf(Input IN, inout SurfaceOutput o){
-fixed4 c =tex2D(_MainTex, IN.uv_MainTex) * _Color;
-o.Albedo = c.rgb;
-o.Alpha = c.a;
-}
-
-ENDCG
-}
+        //Basic surface shader, does colour and albedo map.
+        void surf (Input IN, inout SurfaceOutput o)
+        {
+            o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+            o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
+            o.Gloss = tex2D (_GlossTex, IN.uv_GlossTex).rgb;
+            o.Specular = tex2D (_SpecTex, IN.uv_SpecTex).rgb;
+            o.Alpha = tex2D (_MainTex, IN.uv_MainTex).a;
+        }
+        ENDCG
+    }
 	FallBack "Mobile/Diffuse"
 }
