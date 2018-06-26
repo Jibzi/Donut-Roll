@@ -14,14 +14,12 @@ public class Inter_Snickers : Interactable
         interactor.Score = 0;
         
         //Play sound
-        PlayTypeSound();
+        AMa.Play("Pickup");
 
         //Do visuals
         Camera.main.GetComponent<ChappersCam>().Shake(8f);
 
-
-        //Don't destroy self
-        Triggerable = false;
-        //Destroy(gameObject);
+        //Destroy trigger but not visuals
+        Destroy(this.GetComponent<BoxCollider>());
     }
 }

@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inter_Pellets : Interactable
+public class Inter_CurlyWurly : Interactable
 {
-
-
+    
+        
     public override void Interact(Donut interactor)
     {
+        
         base.Interact(interactor);
 
         //Do effect
         interactor.Score = 0;
 
         //Play sound
-        PlayTypeSound();
+        AMa.Play("Crash");
 
         //Do visuals
-        Camera.main.GetComponent<ChappersCam>().Shake(6f);
+        SpEf.DonutDie();
 
+        //Destroy trigger but not visuals
+        Destroy(this.GetComponent<BoxCollider>());
 
-        //Don't destroy self
-        Triggerable = false;
-        //Destroy(gameObject);
     }
 }

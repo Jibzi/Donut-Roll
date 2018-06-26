@@ -14,7 +14,7 @@ public class Inter_GummyBear : Interactable
         interactor.Score+= 10;
         
         //Play sound
-        PlayTypeSound();
+        AMa.Play("Pickup");
         
         //Do visuals
         

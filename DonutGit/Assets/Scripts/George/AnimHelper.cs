@@ -73,67 +73,23 @@ public class AnimHelper : MonoBehaviour {
     }
     #endregion
 
-    #region MoveRight
-    public void Donut_MoveRight_Start(float Sdelay)
-    {
+    #region Death
 
-        Component animator = GetComponent<Animator>();
-        StartCoroutine(Donut_MoveRight_Play(Sdelay, animator));
+    public void Donut_Death_Start(float Sdelay)
+    {
+        
+        Component animator = this.GetComponent<Animator>();
+        StartCoroutine(Donut_Death_Play(Sdelay, animator));
     }
 
-    private IEnumerator Donut_MoveRight_Play(float delay, Component animator)
-    {
-
-        yield return new WaitForSeconds(delay);
-        animator.GetComponent<Animator>().Play("MoveRight", -1, 0.0f);
-    }
-    #endregion
     
-    #region MoveLeft
-    public void Donut_MoveLeft_Start(float Sdelay)
+    private IEnumerator Donut_Death_Play(float delay, Component animator)
     {
-
-        Component animator = GetComponent<Animator>();
-        StartCoroutine(Donut_MoveLeft_Play(Sdelay, animator));
-    }
-
-    private IEnumerator Donut_MoveLeft_Play(float delay, Component animator)
-    {
-
+        
         yield return new WaitForSeconds(delay);
-        animator.GetComponent<Animator>().Play("MoveLeft", -1, 0.0f);
-    }
-    #endregion
-    
-    #region StopMoveLeft
-    public void Donut_StopMoveLeft_Start(float Sdelay)
-    {
-
-        Component animator = GetComponent<Animator>();
-        StartCoroutine(Donut_StopMoveLeft_Play(Sdelay, animator));
+        
+        animator.GetComponent<Animator>().Play("Death", -1, 0.0f);
     }
 
-    private IEnumerator Donut_StopMoveLeft_Play(float delay, Component animator)
-    {
-
-        yield return new WaitForSeconds(delay);
-        animator.GetComponent<Animator>().Play("StopMoveLeft", -1, 0.0f);
-    }
-    #endregion
-    
-    #region StopMoveRight
-    public void Donut_StopMoveRight_Start(float Sdelay)
-    {
-
-        Component animator = GetComponent<Animator>();
-        StartCoroutine(Donut_StopMoveRight_Play(Sdelay, animator));
-    }
-
-    private IEnumerator Donut_StopMoveRight_Play(float delay, Component animator)
-    {
-
-        yield return new WaitForSeconds(delay);
-        animator.GetComponent<Animator>().Play("StopMoveRight", -1, 0.0f);
-    }
     #endregion
 }

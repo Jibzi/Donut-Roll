@@ -14,7 +14,7 @@ public class Inter_Peppermint : Interactable
         interactor.Score += 50;
         
         //Play sound
-        PlayTypeSound();
+        AMa.Play("Pickup");
         
         //Do visuals
         
