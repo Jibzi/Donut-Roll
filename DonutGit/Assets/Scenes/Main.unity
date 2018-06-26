@@ -388,11 +388,11 @@ MonoBehaviour:
   shakeCam: 0
   shakeFactor: {x: 0, y: 0, z: 0}
   currentTarget: {x: 0, y: 0, z: 0}
-  origin: {x: 0, y: 8, z: -14.3}
+  origin: {x: 0, y: 11.5, z: -14.3}
   donutOffset: {x: 0, y: 0.65, z: 5.2}
   positionFraction: {x: 0.5, y: 0.05, z: 0.125}
-  targetSmoothFactor: 16
-  positionSmoothFactor: 8
+  targetSmoothFactor: 4
+  positionSmoothFactor: 4
 --- !u!1 &325124252
 GameObject:
   m_ObjectHideFlags: 0
