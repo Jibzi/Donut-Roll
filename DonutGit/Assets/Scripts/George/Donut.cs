@@ -39,89 +39,106 @@ public class Donut : MonoBehaviour
 	private TextMeshProUGUI _scoreHUD;
 
 	public bool IsJumping;
+	public bool IsDead;
 	
 	InputHandler inh;
-	
-	
-    void Start()
-    {
-	    
-	    //Initialise the score and UI to display it.
-	    Score = 0;
-	    _scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
-
-	    //Grab the AnimHelper, adds some functionality to calling animations.
-	    _animHelper = this.GetComponent<AnimHelper>();
-	    
-	    //Initialise the left and right constrains, or "walls".
-        _leftConstraint = -5f;
-        _rightConstraint = 5f;
-	    
-	    //Communicate to the "ChappersCam" that we want that script enabled.
-	    Camera.main.GetComponent<ChappersCam>().RunCamera = true;
-
-	    //Initialise IsJumping.
-	    IsJumping = false;
-	    
-	    
-	    //Turn back all ye who do not wish a painful death - Will
-	    
-	    //Initialise Input handler
-	    inh = GameObject.Find("Player").AddComponent<InputHandler>();
-	    
-	    //Track Keys
-	    inh.TrackInput(KeyCode.Space, InputType.Button);
-	    inh.TrackInput(KeyCode.A, InputType.Button);
-	    inh.TrackInput(KeyCode.D, InputType.Button);
-	    inh.TrackInput(KeyCode.LeftArrow, InputType.Button);
-	    inh.TrackInput(KeyCode.RightArrow, InputType.Button);
-	    
-	    /*//////////////////////////////
-	    ///       Define Events      ///
-	    //////////////////////////////*/
-	    
-	    //Move Left
-	    inh.AddEvent(KeyCode.LeftArrow, InputEventType.Down, delegate (InputData inp)
-	    {
-		    _moveDirection = -1f;
-		    _animHelper.Donut_BeginMoveLeft_Start(0f);
-	    });
-	    inh.AddEvent(KeyCode.LeftArrow, InputEventType.Up, delegate (InputData inp) { if (_moveDirection == -1f) _moveDirection = 0f; });
-	    
-	    inh.AddEvent(KeyCode.A, InputEventType.Down, delegate (InputData inp)
-	    {
-		    _moveDirection = -1f;
-		    _animHelper.Donut_BeginMoveLeft_Start(0f);
-	    });
-	    inh.AddEvent(KeyCode.A, InputEventType.Up, delegate (InputData inp) { if (_moveDirection == -1f) _moveDirection = 0f; });
-	    
-	    //Move Right
-	    inh.AddEvent(KeyCode.RightArrow, InputEventType.Down, delegate (InputData inp)
-	    {
-		    _moveDirection = 1f;
-		    _animHelper.Donut_BeginMoveRight_Start(0f);
-	    });
-	    inh.AddEvent(KeyCode.RightArrow, InputEventType.Up, delegate (InputData inp) { if (_moveDirection == 1f) _moveDirection = 0f; });
-	    
-	    inh.AddEvent(KeyCode.D, InputEventType.Down, delegate (InputData inp)
-	    {
-		    _moveDirection = 1f;
-		    _animHelper.Donut_BeginMoveRight_Start(0f);
-	    });
-	    inh.AddEvent(KeyCode.D, InputEventType.Up, delegate (InputData inp) { if (_moveDirection == 1f) _moveDirection = 0f; });
-	    
-	    //Jump
-	    inh.AddEvent(KeyCode.Space, InputEventType.Down, delegate (InputData inp)
-	    {
-		    if (!IsJumping)
-		    {
-				_animHelper.Donut_Jump_Start(0f);
-			}
-	    });
-    }
 
 
-    void Update ()
+	void Start()
+	{
+
+		//Initialise the score and UI to display it.
+		Score = 0;
+		_scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
+
+		//Grab the AnimHelper, adds some functionality to calling animations.
+		_animHelper = this.GetComponent<AnimHelper>();
+
+		//Initialise the left and right constrains, or "walls".
+		_leftConstraint = -5f;
+		_rightConstraint = 5f;
+
+		//Communicate to the "ChappersCam" that we want that script enabled.
+		Camera.main.GetComponent<ChappersCam>().RunCamera = true;
+
+		//Initialise IsJumping.
+		IsJumping = false;
+		
+		//Initialise IsDead.
+		IsDead = false;
+
+
+		//Turn back all ye who do not wish a painful death - Will
+
+		//Initialise Input handler
+		inh = GameObject.Find("Player").AddComponent<InputHandler>();
+
+		//Track Keys
+		inh.TrackInput(KeyCode.Space, InputType.Button);
+		inh.TrackInput(KeyCode.A, InputType.Button);
+		inh.TrackInput(KeyCode.D, InputType.Button);
+		inh.TrackInput(KeyCode.LeftArrow, InputType.Button);
+		inh.TrackInput(KeyCode.RightArrow, InputType.Button);
+
+		/*//////////////////////////////
+		///       Define Events      ///
+		//////////////////////////////*/
+
+			//Move Left
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				_animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.A, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				_animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.A, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			//Move Right
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				_animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.D, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				_animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.D, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
+		
+
+		//Jump
+			inh.AddEvent(KeyCode.Space, InputEventType.Down, delegate(InputData inp)
+			{
+				if (!IsJumping && !IsDead)
+				{
+					_animHelper.Donut_Jump_Start(0f);
+				}
+			});
+	}
+
+
+	void Update ()
     {
 		
 	    //Update the score counter.

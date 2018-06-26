@@ -20,6 +20,7 @@ public class SpellEffects : MonoBehaviour
     private WorldMover _worldMover;
     private AnimHelper _anim;
     private DonutSpin _spin;
+    private Donut _donut;
     
     //Variables
     private bool _isBoosting;
@@ -35,7 +36,8 @@ public class SpellEffects : MonoBehaviour
         _chCam = Camera.main.GetComponent<ChappersCam>();
         _worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
         _anim = player.GetComponent<AnimHelper>();
-        _spin = player.GetComponent<DonutSpin>();
+        _spin = player.GetComponentInChildren<DonutSpin>();
+        _donut = player.GetComponent<Donut>();
     }
 
 
@@ -73,6 +75,7 @@ public class SpellEffects : MonoBehaviour
         _worldMover.WorldAcceleration = -30;
         _anim.Donut_Death_Start(0f);
         _spin.SpinSpeed = 0f;
+        _donut.IsDead = true;
     }
 
     public void DonutBoost()
