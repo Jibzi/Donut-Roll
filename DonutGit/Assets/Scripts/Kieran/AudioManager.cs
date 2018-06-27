@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
         Sound s = System.Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.LogWarning(s.name + " is not a sound.");
+            Debug.LogWarning(name + " is not a sound.");
             return;
         }
         s.source.Play();

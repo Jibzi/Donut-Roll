@@ -14,8 +14,8 @@ public class Interactable : MonoBehaviour
     //this one virtual function.
     //
 
-    //The AudioManager
-    protected AudioManager AMa;
+    //The AudioManager. Static, because it must be the same in every instance.
+    protected static AudioManager AMa;
     //Whether the inheritor is an obstacle or collectable.
     protected bool isCollectable;
 
@@ -25,7 +25,8 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        FindAudioManager();
+        //Get the audio manager
+        AMa = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
 
@@ -34,40 +35,39 @@ public class Interactable : MonoBehaviour
         
     }
 
-
+    //Check if the collisible is a colectable or an obstacle, before carrring out type-specific actions
     protected void CheckTypeThenDoThings()
     {
-        if (isCollectable)
-        {
-            PlayCollectableSound();
-        }
-        else
+        //If the collisible is an obstacle
+        if (!isCollectable)
         {
             PlayObstacleSound();
         }
+        //Else, the collisible must be a collectable
+        else if(isCollectable)
+        {
+            PlayCollectableSound();
+        }
+        //Otherwise, the collisible has not been assigned a type
+        else
+        {
+            Debug.LogError("This collisible is neither a collectable nor an obstacle.");
+        }
     }
 
+    //Play the pickup noise
     private void PlayCollectableSound()
-    {
-        //The constant index of the pickup
-            //const int kPickupIndex = 2;
-        //Play the pickup noise
+    { 
         AMa.Play("Pickup");
     }
-
+    
+    //Play the obstacle noise
     private void PlayObstacleSound()
     {
-        //The constant index of the obstacle's noise
-            //const int kObstacleIndex = 2;
-        //Play the obstacle noise
         AMa.Play("Crash");
     }
 
 
-    private void FindAudioManager()
-    {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>();
-    }
 
 
     public bool Triggerable
