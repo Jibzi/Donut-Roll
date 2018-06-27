@@ -55,12 +55,12 @@ public class SpellEffects : MonoBehaviour
         if (_isBoosting)
         {
             Debug.Log("Boosting");
-            _boostProgress += 10 * Time.deltaTime;
+            _boostProgress += Time.deltaTime;
         }
 
-        if (_boostProgress > 100f)
+        if (_boostProgress > 5f)
         {
-            _worldMover.WorldSpeed -= 3f;
+            _worldMover.WorldSpeed -= 5f;
             Debug.Log("Ended boost!");
             _boostProgress = 0f;
             _isBoosting = false;
