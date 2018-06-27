@@ -10,8 +10,6 @@ public class Inter_Peppermint : Interactable
     {
         base.Interact(interactor);
         
-
-
         //Do effect
         interactor.Score += 50;
         

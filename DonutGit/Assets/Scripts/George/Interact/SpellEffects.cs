@@ -15,6 +15,7 @@ public class SpellEffects : MonoBehaviour
 {
 
     //References
+    //TODO: Remove unused references.
     private AudioManager _aMa;
     private ChappersCam _chCam;
     private WorldMover _worldMover;
@@ -72,7 +73,7 @@ public class SpellEffects : MonoBehaviour
     {
         
         _chCam.Shake(10f);
-        _worldMover.WorldAcceleration = -30;
+        _worldMover.WorldAcceleration = -200;
         _anim.Donut_Death_Start(0f);
         _spin.SpinSpeed = 0f;
         _donut.IsDead = true;
