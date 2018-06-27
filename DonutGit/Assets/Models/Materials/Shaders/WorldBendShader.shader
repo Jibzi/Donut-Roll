@@ -15,6 +15,7 @@ shader "Custom/Bender"{
         _BumpMap ("Bumpmap", 2D) = "bump" {}
         _GlossTex ("Gloss", 2D) = "white" {}
         _SpecTex ("Specular", 2D) = "white" {}
+        _Emission ("Emission", Range( 0, 1)) = 0
     }
 
     SubShader
@@ -36,12 +37,15 @@ shader "Custom/Bender"{
             float2 uv_BumpMap;
             float2 uv_GlossTex;
             float2 uv_SpecTex;
+            float _Emission;
         };
 
         sampler2D _MainTex;
         sampler2D _BumpMap;
         sampler2D _GlossTex;
         sampler2D _SpecTex;
+        float _Emission;
+        
        
 
         float4 Warp(float4 v)
@@ -83,6 +87,7 @@ shader "Custom/Bender"{
             o.Gloss = tex2D (_GlossTex, IN.uv_GlossTex).r;
             o.Specular = tex2D (_SpecTex, IN.uv_SpecTex).r;
             o.Alpha = tex2D (_MainTex, IN.uv_MainTex).a;
+            o.Emission = _Emission;
         }
         ENDCG
     }
