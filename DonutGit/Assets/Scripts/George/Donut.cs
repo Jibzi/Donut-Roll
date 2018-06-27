@@ -23,173 +23,157 @@ public class Donut : MonoBehaviour
 	public float testShakeAmount = 10f;
 	
 	[SerializeField]
-    private float _moveSpeed;
+	[Range(1f, 100f)]
+    private float _moveSpeed = 15f;
+	private float _moveDirection;
 
-    [SerializeField][Tooltip("Distance the path's centre to the right, at which the donut is stopped from going out of bounds. ")]
 	private float _rightConstraint;
     private float _leftConstraint;
 	
 	//Store the Donut's animator
 	private AnimHelper _animHelper;
 
-	private bool _isLeftMoving;
-	private bool _isRightMoving;
-	private bool _oldLeft;
-	private bool _oldRight;
 
 	[SerializeField]
 	public int Score;
 	private TextMeshProUGUI _scoreHUD;
 
 	public bool IsJumping;
+	public bool IsDead;
 	
-	InputHandler inh = new InputHandler();
-	
-	
-    void Start()
-    {
-	    
-	    //Initialise the score and UI to display it.
-	    Score = 0;
-	    _scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
-
-	    //Grab the AnimHelper, adds some functionality to calling animations.
-	    _animHelper = this.GetComponent<AnimHelper>();
-	    
-	    //Initialise the left and right constrains, or "walls".
-        _leftConstraint = -5f;
-        _rightConstraint = 5f;
-	    
-	    //Communicate to the "ChappersCam" that we want that script enabled.
-	    Camera.main.GetComponent<ChappersCam>().RunCamera = true;
-
-	    //Initialise IsJumping.
-	    IsJumping = false;
-	    
-	    
-	    inh.TrackInput(KeyCode.L, InputType.Button);
-	    inh.AddEvent(KeyCode.L, InputEventType.Down, delegate (InputData inp){
-				Debug.Log("L Pressed");
-			    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
-		    }
-	    );
-    }
+	InputHandler inh;
 
 
-    void Update ()
+	void Start()
+	{
+
+		//Initialise the score and UI to display it.
+		Score = 0;
+		_scoreHUD = GameObject.Find("HUDCanvas").GetComponentInChildren<TextMeshProUGUI>();
+
+		//Grab the AnimHelper, adds some functionality to calling animations.
+		_animHelper = this.GetComponent<AnimHelper>();
+
+		//Initialise the left and right constrains, or "walls".
+		_leftConstraint = -5f;
+		_rightConstraint = 5f;
+
+		//Communicate to the "ChappersCam" that we want that script enabled.
+		Camera.main.GetComponent<ChappersCam>().RunCamera = true;
+
+		//Initialise IsJumping.
+		IsJumping = false;
+		
+		//Initialise IsDead.
+		IsDead = false;
+
+
+		//Turn back all ye who do not wish a painful death - Will
+
+		//Initialise Input handler
+		inh = GameObject.Find("Player").AddComponent<InputHandler>();
+
+		//Track Keys
+		inh.TrackInput(KeyCode.Space, InputType.Button);
+		inh.TrackInput(KeyCode.A, InputType.Button);
+		inh.TrackInput(KeyCode.D, InputType.Button);
+		inh.TrackInput(KeyCode.LeftArrow, InputType.Button);
+		inh.TrackInput(KeyCode.RightArrow, InputType.Button);
+
+		/*//////////////////////////////
+		///       Define Events      ///
+		//////////////////////////////*/
+
+			//Move Left
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.A, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.A, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			//Move Right
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.D, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.D, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
+		
+
+		//Jump
+			inh.AddEvent(KeyCode.Space, InputEventType.Down, delegate(InputData inp)
+			{
+				if (!IsJumping && !IsDead)
+				{
+					_animHelper.Donut_Jump_Start(0f);
+				}
+			});
+	}
+
+
+	void Update ()
     {
 		
 	    //Update the score counter.
 	    _scoreHUD.text = Score.ToString();
 
-	    DonutControl();
-
-	    //Jump
-	    if (!IsJumping)
+	    if (!IsDead)
 	    {
-		    
-		    if (Input.GetKeyDown(KeyCode.Space))
-		    {
-
-			    _animHelper.Donut_Jump_Start(0f);
-		    }
+		    //Move the donut
+		    transform.Translate
+		    (
+			    Mathf.Clamp(transform.position.x + (_moveSpeed * Time.deltaTime * _moveDirection), _leftConstraint, _rightConstraint) - transform.position.x, 
+			    0, 
+			    0
+		    );
 	    }
 
-	    //Shake
-	    if (Input.GetKeyDown(KeyCode.K))
-	    {
-		    Debug.Log("Shake K");
-		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
-	    }
-
-	    //Shake L IF
-	    if (inh.Position(KeyCode.L)[0] == 1f)
-	    {
-		    Debug.Log("Shake L IF");
-		    Camera.main.GetComponent<ChappersCam>().Shake(testShakeAmount);
-	    }
-
-	    //Move left.
-	    if (_isLeftMoving &&  !_oldLeft)
-	    {
-		    
-		    _animHelper.Donut_BeginMoveLeft_Start(0f);
-	    }
-
-	    //Move right.
-	    if (_isRightMoving && !_oldRight)
-	    {
-		    
-		    _animHelper.Donut_BeginMoveRight_Start(0f);
-	    }
-
-	    //Store our current left and right bools, so we can use the delta between this frame and next frame, on next frame.
-	    _oldLeft = _isLeftMoving;
-	    _oldRight = _isRightMoving;
     }
-
+	
 
 	//Where the donut checks for collisions with "Interactables". While jumping, collision checking is turned off.
 	//The donut will collide with any collider with the "Is Trigger" option ticked. The donut will then check for
 	//any script that derrives from the Interactable class, then call Interact(); on that, meaning many, unique, scripts
 	//can all be called through one line of code!
-		void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
+	{
+		
+		if (!IsJumping)
 		{
 			
-			if (!IsJumping)
+			//Check to see if it's Interactable and CanCollide
+			if (other.GetComponent<Interactable>() != null)
 			{
-				
-				//Check to see if it's Interactable and CanCollide
-				if (other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().Triggerable)
-				{
-					other.GetComponent<Interactable>().Interact(this);
-				}
+				other.GetComponent<Interactable>().Interact(this);
 			}
 		}
+	}
 
-
-//Method that handles basic player input to move the donut.
-	private void DonutControl()
-	{
-
-		//Reset left and right bools, so they are ready to be set properly below.
-		_isLeftMoving = false;
-		_isRightMoving = false;
-		
-		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-		{
-
-			if (transform.position.x < _leftConstraint)
-			{
-
-				transform.position.Set(_leftConstraint, transform.position.y, transform.position.z);
-				_isLeftMoving = false;
-			}
-
-			else
-			{
-
-				transform.Translate(-_moveSpeed * Time.deltaTime, 0, 0);
-				_isLeftMoving = true;
-			}
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-		{
-
-			if (transform.position.x > _rightConstraint)
-			{
-
-				transform.position.Set(_rightConstraint, transform.position.y, transform.position.z);
-				_isRightMoving = false;
-			}
-
-			else
-			{
-
-				transform.Translate(_moveSpeed * Time.deltaTime, 0, 0);
-				_isRightMoving = true;
-			}
-		}
-	}	
 }

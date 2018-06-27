@@ -3,6 +3,7 @@
   
   Will Chapman
   19/06/2018
+  25/06/2018
   
   Sets the position of the camera to a distance (*positionFraction) between the origin and donut position,
   and aims it at the donut(+an offset).
@@ -28,7 +29,7 @@ public class ChappersCam : MonoBehaviour
 	//Camera Position/Origin variables
 	[SerializeField]   private     Vector3       shakeFactor;
 	[SerializeField]   private     Vector3       currentTarget;
-	[SerializeField]   private     Vector3       origin                = new Vector3(0f, 14f, -14.3f);
+	[SerializeField]   private     Vector3       origin                = new Vector3(0f, 11.5f, -14.3f);
 	[SerializeField]   private     Vector3       donutOffset           = new Vector3(0f, 0.65f, 5.2f);
 	[SerializeField]   private     Vector3       positionFraction      = new Vector3(0.5f, 0.05f, 0.125f);
 

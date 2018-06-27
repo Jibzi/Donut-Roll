@@ -14,6 +14,7 @@ using UnityEngine;
 //
 public class WarpRedux : MonoBehaviour
 {
+    
     //Stores two separate positions, needed for warp calculations.
     public Vector3 _realPos;
     private Vector3 _warpPos;
@@ -31,13 +32,11 @@ public class WarpRedux : MonoBehaviour
     [SerializeField]
     private Vector3 RotationSpeed;
 
-    //Value used to reduce the amplitude of wobbling
-    private float WobbleClamper = 100f;
-
     private WorldMover _worldMover;
 
     private WorldBender _wbs;
 
+    
     void Start()
     {
 
@@ -52,20 +51,25 @@ public class WarpRedux : MonoBehaviour
         _worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
+        
         Float();
         WarpRy();
         Rotate();
     }
 
+    
     //Spins the object according to the variables set in the editor.
     void Rotate()
     {
+        
         this.transform.Rotate(RotationSpeed / 100, Space.World);
     }
 
+    
     //Applies proper movements to the object.
     //TODO: Add helper functions here so that applying movements to the objects don't requre adding code to this section.
     void Float()
@@ -78,10 +82,12 @@ public class WarpRedux : MonoBehaviour
         );
     }
 
+    
     //Replication of the vertex displacement that is applied to the road.
     //But instead just adjusts the objects transform so that it appears to also be warped.
     void WarpRy()
     {
+        
         var dist = Vector3.Distance(_realPos, _wbs.BendStart.transform.position);
 
         dist = Mathf.Max(0, (dist - _wbs.Falloff));
@@ -102,5 +108,4 @@ public class WarpRedux : MonoBehaviour
 
         transform.position = _warpPos;
     }
-
 }

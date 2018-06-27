@@ -55,6 +55,11 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    protected void IncrementScore(int incrementor)
+    {
+        
+    }
+
     //Play the pickup noise
     private void PlayCollectableSound()
     { 
@@ -66,9 +71,6 @@ public class Interactable : MonoBehaviour
     {
         AMa.Play("Crash");
     }
-
-
-
 
     public bool Triggerable
     {

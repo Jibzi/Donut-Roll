@@ -34,7 +34,8 @@ public class RoadPartComponent : MonoBehaviour
         if (this.transform.position.z < -40f)
         {
             //TODO: Consider also swapping out the mesh for another; to reduce the repition.
-            this.transform.Translate(0, 0, 120);
+            //TODO: change from 160 to 20* roadparts
+            this.transform.Translate(0, 0, 160);
 			
             //Debug.Log(_populateRoad);
             _populateRoad.PopulateRoadSegment();

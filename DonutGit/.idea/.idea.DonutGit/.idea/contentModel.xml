@@ -208,12 +208,15 @@
             <e p="BuildRoad.cs" t="Include" />
             <e p="Donut.cs" t="Include" />
             <e p="DonutSpin.cs" t="Include" />
-            <e p="Inter_CurlyWurly.cs" t="Include" />
-            <e p="Inter_GummyBear.cs" t="Include" />
-            <e p="Inter_Pellets.cs" t="Include" />
-            <e p="Inter_PepperMint.cs" t="Include" />
-            <e p="Inter_Snickers.cs" t="Include" />
-            <e p="Interactable.cs" t="Include" />
+            <e p="Interact" t="Include">
+              <e p="Inter_CurlyWurly.cs" t="Include" />
+              <e p="Inter_GummyBear.cs" t="Include" />
+              <e p="Inter_Pellets.cs" t="Include" />
+              <e p="Inter_PepperMint.cs" t="Include" />
+              <e p="Inter_Snickers.cs" t="Include" />
+              <e p="Interactable.cs" t="Include" />
+              <e p="SpellEffects.cs" t="Include" />
+            </e>
             <e p="MainMenu.cs" t="Include" />
             <e p="PopulateRoad.cs" t="Include" />
             <e p="RoadPartComponent.cs" t="Include" />
@@ -240,6 +243,8 @@
           <e p="Will" t="Include">
             <e p="ChappersCam.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
+            <e p="KeyMap.cs" t="Include" />
+            <e p="KeyMapParser.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
