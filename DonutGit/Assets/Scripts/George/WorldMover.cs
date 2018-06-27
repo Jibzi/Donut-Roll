@@ -27,8 +27,8 @@ public class WorldMover : MonoBehaviour
 	void Start ()
 	{
 
-		WorldSpeed = 10f;
-		WorldAcceleration = 0.14f;
+		WorldSpeed = 13f;
+		WorldAcceleration = 0.075f;
 	}
 	
 	
