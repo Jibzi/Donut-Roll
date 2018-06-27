@@ -13,16 +13,29 @@ public class ChromaticRandomiser : MonoBehaviour {
     public Texture[] textures;
     private int indexOfLastUsedElement;
     public System.Random rand = new System.Random();
-    
+
+    [SerializeField]
+    [Tooltip("The opacity for the given object. 0.64f works best for gummyBear.")]
+    float transparency = 0.9f;
+
     void RandomiseColour()
     {
         //Dictionary of colours to apply to the given material
-        Dictionary<int, Color> colours = new Dictionary<int, Color>();
-        colours.Add(0, Color.green);
-        colours.Add(1, Color.red);
-        colours.Add(2, Color.blue);
-        colours.Add(3, Color.yellow);
-        colours.Add(4, Color.white);
+        Dictionary<int, Color> colours = new Dictionary<int, Color>
+        {
+            //Green
+            { 0, new Color(0, 1, 0, transparency) },
+            //Red
+            { 1, new Color(1, 0, 0, transparency) }, 
+            //Blue
+            { 2, new Color(0, 0, 1, transparency) }, 
+            //Yellow
+            { 3, new Color(1, 0.92f, 0.016f, transparency) }, 
+            //White
+            { 4, new Color(1, 1, 1, transparency) },  
+            //Orange
+            { 5, new Color(1, 0.47f, 0, transparency) }
+        };
         //The key of the to be allocated colour
         int chromaticKey;
         //Max reachable key of dictionary (in accordance with zero-based indexing)
