@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class Inter_Peppermint : Interactable
 {
-
-        
-    public override void Interact(Donut interactor)
+    public Inter_Peppermint()
     {
-        base.Interact(interactor);
+        points = 50;
+        sound = "Pickup";
+        shake = 0f;
+    }
         
-        //Do effect
-        interactor.Score += 50;
-        
-        //Play sound
-        AMa.Play("Pickup");
-        
-        //Do visuals
-        
-        
+    protected override void Unique(Donut interactor)
+    {
         //Destroy self
         Destroy(gameObject);
     }

@@ -27,7 +27,7 @@ public class WorldMover : MonoBehaviour
 	void Start ()
 	{
 
-		WorldSpeed = 10f;
+		WorldSpeed = 13f;
 		WorldAcceleration = 0.14f;
 	}
 	
@@ -35,7 +35,15 @@ public class WorldMover : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
-		WorldSpeed = Mathf.Clamp(WorldSpeed + (Time.deltaTime * WorldAcceleration), 0f, Mathf.Infinity);
+		if (WorldSpeed > 1)
+		{
+			WorldSpeed = Mathf.Clamp(WorldSpeed + (Time.deltaTime * WorldAcceleration), 0f, Mathf.Infinity);
+			WorldAcceleration += 0.001f * Time.deltaTime;
+		}
+		else
+		{
+			//Make double sure that the WorldSpeed is 0, jst incase it was updated from 0 before the next check
+			WorldSpeed = 0;
+		}
 	}
 }

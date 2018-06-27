@@ -32,6 +32,7 @@ public class Donut : MonoBehaviour
 	
 	//Store the Donut's animator
 	private AnimHelper _animHelper;
+	private WorldMover _worldMover;
 
 
 	[SerializeField]
@@ -53,6 +54,9 @@ public class Donut : MonoBehaviour
 
 		//Grab the AnimHelper, adds some functionality to calling animations.
 		_animHelper = this.GetComponent<AnimHelper>();
+		
+		//Grab world mover
+		_worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
 
 		//Initialise the left and right constrains, or "walls".
 		_leftConstraint = -5f;
@@ -144,15 +148,21 @@ public class Donut : MonoBehaviour
 	    //Update the score counter.
 	    _scoreHUD.text = Score.ToString();
 
-	    if (!IsDead)
+	    
+	    //Move the donut if running, if not then finish killing the donut
+	    if (_worldMover.WorldSpeed > 0)
 	    {
-		    //Move the donut
 		    transform.Translate
 		    (
 			    Mathf.Clamp(transform.position.x + (_moveSpeed * Time.deltaTime * _moveDirection), _leftConstraint, _rightConstraint) - transform.position.x, 
 			    0, 
 			    0
 		    );
+	    }
+	    else if (!IsDead)
+	    {
+		    IsDead = true;
+		    _animHelper.Donut_Death_Start(0f);
 	    }
 
     }

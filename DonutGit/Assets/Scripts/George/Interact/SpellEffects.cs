@@ -71,12 +71,8 @@ public class SpellEffects : MonoBehaviour
 
     public void DonutDie()
     {
-        
-        _chCam.Shake(10f);
-        _worldMover.WorldAcceleration = -200;
-        _anim.Donut_Death_Start(0f);
+        _worldMover.WorldAcceleration = -100;
         _spin.SpinSpeed = 0f;
-        _donut.IsDead = true;
     }
 
     public void DonutBoost()

@@ -1,23 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class Inter_Snickers : Interactable
 {
-    
-
-    public override void Interact(Donut interactor)
+    public Inter_Snickers()
     {
-        base.Interact(interactor);
+        points = 0;
+        sound = "Crash";
+        shake = 10f;
+    }
 
-        //Do effect
-        interactor.Score = 0;
+    protected override void Unique(Donut interactor)
+    {
+        //Reduce Speed
+        GameObject.Find("Road").GetComponent<WorldMover>().WorldSpeed -= 10;
         
-        //Play sound
-        AMa.Play("Pickup");
-
-        //Do visuals
-        Camera.main.GetComponent<ChappersCam>().Shake(8f);
+        //Kill donut if too slow
+        if (GameObject.Find("Road").GetComponent<WorldMover>().WorldSpeed < 13)
+        {
+            GameObject.Find("Road").GetComponent<WorldMover>().WorldSpeed = 0;
+        }
 
         //Destroy trigger but not visuals
         Destroy(this.GetComponent<BoxCollider>());

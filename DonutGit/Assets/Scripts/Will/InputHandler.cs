@@ -270,7 +270,7 @@ class InputHandler : MonoBehaviour
             //Fire event if it exists and was up before
             if (inputDict[input.Key].Position[0] == 0f && downEventDict.ContainsKey(input.Key))
             {
-              Debug.Log("Key Down Event Firing");  
+              //Debug.Log("Key Down Event Firing");  
               downEventDict[input.Key](input.Value);
             }
             
@@ -284,7 +284,7 @@ class InputHandler : MonoBehaviour
             //Fire event if it exists and was down before
             if (inputDict[input.Key].Position[0] == 1f && upEventDict.ContainsKey(input.Key))
             {
-              Debug.Log("Key Up Event Firing");
+              //Debug.Log("Key Up Event Firing");
               upEventDict[input.Key](input.Value);
             }
 
