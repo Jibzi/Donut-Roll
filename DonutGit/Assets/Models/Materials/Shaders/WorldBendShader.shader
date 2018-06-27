@@ -80,8 +80,8 @@ shader "Custom/Bender"{
         {
             o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
             o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
-            o.Gloss = tex2D (_GlossTex, IN.uv_GlossTex).rgb;
-            o.Specular = tex2D (_SpecTex, IN.uv_SpecTex).rgb;
+            o.Gloss = tex2D (_GlossTex, IN.uv_GlossTex).r;
+            o.Specular = tex2D (_SpecTex, IN.uv_SpecTex).r;
             o.Alpha = tex2D (_MainTex, IN.uv_MainTex).a;
         }
         ENDCG
