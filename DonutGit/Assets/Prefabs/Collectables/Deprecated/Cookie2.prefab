@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114690909368555222}
   - component: {fileID: 114869885069652284}
   m_Layer: 0
-  m_Name: Cookie
+  m_Name: Cookie2
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,10 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba134213cc4b8479ee3cefb0d271f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _realPos: {x: 0, y: 0, z: 0}
   WobbleFrequency: 4.99
   WobbleAmplitude: 69.5
   RotationSpeed: {x: 0, y: 300, z: 0}
-  _startPos: {x: 0, y: 1, z: 120}
 --- !u!114 &114944530299107766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,3 +186,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: 6db7ac18dd4176d45b7daeee3d8daa83, type: 2}
   textures: []
+  transparency: 0.9
