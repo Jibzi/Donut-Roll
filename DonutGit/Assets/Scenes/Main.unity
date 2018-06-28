@@ -925,7 +925,7 @@ MonoBehaviour:
     loop: 0
   - globalMusicalVolume: 10
     name: Crash
-    clip: {fileID: 8300000, guid: 2e08d9a339a7f914fb5c741c5a11b17f, type: 3}
+    clip: {fileID: 8300000, guid: 04e6f087d8170234c8f078bcd2512646, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
