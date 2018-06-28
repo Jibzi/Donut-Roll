@@ -14,7 +14,19 @@
                 <e p="GummyTestingShader.shader" t="Include" />
               </e>
               <e p="ExpandedBender.shader" t="Include" />
+              <e p="TreeShader.shader" t="Include" />
               <e p="WorldBendShader.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Obstacles" t="Include">
+            <e p="Materials" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="Bear of the gum" t="Include">
+                  <e p="GummyTestingShader.shader" t="Include" />
+                </e>
+                <e p="ExpandedBender.shader" t="Include" />
+                <e p="WorldBendShader.shader" t="Include" />
+              </e>
             </e>
           </e>
         </e>
@@ -208,18 +220,21 @@
             <e p="BuildRoad.cs" t="Include" />
             <e p="Donut.cs" t="Include" />
             <e p="DonutSpin.cs" t="Include" />
+            <e p="ForestComponent.cs" t="Include" />
             <e p="Interact" t="Include">
               <e p="Inter_CurlyWurly.cs" t="Include" />
               <e p="Inter_GummyBear.cs" t="Include" />
               <e p="Inter_Pellets.cs" t="Include" />
               <e p="Inter_PepperMint.cs" t="Include" />
               <e p="Inter_Snickers.cs" t="Include" />
+              <e p="Inter_Strawberry.cs" t="Include" />
               <e p="Interactable.cs" t="Include" />
               <e p="SpellEffects.cs" t="Include" />
             </e>
             <e p="MainMenu.cs" t="Include" />
             <e p="PopulateRoad.cs" t="Include" />
             <e p="RoadPartComponent.cs" t="Include" />
+            <e p="TreeSpawner.cs" t="Include" />
             <e p="WarpRedux.cs" t="Include" />
             <e p="WorldBender.cs" t="Include" />
             <e p="worldMover.cs" t="Include" />

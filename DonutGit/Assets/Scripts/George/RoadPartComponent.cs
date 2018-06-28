@@ -20,8 +20,8 @@ public class RoadPartComponent : MonoBehaviour
     void Start ()
     {
 
-        _populateRoad = gameObject.GetComponentInParent<PopulateRoad>();
-        _worldMover = gameObject.GetComponentInParent<WorldMover>();
+        _populateRoad = GameObject.Find("Road").GetComponent<PopulateRoad>();
+        _worldMover = GameObject.Find("Road").GetComponent<WorldMover>();
     }
 
 	

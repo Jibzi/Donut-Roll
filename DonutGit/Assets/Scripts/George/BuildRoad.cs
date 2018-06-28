@@ -29,10 +29,15 @@ public class BuildRoad : MonoBehaviour
 
 	private void MakeTheRoad()
 	{
+		var _forests = gameObject.GetComponentInChildren<TreeSpawner>()._trees;
 
 		for (int j = 0; j < _roadLength; j++)
 		{
-			Instantiate(_roadPart, new Vector3(0, 0, j * 20), Quaternion.identity, transform);
+			var rObj = Instantiate(_roadPart, new Vector3(0, 0, j * 20), Quaternion.identity, transform);
+
+			var rnd = Random.Range(0, 1);
+
+			Instantiate(_forests[rnd], new Vector3(0, 1, j * 21), Quaternion.identity);
 		}
 	}
 }
