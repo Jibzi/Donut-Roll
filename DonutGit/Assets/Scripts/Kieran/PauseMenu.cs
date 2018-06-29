@@ -14,21 +14,38 @@ public class PauseMenu : MonoBehaviour {
         escapePressed = (Input.GetAxis("Cancel") == 1);
     }
 
-    float Pause()
+    public float Pause()
     {
         const float kPauser = 0f;
         Debug.Log("The game has been paused.");
+        ContextDependentPause();
         return  0f;
     }
 
-    float Unpause()
+    public float Unpause()
     {
         const float kUnauser = 1f;
         Debug.Log("The game has been unpaused.");
+        ContextDependentPause();
         return 1f;
     }
 
+    public bool IsPaused
+    {
+        get { return isPaused; }
+        set { /*readonly*/ Debug.LogWarning("Cannot set. Property is readonly."); }
+    }
+
     void ContextDependentPause()
+    {
+        {
+            //If the game is paused, unpause it. Otherwise, pause it.
+            Time.timeScale = isPaused ? Unpause() : Pause();
+        }
+    }
+    
+    //Deprecated
+    /*void ContextDependentPause()
     {
         //Has escape been pressed?
         if (escapePressed)
@@ -42,5 +59,5 @@ public class PauseMenu : MonoBehaviour {
 	void Update ()
     {
         ContextDependentPause();
-	}
+	}*/
 }
