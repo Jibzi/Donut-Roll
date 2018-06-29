@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - OptionsMenu
   - MainMenu
+  - EarthDisc
   layers:
   - Default
   - TransparentFX

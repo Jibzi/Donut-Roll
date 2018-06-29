@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour {
     //Enter the game
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
     //
     //Go to the options menu from the main menu
