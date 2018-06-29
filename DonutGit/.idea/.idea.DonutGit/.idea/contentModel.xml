@@ -262,6 +262,7 @@
             <e p="KeyMapParser.cs" t="Include" />
           </e>
         </e>
+        <e p="SkyWobble.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
             <e p="Fonts" t="Include">

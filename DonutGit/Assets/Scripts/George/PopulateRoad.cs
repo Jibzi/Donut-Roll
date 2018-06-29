@@ -22,6 +22,8 @@ public class PopulateRoad : MonoBehaviour {
 
     public void PopulateRoadSegment()
     {
+        
+        Debug.Log("PopulateRoadSegment" + Time.time);
 
         for (int i = 0; i < 4; i++)
         {
@@ -32,7 +34,7 @@ public class PopulateRoad : MonoBehaviour {
             Vector3 vec = new Vector3(
                 _xLanes[rndVec],
                 0f,
-                (100f + (5f * i))
+                (160f + (5f * i))
                 );
 
             Instantiate(Obstacles[rnd], vec, Quaternion.identity);
