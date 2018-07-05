@@ -233,20 +233,18 @@
             <e p="Collector.cs" t="Include" />
             <e p="Obstacle.cs" t="Include" />
             <e p="OptionsMenu.cs" t="Include" />
-            <e p="PauseMenu.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="ScoreTracker.cs" t="Include" />
             <e p="TemporaryScript" t="Include">
               <e p="CollectableScript.cs" t="Include" />
             </e>
+            <e p="TimesOfDay.cs" t="Include" />
           </e>
           <e p="Will" t="Include">
             <e p="ChappersCam.cs" t="Include" />
-            <e p="InputData.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
             <e p="KeyMap.cs" t="Include" />
-            <e p="KeyMapManager.cs" t="Include" />
-            <e p="VirtualButton.cs" t="Include" />
+            <e p="KeyMapParser.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

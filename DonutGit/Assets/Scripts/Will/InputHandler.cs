@@ -3,7 +3,7 @@
   
   Will Chapman
   14/06/2018
-  27/06/2018
+  25/06/2018
   
     
   Now Works!
@@ -35,98 +35,261 @@
 */
 
 //Using
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
+//Enum describing the input types
+public enum InputType
+{
+  Button,
+  Axis,
+  Trigger,
+  Mouse,
+  Touch,
+  Accelerometer,
+  Virtual
+}
+
+//Enum describing the input event type
+public enum InputEventType
+{
+  Down,
+  Up,
+  Changed,
+  Update
+}
+
+// A blank delegate to insert anonymous methods with
+public delegate void Function(InputData input);
+
+//Class containing all the data for a single input instance
+public class InputData
+{
+  //initialise variables
+  
+  //The KeyCode of the input
+  private KeyCode    input;
+  //The type of the input
+  private InputType  type;
+  //The position of the input
+  private float[]    position;
+  //The delta position between last frame and this frame
+  private float[]    positionDelta;
+  //The time the key has been in its current position
+  private float      positionTime;
+  //The total time the key has been tracked for
+  private float      timeTracked;
+  //The timestamp of the last update
+  private float      lastUpdate;
+    
+  //Constructor takes input identifier, input type, and input position
+  public InputData(KeyCode _keyIdentifier, InputType _type, float[] _position )
+  {
+    input          =   _keyIdentifier;
+    type           =   _type;
+    position       =   _position;
+    positionDelta  =   new [] {0f, 0f};
+    positionTime   =   0;
+    timeTracked    =   0;
+    lastUpdate     =   Time.time;
+  }
+  
+  //The keycode of the input
+  public KeyCode Input
+  {
+    get { return input; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set INPUT. Property is readonly"); }
+  }
+  
+  //The type of the input
+  public InputType Type
+  {
+    get { return type; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TYPE. Property is readonly"); }
+  }
+  
+  //The position of the input
+  public float[] Position
+  {
+    get { return position; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITION. Property is readonly"); }
+  }
+  
+  //The delta position between last frame and this frame
+  public float[] PositionDelta
+  {
+    get { return positionDelta; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONDELTA. Property is readonly"); }
+  }
+  
+  //The time the key has been in its current position
+  public float PositionTime
+  {
+    get { return positionTime; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set POSITIONTIME. Property is readonly"); }
+  }
+  
+  //The total time the key has been tracked for
+  public float TimeTracked
+  {
+    get { return timeTracked; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set TIMETRACKED. Property is readonly"); }
+  }
+  
+  //The timestamp of the last update
+  public float LastUpdate
+  {
+    get { return lastUpdate; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set LASTUPDATE. Property is readonly"); }
+  }
+  
+  //The time delta between the last update and now
+  public float UpdateDelta
+  {
+    get { return Time.time - LastUpdate; }
+    set { /*readonly*/ Debug.LogWarning("Cannot set UPDATEDELTA. Property is readonly"); }
+  }
+  
+  //Called by InputHandler, should not really be invoked by user
+  public void Update(float[] _newPosition)
+  {
+    //Update position delta
+    positionDelta[0] = _newPosition[0] - Position[0];
+    positionDelta[1] = _newPosition[1] - Position[1];
+    //Update position
+    position = _newPosition;
+    //Update Position Time
+    if (positionDelta[0] == 0 && positionDelta[1] == 0)
+    {
+      positionTime += Time.deltaTime;
+    }
+    //Update Time Tracked
+    timeTracked += Time.deltaTime;
+    //Update LastUpdate
+    lastUpdate = Time.time;
+  }
+      
+}
 
 /*
 The main class. Should only be instantiated once; will track all input for you, make requests to it
 Only use one otherwise the redundant duplicates will just eat memory and CPU time.
 */
-class InputHandler
+class InputHandler : MonoBehaviour
 {
-  /*//////////////////////////////
-  ///   Initialise Variables   ///
-  //////////////////////////////*/
   
-  /// <summary>
-  /// Dictionary of inputs to be tracked
-  /// </summary>
-  private Dictionary<KeyCode, InputData> inputDict;
+  //Initialise Event Dictionaries
+  private Dictionary<KeyCode, Function>     downEventDict     =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     upEventDict       =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     changedEventDict  =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, Function>     updateEventDict   =   new Dictionary<KeyCode, Function>();
+  private Dictionary<KeyCode, InputData>    inputDict         =   new Dictionary<KeyCode, InputData>();
   
+  //Store Current KeyMap
+  private KeyMap map;
   
-  
-  /*//////////////////////////////
-  ///     Initialise Event     ///
-  ///       Dictionaries       ///
-  //////////////////////////////*/
-  
-  /// <summary>
-  /// Dictionary of events when key is pressed down
-  /// </summary>
-  private Dictionary<KeyCode, Function>  downEventDict;
-  
-  /// <summary>
-  /// Dictionary of events when key is let up
-  /// </summary>
-  private Dictionary<KeyCode, Function>  upEventDict;
-  
-  /// <summary>
-  /// Dictionary of events when key changes position
-  /// </summary>
-  private Dictionary<KeyCode, Function>  changedEventDict;
-  
-  /// <summary>
-  /// Dictionary of events every MonoBehaviour.Update()
-  /// </summary>
-  private Dictionary<KeyCode, Function>  updateEventDict;
-  
-  
-  
-  /*//////////////////////////////
-  ///      Unity Methods       ///
-  //////////////////////////////*/
-  
-  /// <summary>
-  /// Creates an input handler
-  /// </summary>
-  public void Start()
+  //Constructor creates an input handler
+  public InputHandler()
   {
-    //Initialise inputDict
-    inputDict = new Dictionary<KeyCode, InputData>();
-
-    //Initialise events
-    downEventDict = new Dictionary<KeyCode, Function>();
-    upEventDict = new Dictionary<KeyCode, Function>();
-    changedEventDict = new Dictionary<KeyCode, Function>();
-    updateEventDict = new Dictionary<KeyCode, Function>();
+    
   }
   
-  /// <summary>
-  /// MonoBehaviour updates all keys being tracked every frame
-  /// </summary>
-  public void Update ()
+  //Method to add input to the dictionary for tracking
+  public void TrackInput(KeyCode _keyIdentifier, InputType _inputType)
+  {
+    Debug.Log("Received Track Request");
+    inputDict.Add(
+      _keyIdentifier,
+      new InputData(_keyIdentifier, _inputType, new []{0f, 0f})
+    );
+  }
+  
+  //Method to remove input from the dictionary
+  public void IgnoreInput(KeyCode _keyIdentifier)
+  {
+    if (inputDict.ContainsKey(_keyIdentifier))
+    {
+      inputDict.Remove(_keyIdentifier); 
+    }
+  }
+
+  //Method to get status of a certain key
+  public InputData GetState(KeyCode _keyIdentifier)
+  {
+    return this.inputDict[_keyIdentifier];
+  }
+  
+  //Method to get just position of a certain key
+  public float[] Position(KeyCode _keyIdentifier)
+  {
+    return this.inputDict[_keyIdentifier].Position;
+  }
+  
+  //Method to add a custom event function to be fired when a key goes down, up or each frame
+  //Event function will have the InputData for that key passsed to it as the first argument when fired
+  public void AddEvent(KeyCode _keyIdentifier, InputEventType _eventType, Function _function)
+  {
+    switch (_eventType)
+    {
+      case InputEventType.Down:
+        downEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Up:
+        upEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Changed:
+        changedEventDict.Add(_keyIdentifier, _function);
+        break;
+      case InputEventType.Update:
+        updateEventDict.Add(_keyIdentifier, _function);
+        break;
+      default:
+        Debug.Log("INPUT SYSTEM ERROR \"AddEvent\": event has invalid type");
+        break;
+    }
+  }
+  
+  //Updates every input once per frame
+  private void Update ()
   {
     foreach(KeyValuePair<KeyCode, InputData> input in inputDict)
     {
       // do something with input.Value or input.Key
       //Debug.Log("Updating Input Dictionary ["+input.Key+"]: ", input.Value.ToString());
 
-      //Initialise a variable to contain the events to be fired after the update
-      List<InputEventType> events = new List<InputEventType>();
-      
       switch (input.Value.Type)
       {
         case InputType.Button:
           //Key Down
           if (Input.GetKey(input.Key))
           {
-            events = inputDict[input.Key].Update(new []{1f, 0f});
+            
+            //Fire event if it exists and was up before
+            if (inputDict[input.Key].Position[0] == 0f && downEventDict.ContainsKey(input.Key))
+            {
+              //Debug.Log("Key Down Event Firing");  
+              downEventDict[input.Key](input.Value);
+            }
+            
+            inputDict[input.Key].Update(new []{1f, 0f});
+            
           }
           //Key Up
           else
           {
-            events = inputDict[input.Key].Update(new []{0f, 0f});
+            
+            //Fire event if it exists and was down before
+            if (inputDict[input.Key].Position[0] == 1f && upEventDict.ContainsKey(input.Key))
+            {
+              //Debug.Log("Key Up Event Firing");
+              upEventDict[input.Key](input.Value);
+            }
+
+            inputDict[input.Key].Update(new []{0f, 0f});
+            
           }
           break;
         
@@ -152,141 +315,16 @@ class InputHandler
           Debug.LogWarning("INPUT SYSTEM ERROR \"Update\": key has invalid type");
           break;
       }
-
-      //Fire Events
-      foreach (var iEvent in events)
+      
+      //Do this last so it goes in order: Down, Update(*n) Up
+      if (updateEventDict.ContainsKey(input.Key))
       {
-        switch (iEvent)
-        {
-          case InputEventType.Down:
-            if (downEventDict.ContainsKey(input.Key))
-            {
-              downEventDict[input.Key](input.Value);
-            }
-            break;
-          case InputEventType.Up:
-            if (upEventDict.ContainsKey(input.Key))
-            {
-              upEventDict[input.Key](input.Value);
-            }
-            break;
-          case InputEventType.Changed:
-            if (changedEventDict.ContainsKey(input.Key))
-            {
-              changedEventDict[input.Key](input.Value);
-            }
-            break;
-          case InputEventType.Update:
-            if (updateEventDict.ContainsKey(input.Key))
-            {
-              updateEventDict[input.Key](input.Value);
-            }
-            break;
-        }
+        Debug.Log("Event Firing:");
+        updateEventDict[input.Key](input.Value);
       }
+      
     }
   }
-  
-  
-    
-  /*//////////////////////////////
-  ///          Methods         ///
-  //////////////////////////////*/
-  
-  /// <summary>
-  /// Method to add input to the dictionary for tracking
-  /// </summary>
-  /// <param name="_keyIdentifier">KeyCode to be tracked</param>
-  /// <param name="_inputType">The type of input it is</param>
-  public void TrackInput(KeyCode _keyIdentifier, InputType _inputType)
-  {
-    Debug.Log("Received Track Request");
-    inputDict.Add(
-      _keyIdentifier,
-      new InputData(_keyIdentifier, _inputType)
-    );
-  }
-  
-  /// <summary>
-  /// Method to remove input from the dictionary
-  /// </summary>
-  /// <param name="_keyIdentifier">KeyCode to be removed from tracking</param>
-  public void IgnoreInput(KeyCode _keyIdentifier)
-  {
-    if (inputDict.ContainsKey(_keyIdentifier))
-    {
-      inputDict.Remove(_keyIdentifier); 
-    }
-    else
-    {
-      Debug.Log("Key did not exist! Aborting attempt");
-    }
-  }
-
-  /// <summary>
-  /// Method to get status of a certain key
-  /// </summary>
-  /// <param name="_keyIdentifier">The key to get the status of</param>
-  /// <returns></returns>
-  public InputData GetState(KeyCode _keyIdentifier)
-  {
-    if (inputDict.ContainsKey(_keyIdentifier))
-    {
-      return inputDict[_keyIdentifier];
-    }
-    else
-    {
-      Debug.Log("Key did not exist! Aborting attempt");
-      return null;
-    }
-  }
-    
-  /// <summary>
-  /// Method to get just position of a certain key
-  /// </summary>
-  /// <param name="_keyIdentifier">The key to get the position of</param>
-  /// <returns></returns>
-  public float[] Position(KeyCode _keyIdentifier)
-  {
-    if (inputDict.ContainsKey(_keyIdentifier))
-    {
-      return inputDict[_keyIdentifier].Position;
-    }
-    else
-    {
-      Debug.Log("Key did not exist! Aborting attempt");
-      return null;
-    }
-  }
-  
-  /// <summary>
-  /// Method to add a custom event function to be fired when a key meets the InputEventType
-  /// </summary>
-  /// <param name="_keyIdentifier">The key to have the event connected to</param>
-  /// <param name="_eventType">The type of event, when it is fired</param>
-  /// <param name="_function">The code to be fired, has input data passed as first argument</param>
-  public void AddEvent(KeyCode _keyIdentifier, InputEventType _eventType, Function _function)
-  {
-    switch (_eventType)
-    {
-      case InputEventType.Down:
-        downEventDict.Add(_keyIdentifier, _function);
-        break;
-      case InputEventType.Up:
-        upEventDict.Add(_keyIdentifier, _function);
-        break;
-      case InputEventType.Changed:
-        changedEventDict.Add(_keyIdentifier, _function);
-        break;
-      case InputEventType.Update:
-        updateEventDict.Add(_keyIdentifier, _function);
-        break;
-      default:
-        Debug.Log("Event did not exist! Aborting attempt");
-        break;
-    }
-  }
-  
 }
 
 

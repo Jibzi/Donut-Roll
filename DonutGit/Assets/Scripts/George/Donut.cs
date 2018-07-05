@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
@@ -43,8 +42,7 @@ public class Donut : MonoBehaviour
 	public bool IsJumping;
 	public bool IsDead;
 	
-	private KeyMapManager inp;
-	private PauseMenu pauser;
+	InputHandler inh;
 
 
 	void Start()
@@ -73,86 +71,74 @@ public class Donut : MonoBehaviour
 		//Initialise IsDead.
 		IsDead = false;
 
-		//Initialise pauser
-		pauser = new PauseMenu();
-		
+
 		//Turn back all ye who do not wish a painful death - Will
 
-		
-		//Initialise KeyMap Manager
-		inp = GameObject.Find("InputSystem").GetComponent<KeyMapManager>();
-		
-		//Create Virtual Keys
-		inp.AddVirtualButton("Jump");
-		inp.AddVirtualButton("Left");
-		inp.AddVirtualButton("Right");
-		inp.AddVirtualButton("Pause");
-		
-		//Create keymap
-		inp.AddMap("Default");
-		inp.SetTo("Default");
+		//Initialise Input handler
+		inh = GameObject.Find("Player").AddComponent<InputHandler>();
 
-		//Map real keys to virtual keys
-		inp.Map().AddKey("Jump", KeyCode.Space, InputType.Button);
-		inp.Map().AddKey("Left", KeyCode.A, InputType.Button);
-		inp.Map().AddKey("Left", KeyCode.LeftArrow, InputType.Button);
-		inp.Map().AddKey("Right", KeyCode.D, InputType.Button);
-		inp.Map().AddKey("Right", KeyCode.RightArrow, InputType.Button);
-		//inp.Map().AddKey("Pause", KeyCode.P, InputType.Button);
-		//inp.Map().AddKey("Pause", KeyCode.Escape, InputType.Button);
+		//Track Keys
+		inh.TrackInput(KeyCode.Space, InputType.Button);
+		inh.TrackInput(KeyCode.A, InputType.Button);
+		inh.TrackInput(KeyCode.D, InputType.Button);
+		inh.TrackInput(KeyCode.LeftArrow, InputType.Button);
+		inh.TrackInput(KeyCode.RightArrow, InputType.Button);
 
-		
-		
 		/*//////////////////////////////
 		///       Define Events      ///
 		//////////////////////////////*/
 
-		//Move Left
-		inp.AddEvent("Left", InputEventType.Down, delegate(InputData inp)
-		{
-			_moveDirection = -1f;
-			if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
-		});
-		inp.AddEvent("Left", InputEventType.Up, delegate(InputData inp)
-		{
-			if (_moveDirection == -1f) _moveDirection = 0f;
-		});
+			//Move Left
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.LeftArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.A, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = -1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveLeft_Start(0f);
+			});
+			inh.AddEvent(KeyCode.A, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == -1f) _moveDirection = 0f;
+			});
+
+			//Move Right
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.RightArrow, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
+
+			inh.AddEvent(KeyCode.D, InputEventType.Down, delegate(InputData inp)
+			{
+				_moveDirection = 1f;
+				if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
+			});
+			inh.AddEvent(KeyCode.D, InputEventType.Up, delegate(InputData inp)
+			{
+				if (_moveDirection == 1f) _moveDirection = 0f;
+			});
 		
-		//Move Right
-		inp.AddEvent("Right", InputEventType.Down, delegate(InputData inp)
-		{
-			_moveDirection = 1f;
-			if (!IsDead) _animHelper.Donut_BeginMoveRight_Start(0f);
-		});
-		inp.AddEvent("Right", InputEventType.Up, delegate(InputData inp)
-		{
-			if (_moveDirection == 1f) _moveDirection = 0f;
-		});
 
 		//Jump
-		inp.AddEvent("Jump", InputEventType.Down, delegate(InputData inp)
-		{
-			if (!IsJumping && !IsDead)
+			inh.AddEvent(KeyCode.Space, InputEventType.Down, delegate(InputData inp)
 			{
-				_animHelper.Donut_Jump_Start(0f);
-			}
-		});
-		
-		//Pause
-		inp.AddEvent("Pause", InputEventType.Down, delegate(InputData inp)
-		{
-			if (!IsDead)
-			{
-				if (pauser.IsPaused)
+				if (!IsJumping && !IsDead)
 				{
-					pauser.Unpause();
+					_animHelper.Donut_Jump_Start(0f);
 				}
-				else
-				{
-					pauser.Pause();
-				}
-			}
-		});
+			});
 	}
 
 
