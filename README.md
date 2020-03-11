@@ -1,6 +1,6 @@
 # Donut-Roll
 
-A candy themed 3-lane endless runner.
+A candy themed 3-lane endless runner made in C# with Unity.
 
 To play, open the [DonutGit folder](https://github.com/Jibzi/Donut-Roll/tree/master/DonutGit) with Unity and wait for it to build, and play the "Main" scene.
 
