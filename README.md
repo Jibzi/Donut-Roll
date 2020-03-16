@@ -9,7 +9,9 @@ This repo uses [Git LFS](https://git-lfs.github.com/) to store larger game asset
 #### Video:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=EJwDCta1Q34" target="_blank"><img src="https://i.ytimg.com/vi/EJwDCta1Q34/hqdefault.jpg" alt="Video Clip of AH:WF" width="853" height="480" border="10" /></a>
 
+
 <h2 id="Features">Key Features:</h2>
+
 * A [shader](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/WorldBender.cs) that curves the world
 * A robust [collectables system](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/Interact/Interactable.cs)
 * A custom [audio management system](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/Kieran/AudioManager.cs)
