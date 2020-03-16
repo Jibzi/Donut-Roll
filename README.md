@@ -7,7 +7,7 @@ To play, clone or download this repo and run [DonutRoll.exe](https://github.com/
 This repo uses [Git LFS](https://git-lfs.github.com/) to store larger game assets. Check out other features <a href="#Features">below</a>.
 
 #### Video:
-<iframe width="874" height="492" src="https://www.youtube.com/embed/EJwDCta1Q34" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=EJwDCta1Q34" target="_blank"><img src="https://i.ytimg.com/vi/EJwDCta1Q34/hqdefault.jpg" alt="Video Clip of AH:WF" width="853" height="480" border="10" /></a>
 
 <h2 id="Features">Key Features:</h2>
 * A [shader](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/WorldBender.cs) that curves the world
