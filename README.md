@@ -16,3 +16,6 @@ This repo uses [Git LFS](https://git-lfs.github.com/) to store larger game asset
 * A robust [collectables system](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/Interact/Interactable.cs)
 * A custom [audio management system](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/Kieran/AudioManager.cs)
 * A powerful [input manager](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/Will/InputHandler.cs) that tracks key metadata
+* [Pickups](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/Kieran/Collectable.cs) that add to your score, or accelerate your donut
+* [Hazards](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/Kieran/Obstacle.cs) that slow down or stop your donut
+* A difficulty system orientated around a [jerk-based acceleration system](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/WorldMover.cs#L13) that increases your acceleration over time, soe ven if you slow down 5 minuites in you get back up to speed in no time!
