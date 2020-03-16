@@ -2,7 +2,9 @@
 
 A candy themed 3-lane endless runner made in C# with Unity.
 
-To play, open the [DonutGit folder](https://github.com/Jibzi/Donut-Roll/tree/master/DonutGit) with Unity and wait for it to build, and play the "Main" scene.
+To play, clone or download this repo and run [DonutRoll.exe](https://github.com/Jibzi/Donut-Roll/tree/master/DonutGame) in the DonutGame folder.
+
+This repo uses [Git LFS](https://git-lfs.github.com/) to store larger game assets.
 
 ### Key Features:
 * A [shader](https://github.com/Jibzi/Donut-Roll/blob/master/DonutGit/Assets/Scripts/George/WorldBender.cs) that curves the world
