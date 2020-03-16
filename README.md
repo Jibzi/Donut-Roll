@@ -7,7 +7,7 @@ To play, clone or download this repo and run [DonutRoll.exe](https://github.com/
 This repo uses [Git LFS](https://git-lfs.github.com/) to store larger game assets. Check out other features <a href="#Features">below</a>.
 
 #### Video:
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=EJwDCta1Q34" target="_blank"><img src="https://i.ytimg.com/vi/EJwDCta1Q34/hqdefault.jpg" alt="Video Clip of Donut Roller" width="853" height="480" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=EJwDCta1Q34" target="_blank"><img src="https://static.wixstatic.com/media/3978e6_577023bfc9444415900811be9a1c7585f003.jpg/v1/fill/w_756,h_425,fp_0.50_0.50,q_90/3978e6_577023bfc9444415900811be9a1c7585f003.webp" alt="Video Clip of Donut Roller" width="853" height="480" border="10" /></a>
 
 
 <h2 id="Features">Key Features:</h2>
